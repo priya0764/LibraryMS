@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import StoreBooksCategory from "./storeBooksCategory";
+import LoginNavbar from './loginNavbar';
 
 class Home extends Component {
-  state = {};
   render() {
     return (
       <div>
-        <h1>Home Page</h1>
+        <LoginNavbar />
+        <StoreBooksCategory />
       </div>
     );
   }

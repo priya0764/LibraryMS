@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
+
 import Readers from "./components/readers";
-import ReaderService from "./services/readerService";
 import { Route, Switch, Redirect } from "react-router-dom";
 import AddReader from './components/addReader'
 import ReaderDetails from './components/readerDetails'
@@ -12,35 +11,57 @@ import LoginFormUser from './components/loginFormUser'
 import UserOrAdmin from './components/userOrAdmin';
 import LoginFormAdmin from './components/loginFormAdmin';
 import AdminPage from './components/adminPage'
-
-
-
-
+import Books from './components/books';
+import AddBook from './components/addBook';
+import BookDetails from './components/bookDetails';
+import BooksOrder from './components/booksOrder';
+import DamagedBooks from './components/damagedBooks';
+import AddBooksOrder from './components/addBooksOrder';
+import BooksOrderDetails from './components/booksOrderDetails';
+import AddDamagedBooks from './components/addDamagedBooks';
+import DamagedBooksDetails from './components/damagedBooksDetails';
+import Home from './components/home';
+import SearchBook from './components/searchBook';
+import UserBooksList from './components/userBooks';
+import Footer from './components/footer';
 
 function App() {
   return (
+    <div className="App">
+      <div className="container-fluid">
+        <Switch>
+          <Route path="/reader/add" component={AddReader} />
+          <Route path="/reader/update/:id" component={ReaderDetails} />
+          <Route path="/reader/:id" component={ReaderDetails} />
+          <Route path="/reader" component={Readers} />
 
-    <div className="container-fluid">
-      <Switch>
-        <Route path="/reader/add" component={AddReader} />
-        <Route path="/reader/update/:id" component={ReaderDetails} />
-        <Route path="/reader/:id" component={ReaderDetails} />
-        <Route path="/reader" component={Readers} />
+          <Route path="/feedback/add" component={AddFeedback} />
+          <Route path="/feedback/update/:id" component={FeedbackDetails} />
+          <Route path="/feedback/:id" component={FeedbackDetails} />
+          <Route path="/feedback" component={Feedback} />
 
-        <Route path="/feedback/add" component={AddFeedback} />
-        <Route path="/feedback/update/:id" component={FeedbackDetails} />
-        <Route path="/feedback/:id" component={FeedbackDetails} />
-        <Route path="/feedback" component={Feedback} />
+          <Route path="/Admin/login" component={LoginFormAdmin} />
+          <Route path="/user/login" component={LoginFormUser} />
+          <Route path="/userOrAdmin" component={UserOrAdmin} />
+          <Route path="/adminPage" component={AdminPage} />
 
-        <Route path="/Admin/login" component={LoginFormAdmin}/>
-       <Route path="/user/login" component={LoginFormUser}/>
-       <Route path="/userOrAdmin" component={UserOrAdmin}/>
-       <Route path="/adminPage" component={AdminPage}/>
-      
-
-       
-      
-      </Switch>
+          <Route path="/book/details" component={UserBooksList} />
+          <Route path="/book/add" component={AddBook} />
+          <Route path="/book/get/subject/:subject" component={SearchBook} />
+          <Route path="/book/update/:id" component={BookDetails} />
+          <Route path="/book" component={Books} />
+          <Route path="/booksorder/add" component={AddBooksOrder} />
+          <Route path="/booksorder/get/:id" component={BooksOrderDetails} />
+          <Route path="/booksorder/update/:id" component={BooksOrderDetails} />
+          <Route path="/booksorder" component={BooksOrder} />
+          <Route path="/damagedbook/add" component={AddDamagedBooks} />
+          <Route path="/damagedbook/get/:id" component={DamagedBooksDetails} />
+          <Route path="/damagedbook/update/:id" component={DamagedBooksDetails} />
+          <Route path="/damagedbook" component={DamagedBooks} />
+          <Route path="/" exact component={Home} />
+        </Switch>
+      </div>
+      <Footer />
     </div>
   );
 }
