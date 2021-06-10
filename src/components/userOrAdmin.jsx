@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import LoginNavbar from './loginNavbar';
 
 class UserOrAdmin extends Component {
   render() {
     return (
-      <div>
-
+      <div className="container-fluid">
+        <LoginNavbar />
         <div className="row">
           <div className="col-sm-4 offset-md-4">
             <div className="well text-center">

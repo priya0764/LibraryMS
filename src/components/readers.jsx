@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReaderService from "../services/readerService";
 import { Link } from "react-router-dom";
-import _ from 'lodash';
 
 class Readers extends Component {
   state = {
@@ -44,8 +43,6 @@ class Readers extends Component {
     }
   render() {
     return (
-      
-     
       <div className="w-75 mt-5 mx-auto">
         <div className="d-flex justify-content-between">
           <Link to="/reader/add" className="btn btn-secondary btn-large mb-1">
