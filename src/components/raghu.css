@@ -1,0 +1,63 @@
+h3 {
+  color: rgb(16, 67, 87);
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.co {
+  background-color: greenyellow;
+}
+.coo {
+  text-align: left;
+  text-decoration: underline;
+}
+.hi3 {
+  font-weight: 700;
+  color: rgb(199, 59, 59);
+}
+
+.koko {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.kiki {
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.kiki1 {
+  color: chartreuse;
+  top: 0;
+  bottom: 10%;
+  position: initial;
+}
+
+.kiki2 {
+  color: darkturquoise;
+}
+
+.kiki3 {
+  left: 500px;
+  top: 150px;
+  height: 300px;
+  padding: 0 450px;
+}
+
+.kiki4 {
+  background-color: dodgerblue;
+}
+
+.drop {
+  position: absolute;
+  top: 12%;
+  width: 75%;
+}
