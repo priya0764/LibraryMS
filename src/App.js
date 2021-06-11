@@ -29,6 +29,7 @@ import AddressDetails from'./components/addressDetails';
 import BooksIssued from './components/booksIssued';
 import AddBooksIssued from './components/addBooksIssued';
 import BooksIssuedDetails from './components/booksIssuedDetails';
+import Register from './components/register';
 import UserLogin from './components/userLogin';
 import Logout from './components/logout';
 import Home from './components/home';
@@ -52,7 +53,7 @@ function App() {
           <Route path="/feedback" component={Feedback} />
 
           <Route path="/Admin/login" component={LoginFormAdmin} />
-          <Route path="/user/login" component={LoginFormUser} />
+          <Route path="/user/login" component={UserLogin} />
           <Route path="/userOrAdmin" component={UserOrAdmin} />
           <Route path="/adminPage" component={AdminPage} />
 
@@ -70,8 +71,8 @@ function App() {
           <Route path="/damagedbook/update/:id" component={DamagedBooksDetails} />
           <Route path="/damagedbook" component={DamagedBooks} />
 
-          <Route exact path="/user/add" component={AddUser}/>
-         <Route exact path="/user/update/:id" component={UserDetails}/>
+        <Route exact path="/user/add" component={AddUser}/>
+        <Route exact path="/user/update/:id" component={UserDetails}/>
         <Route exact path="/user/get/:id" component={UserDetails}/>
         <Route exact path="/users" component={Users}/>
         <Route exact path="/address/add" component={AddAddress}/>
@@ -82,7 +83,7 @@ function App() {
         <Route exact path="/booksIssued/update/:id" component={BooksIssuedDetails}/>
         <Route exact path="/booksIssued/get/:id" component={BooksIssuedDetails}/>
         <Route exact path="/booksIssued" component={BooksIssued}/>
-        <Route exact path="/userLogin" component={UserLogin}/>
+        <Route exact path="/register" component={Register}/>
         <Route exact path="/logout" component={Logout}/>
         <Route path="/" exact component={Home} />
         </Switch>

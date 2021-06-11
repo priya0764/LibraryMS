@@ -36,14 +36,7 @@ render(){
         <div>
             <br></br>
         <div>
-        <div class="carousel-item active">
-              <img
-                src="https://image.shutterstock.com/image-photo/sunset-coast-lake-nature-landscape-260nw-1960131820.jpg"
-                className = "center"
-                width="100%"
-                height="800px"
-                alt="crop"
-              /></div>
+        
              <div className = "container-md" >
                 <div className = "row">
                     <div className = "card col-md-6 offset-md-3 offset-md-3">
@@ -51,12 +44,20 @@ render(){
                           <div className = "card-body">
                               <form>
                               <div className="form-group">
-                                      <label>Email</label>
-                                      <input placeholder="email" name="userid" className="form-control" value={this.state.email} onChange={this.changeEmailHandler}/>
+                                      <label>Email</label><span class="text-danger">*</span>
+                                      <input placeholder="email" 
+                                      name="userid" 
+                                      className="form-control" 
+                                      value={this.state.email} onChange={this.changeEmailHandler}/>
                                   </div>
                                   <div className="form-group">
-                                      <label>Password</label>
-                                      <input placeholder="Password"type ="Password"name="password" className="form-control" value={this.state.password} onChange={this.changePasswordHandler}/>
+                                      <label>Password</label><span class="text-danger">*</span>
+                                      <input placeholder="Password"
+                                      minLength="8"
+                                      maxLength="15"
+                                      type ="Password"
+                                      name="password" 
+                                      className="form-control" value={this.state.password} onChange={this.changePasswordHandler}/>
                                   </div>
                                   <button className="btn btn-success" onClick={this.saveUser}>Login</button>
                                   <div className="mt-2 text-center">
