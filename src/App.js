@@ -40,6 +40,20 @@ import SuggestedBooks from './components/suggestedBooks';
 import AddSuggestedBooks from './components/addSuggestedBooks';
 import UpdateSuggestedBooks from './components/updateSuggestedBooks';
 import ViewSuggestedBooks from './components/viewSuggestedBooks';
+import Author from './Components/author';
+
+import ViewAuthor from './Components/viewAuthor';
+import UpdateAuthor from './Components/updateAuthor';
+import AddAuthor from './Components/addAuthor';
+
+import BooksReturned from './Components/booksReturned'
+import AddBooksReturned from './Components/addBooksReturned';
+import UpdateBooksReturned from './Components/updateBooksReturned';
+import ViewBooksReturned from './Components/viewBooksReturned';
+
+import Dashboard from './Components/dashboard';
+import SearchAuthor from './Components/searchAuthorByName';
+import SearchReturnedBook from './Components/searchReturnedBookByDelayedDays';
 function App() {
   return (
     <div className="App">
@@ -102,6 +116,21 @@ function App() {
 
         <Route path="/" exact component={Home} />
         <Route path="/userPage" component={UserPage}/>
+
+        <Route path="/" exact component={Author}></Route>
+            <Route path="/author" component={Author}></Route>
+            <Route path="/view-author/:authorId" component={ViewAuthor}></Route>
+            <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
+            <Route path="/add-author" component={AddAuthor}></Route>
+            <Route path="/author-name/:firstName" component={SearchAuthor}></Route>
+
+
+            <Route path="/booksReturned" component={BooksReturned}></Route>
+            <Route path="/add-returned" component={AddBooksReturned}></Route>
+            <Route path="/update-returned/:id" exact component={UpdateBooksReturned}></Route>
+            <Route path="/view-returned/:id" component={ViewBooksReturned}></Route>
+            <Route path="/dashboard" component={Dashboard}></Route>
+            <Route path="/returnedBooks-delayed/:delayedDays" component={SearchReturnedBook}></Route>
         </Switch>
       </div>
 
