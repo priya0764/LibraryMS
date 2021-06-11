@@ -20,37 +20,39 @@ class ViewSuggestedBooks extends Component {
         return (
             <div className="card col-md-6 offset-md-3">
                 <h3 className="text-center"> View SuggestedBooks Details</h3>
-                <div className="card bg-info text-dark">
-                    <div className="card-body">
+                <div className="card bg-dark text-white">
+                    <div className="card-body" >
                         <h1>{this.props.match.params.id}</h1>
+                      
                         <div className="row">
                             <label><b>Title: </b></label>
-                            <div>{this.state.suggestedBooks.title}</div>
+                            <div>&nbsp;{this.state.suggestedBooks.title}</div>
                         </div>
                         <div className="row">
                             <label><b>Subject:</b> </label>
-                            <div>{this.state.suggestedBooks.subject}</div>
+                            <div>&nbsp;{this.state.suggestedBooks.subject}</div>
                         </div>
                         <div className="row">
                             <label><b>Author: </b></label>
-                            <div>{this.state.suggestedBooks.author}</div>
+                            <div>&nbsp;{this.state.suggestedBooks.author}</div>
                         </div>
                         <div className="row">
                             <label><b>Publications: </b></label>
-                            <div>{this.state.suggestedBooks.publications}</div>
+                            <div>&nbsp;{this.state.suggestedBooks.publications}</div>
                         </div>
                         <div className="row">
                             <label><b>Description: </b></label>
-                            <div>{this.state.suggestedBooks.description}</div>
+                            <div>&nbsp;{this.state.suggestedBooks.description}</div>
                         </div>
                         <div className="row">
                             <label><b>Suggested Date: </b></label>
-                            <div>{this.state.suggestedBooks.suggested_date}</div>
+                            <div>&nbsp;{this.state.suggestedBooks.suggested_date}</div>
                         </div>
                         <div className="row">
                             <label><b>Status: </b></label>
-                            <div>{this.state.suggestedBooks.status}</div>
+                            <div>&nbsp;{this.state.suggestedBooks.status}</div>
                         </div>
+                    
                       
 
                     </div>
