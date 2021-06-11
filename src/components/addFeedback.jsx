@@ -10,14 +10,14 @@ class AddFeedback extends Component {
       description: "",
       rating: "",
       comments: "",
-      users: [],
+      userId:"",
     },
   };
   // to handle sumbit
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("Submitted");
-    FeedbackService.writeFeedback(this.props.userId, this.state.feedback).then(
+    FeedbackService.writeFeedback(this.state.feedback).then(
       (res) => {
         this.props.history.push("/feedback");
       }
@@ -48,7 +48,7 @@ class AddFeedback extends Component {
               className="form-control"
               id="users"
               name="userId"
-              value={this.props.userId}
+              value={this.state.feedback.userId}
               onChange={this.handleChange}
               required
             />
