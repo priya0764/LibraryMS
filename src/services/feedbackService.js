@@ -6,14 +6,14 @@ class FeedbackService{
     async getAllFeedback(){
         return await axios.get(FEEDBACK_API_BASE_URL)
     }
-    async writeFeedback(userId,feedback){
-        return await axios.post(FEEDBACK_API_BASE_URL+"/"+userId,feedback)
+    async writeFeedback(feedback){
+        return await axios.post(FEEDBACK_API_BASE_URL,feedback)
     }
     async updateFeedback(userId,feedback){
         return await axios.put(FEEDBACK_API_BASE_URL+"/"+userId,feedback)
     }
     async deleteFeedbackById(id){
-        return await axios.get(FEEDBACK_API_BASE_URL+"/"+id)
+        return await axios.delete(FEEDBACK_API_BASE_URL+"/"+id)
     }
     async viewFeedbackByRating(rating){
         return await axios.get(FEEDBACK_API_BASE_URL+"/view/rating/"+rating)

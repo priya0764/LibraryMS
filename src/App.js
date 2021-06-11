@@ -34,8 +34,7 @@ import Logout from './components/logout';
 import Home from './components/home';
 import SearchBook from './components/searchBook';
 import UserBooksList from './components/userBooks';
-import Footer from './components/footer';
-
+import UserPage from './components/userPage'
 function App() {
   return (
     <div className="App">
@@ -85,9 +84,9 @@ function App() {
         <Route exact path="/userLogin" component={UserLogin}/>
         <Route exact path="/logout" component={Logout}/>
         <Route path="/" exact component={Home} />
+        <Route path="/userPage" component={UserPage}/>
         </Switch>
       </div>
-      <Footer />
     </div>
   );
 }
