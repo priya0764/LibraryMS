@@ -3,9 +3,9 @@ import "./design.css";
 
 
 import Readers from "./components/readers";
+import Feedback from "./components/feedback"
 import AddFeedback from './components/addFeedback';
 import FeedbackDetails from './components/feedbackDetails';
-import LoginFormUser from './components/loginFormUser'
 import UserOrAdmin from './components/userOrAdmin';
 import LoginFormAdmin from './components/loginFormAdmin';
 import AdminPage from './components/adminPage'
@@ -23,7 +23,7 @@ import AddUser from './components/addUser';
 import UserDetails from './components/userDetails';
 import Address from './components/address';
 import AddAddress from './components/addAddress';
-import AddressDetails from'./components/addressDetails';
+import AddressDetails from './components/addressDetails';
 import BooksIssued from './components/booksIssued';
 import AddBooksIssued from './components/addBooksIssued';
 import BooksIssuedDetails from './components/booksIssuedDetails';
@@ -33,7 +33,6 @@ import Logout from './components/logout';
 import Home from './components/home';
 import SearchBook from './components/searchBook';
 
-import Footer from './components/footer';
 import UserBooksList from './components/userBooks';
 import ViewBook from './components/viewBook';
 import CategoryListHome from "./components/categoryListHome";
@@ -41,7 +40,6 @@ import CategoryListHome from "./components/categoryListHome";
 import UserBooksList from './components/userBooks';
 import UserPage from './components/userPage'
 import Publishers from './components/publishers';
-import { BrowserRouter as  Router } from 'react-router-dom';
 import ViewPublisher from './components/viewPublisher';
 import UpdatePublisher from './components/updatePublisher';
 import AddPublisher from './components/addPublisher';
@@ -63,6 +61,8 @@ import ViewBooksReturned from './Components/viewBooksReturned';
 import Dashboard from './Components/dashboard';
 import SearchAuthor from './Components/searchAuthorByName';
 import SearchReturnedBook from './Components/searchReturnedBookByDelayedDays';
+import AddReader from './components/addReader';
+import ReaderDetails from './components/readerDetails';
 function App() {
   return (
     <div className="App">
@@ -101,23 +101,21 @@ function App() {
 
           <Route path="/viewbook/:title" component={ViewBook} />
           <Route path="/category/books" component={CategoryListHome} />
-          <Route path="/" exact component={Home} />
 
-
-        <Route exact path="/user/add" component={AddUser}/>
-        <Route exact path="/user/update/:id" component={UserDetails}/>
-        <Route exact path="/user/get/:id" component={UserDetails}/>
-        <Route exact path="/users" component={Users}/>
-        <Route exact path="/address/add" component={AddAddress}/>
-        <Route exact path="/address/update/:id" component={AddressDetails}/>
-        <Route exact path="/address/get/:id" component={AddressDetails}/>
-        <Route exact path="/address" component={Address}/>
-        <Route exact path="/booksIssued/add" component={AddBooksIssued}/>
-        <Route exact path="/booksIssued/update/:id" component={BooksIssuedDetails}/>
-        <Route exact path="/booksIssued/get/:id" component={BooksIssuedDetails}/>
-        <Route exact path="/booksIssued" component={BooksIssued}/>
-        <Route exact path="/register" component={Register}/>
-        <Route exact path="/logout" component={Logout}/>
+          <Route path="/user/add" component={AddUser} />
+          <Route path="/user/update/:id" component={UserDetails} />
+          <Route path="/user/get/:id" component={UserDetails} />
+          <Route path="/users" component={Users} />
+          <Route path="/address/add" component={AddAddress} />
+          <Route path="/address/update/:id" component={AddressDetails} />
+          <Route path="/address/get/:id" component={AddressDetails} />
+          <Route path="/address" component={Address} />
+          <Route path="/booksIssued/add" component={AddBooksIssued} />
+          <Route path="/booksIssued/update/:id" component={BooksIssuedDetails} />
+          <Route path="/booksIssued/get/:id" component={BooksIssuedDetails} />
+          <Route path="/booksIssued" component={BooksIssued} />
+          <Route path="/register" component={Register} />
+          <Route path="/logout" component={Logout} />
           <Route path="/publisher" component={Publishers}></Route>
           <Route path="/update-publisher/:publisherId" component={UpdatePublisher}></Route>
           <Route path="/add-publisher" component={AddPublisher}></Route>
@@ -128,24 +126,22 @@ function App() {
           <Route path="/add-suggestedbooks" component={AddSuggestedBooks}></Route>
           <Route path="/view-suggestedbooks/:id" component={ViewSuggestedBooks}></Route>
 
-        <Route path="/" exact component={Home} />
-        <Route path="/userPage" component={UserPage}/>
+          <Route path="/userPage" component={UserPage} />
 
-        <Route path="/" exact component={Author}></Route>
-            <Route path="/author" component={Author}></Route>
-            <Route path="/view-author/:authorId" component={ViewAuthor}></Route>
-            <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
-            <Route path="/add-author" component={AddAuthor}></Route>
-            <Route path="/author-name/:firstName" component={SearchAuthor}></Route>
+          <Route path="/author" component={Author}></Route>
+          <Route path="/view-author/:authorId" component={ViewAuthor}></Route>
+          <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
+          <Route path="/add-author" component={AddAuthor}></Route>
+          <Route path="/author-name/:firstName" component={SearchAuthor}></Route>
 
 
-            <Route path="/booksReturned" component={BooksReturned}></Route>
-            <Route path="/add-returned" component={AddBooksReturned}></Route>
-            <Route path="/update-returned/:id" exact component={UpdateBooksReturned}></Route>
-            <Route path="/view-returned/:id" component={ViewBooksReturned}></Route>
-            <Route path="/dashboard" component={Dashboard}></Route>
-            <Route path="/returnedBooks-delayed/:delayedDays" component={SearchReturnedBook}></Route>
-
+          <Route path="/booksReturned" component={BooksReturned}></Route>
+          <Route path="/add-returned" component={AddBooksReturned}></Route>
+          <Route path="/update-returned/:id" exact component={UpdateBooksReturned}></Route>
+          <Route path="/view-returned/:id" component={ViewBooksReturned}></Route>
+          <Route path="/dashboard" component={Dashboard}></Route>
+          <Route path="/returnedBooks-delayed/:delayedDays" component={SearchReturnedBook}></Route>
+          <Route path="/" exact component={Home} />
         </Switch>
       </div>
 
