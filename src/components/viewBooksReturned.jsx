@@ -51,7 +51,7 @@ class ViewBooksReturned extends Component {
                     the date in which it has been returned,penalty amount to be paid and penalty status.</p>
                 <img src={images} alt="hi" width="150px" class="center"></img>
 
-
+<div><a class="btn btn-primary" href="\booksReturned" role="button">Back</a></div>
             </div>
         )
     }

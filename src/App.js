@@ -6,6 +6,14 @@ import Readers from "./components/readers";
 import Feedback from "./components/feedback"
 import AddFeedback from './components/addFeedback';
 import FeedbackDetails from './components/feedbackDetails';
+
+import AddReader from './components/addReader';
+import ReaderDetails from './components/readerDetails';
+import Feedback from './components/feedback';
+import usersService from "./services/usersService";
+import LoginFormUser from './components/loginFormUser'
+
+
 import UserOrAdmin from './components/userOrAdmin';
 import LoginFormAdmin from './components/loginFormAdmin';
 import AdminPage from './components/adminPage'
@@ -39,6 +47,10 @@ import CategoryListHome from "./components/categoryListHome";
 
 import UserPage from './components/userPage'
 import Publishers from './components/publishers';
+
+import { BrowserRouter as  Route,Router,Switch } from 'react-router-dom';
+
+
 import ViewPublisher from './components/viewPublisher';
 import UpdatePublisher from './components/updatePublisher';
 import AddPublisher from './components/addPublisher';
@@ -61,6 +73,20 @@ import Dashboard from './components/dashboard';
 import SearchAuthor from './components/searchAuthorByName';
 import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
+
+import ViewAuthor from './components/viewAuthor';
+import UpdateAuthor from './components/updateAuthor';
+import AddAuthor from './components/addAuthor';
+
+import BooksReturned from './components/booksReturned'
+import AddBooksReturned from './components/addBooksReturned';
+import UpdateBooksReturned from './components/updateBooksReturned';
+import ViewBooksReturned from './components/viewBooksReturned';
+
+import Dashboard from './components/dashboard';
+import SearchAuthor from './components/searchAuthorByName';
+import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
+
 import Disclaimer from './components/disclaimer'
 import AddReader from './components/addReader'
 import ReaderDetails from './components/readerDetails'
@@ -69,10 +95,12 @@ import {Route, Switch ,Redirect} from 'react-router-dom'
 
 
 
+
 function App() {
   return (
     <div className="App">
       <div className="container-fluid">
+        <Router>
         <Switch>
           <Route path="/reader/add" component={AddReader} />
           <Route path="/reader/update/:id" component={ReaderDetails} />
@@ -154,10 +182,11 @@ function App() {
           <Route path="/returnedBooks-delayed/:delayedDays" component={SearchReturnedBook}></Route>
           <Route path="/" exact component={Home} />
         </Switch>
+        </Router>
       </div>
 
     </div>
   );
 }
 
-export default App;
+export default App; 
