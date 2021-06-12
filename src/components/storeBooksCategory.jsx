@@ -7,7 +7,7 @@ class StoreBooksCategory extends Component {
     return (
       <div>
         <div className="main-book-category-list mr-5">
-          <div className="container-fluid ml-5 mr-5">
+          <div className="container ml-5 mr-5">
             <div className="row">
               <div className="col-sm-12">
                 <h2
@@ -22,7 +22,7 @@ class StoreBooksCategory extends Component {
               <div className="col-sm-2">
                 <div className="single-book-category">
                   <div className="book-category-image">
-                    <Link to="">
+                    <Link to="/category/books">
                       <img
                         className="book-category-thumbnail-image"
                         src="http://demo.greensoftbd.xyz/greenlms/v2.2/uploads/storebookcategory/515b5514238ee91873f5a417b2b23327fa31f24f90174c9c98fe4461dcc575e3f864d0e1b50653d31207719e58703b019f318373b1adf49733d56e48adbb4e11.png"
@@ -31,7 +31,7 @@ class StoreBooksCategory extends Component {
                     </Link>
                   </div>
                   <div className="book-category-content">
-                    <Link to="" className="book-category-title">
+                    <Link to="/category/books" className="book-category-title">
                       Mystery
                     </Link>
                   </div>

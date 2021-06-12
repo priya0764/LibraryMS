@@ -2,21 +2,39 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 class LoginNavbar extends Component {
+  state = {
+    search: "",
+  };
+
+  onChange = (event) => {
+    console.log(event.target.value);
+    this.setState({ search: event.target.value });
+  };
+
   render() {
     return (
-      <div>
+      <React.Fragment>
         <section className="header-top">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12" style={{textAlign:"left", fontSize:20}}>
-                <NavLink to="mailto:admin@gmail.com" className="header-email ml-5">
+              <div
+                className="col-lg-5 col-md-5 col-sm-12 col-xs-12"
+                style={{ textAlign: "left", fontSize: 20 }}
+              >
+                <NavLink
+                  to="mailto:admin@gmail.com"
+                  className="header-email ml-5"
+                >
                   <i className="fa fa-envelope"></i> admin@gmail.com{" "}
                 </NavLink>
                 <NavLink to="" className="header-phone ml-5">
                   <i className="fa fa-phone"></i> 123456{" "}
                 </NavLink>
               </div>
-              <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12" style={{textAlign:"right", fontSize:20}}>
+              <div
+                className="col-lg-7 col-md-7 col-sm-12 col-xs-12"
+                style={{ textAlign: "right", fontSize: 20 }}
+              >
                 <ul className="header-items">
                   <li>
                     <NavLink to="/userOrAdmin" className="mr-2">
@@ -54,8 +72,18 @@ class LoginNavbar extends Component {
                         placeholder="Search...."
                         className="form-control form-control-lg input-group-search"
                         name="search"
-                        value=""
+                        onChange={this.onChange}
                       />
+                      {/* <NavLink
+                        className="input-group-append search-btn"
+                        to={`/getbook/subject/${this.state.search}`}
+                      >
+                        <input
+                          type="submit"
+                          className="input-group-text"
+                          value="Search"
+                        />
+                      </NavLink> */}
                       <div className="input-group-append search-btn">
                         <input
                           type="submit"
@@ -92,52 +120,35 @@ class LoginNavbar extends Component {
           </div>
         </section>
         <section className="mainmenu">
-          <div className="container-fluid" style={{textAlign:"left", fontSize:20}}>
+          <div
+            className="container-fluid"
+            style={{ textAlign: "left", fontSize: 20 }}
+          >
             <ul>
               <li>
-                <NavLink
-                  className="container-fluid ml-5"
-                  to=""
-                >
+                <NavLink className="container-fluid ml-5" to="/">
                   <i className="fa fa-home"></i>Home
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  className="container"
-                  to=""
-                >
+                <NavLink className="container" to="">
                   Ebook
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  className="container"
-                  to="/book/details"
-                >
+                <NavLink className="container" to="/">
                   Book
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  className="container"
-                  to=""
-                >
-                  Shop
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="container"
-                  to=""
-                >
+                <NavLink className="container" to="">
                   Contact
                 </NavLink>
               </li>
             </ul>
           </div>
         </section>
-      </div>
+      </React.Fragment>
     );
   }
 }

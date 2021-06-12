@@ -2,9 +2,18 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 class LogoutNavbar extends Component {
+  state = {
+    search: "",
+  };
+
+  onChange = (event) => {
+    console.log(event.target.value);
+    this.setState({ search: event.target.value });
+  };
+  
   render() {
     return (
-      <div>
+      <React.Fragment>
         <section className="header-top">
           <div className="container-fluid">
             <div className="row">
@@ -59,7 +68,7 @@ class LogoutNavbar extends Component {
                         placeholder="Search...."
                         className="form-control form-control-lg input-group-search"
                         name="search"
-                        value=""
+                        onChange={this.onChange}
                       />
                       <div className="input-group-append search-btn">
                         <input
@@ -142,7 +151,7 @@ class LogoutNavbar extends Component {
             </ul>
           </div>
         </section>
-      </div>
+      </React.Fragment>
     );
   }
 }

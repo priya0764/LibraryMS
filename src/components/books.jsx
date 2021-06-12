@@ -18,11 +18,17 @@ class Books extends Component {
   }
 
   getBookBySubject = (subject) => {
-    this.props.history.push(`/book/get/subject/${subject}`)
-  }
+    this.props.history.push(`/getbook/subject/${subject}`);
+  };
 
   handleUpdate = (id) => {
     this.props.history.push(`/book/update/${id}`);
+  };
+
+  deleteBook = (id) => {
+    const books = this.state.books.filter((book) => book.bookId !== id);
+    this.setState({ books });
+    BookService.deleteBook(id).then((res) => this.props.history.push("/book"));
   };
 
   onChange = (event) => {
@@ -33,13 +39,17 @@ class Books extends Component {
   render() {
     return (
       <div>
-        <h2 className="text-center mt-5">Books List</h2>
-        <div className="w-75 mt-5 mx-auto">
-          <div className="d-flex justify-content-between">
-            <Link to="/book/add" className="btn btn-success btn-large mb-1">
-              Add
-            </Link>
-            <form className="form-inline my-2 my-lg-0">
+        <section className="content-header">
+          <h2 style={{ textAlign: "left" }}>Book</h2>
+          <hr />
+        </section>
+        <section className="content" style={{fontFamily:"revert"}}>
+          <div className="mt-5 mx-auto">
+            <div className="d-flex justify-content-between mb-3">
+              <Link to="/book/add" className="btn btn-dark">
+                <i className="fa fa-plus"></i> Add Book
+              </Link>
+              <form className="form-inline my-2 my-lg-0">
               <input
                 className="form-control ml-auto"
                 type="search"
@@ -49,47 +59,94 @@ class Books extends Component {
                 onChange={this.onChange}
               />
               <button
-                className="btn btn-outline-success my-2 my-sm-0"
+                className="btn btn-success my-2 my-sm-0 ml-2 mr-5"
                 type="button"
                 onClick={() => this.getBookBySubject(this.state.search)}
               >
                 Search
               </button>
             </form>
+            </div>
+            <div className="box-body">
+              <div id="hide-table">
+                <table
+                  id="example1"
+                  className="table table-bordered table-striped"
+                >
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Cover Photo</th>
+                      <th>Title</th>
+                      <th>Subject</th>
+                      <th>Author</th>
+                      <th>Published Year</th>
+                      <th>Quantity</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.books.map((book) => (
+                      <tr>
+                        <td data-title="#">{book.bookId}</td>
+                        <td data-title="Cover Photo">
+                          <img
+                            width="80"
+                            height="80"
+                            src={`./images/${book.imageName}`}
+                            className="rounded"
+                            alt=""
+                          />
+                        </td>
+                        <td data-title="Title">{book.title}</td>
+                        <td data-title="Subject">{book.subject}</td>
+                        <td data-title="Author">{book.author}</td>
+                        <td data-title="Published Year">
+                          {book.publishedYear}
+                        </td>
+                        <td data-title="Quantity">{book.quantity}</td>
+                        <td data-title="Action">
+                          <button
+                            type="button"
+                            onClick={() =>
+                              this.props.history.push(`/viewbook/${book.title}`)
+                            }
+                            className="btn btn-success btn-xs"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="View"
+                          >
+                            <i className="fa fa-check-square-o"></i>
+                          </button>{" "}
+                          <button
+                            type="button"
+                            onClick={() => this.handleUpdate(book.bookId)}
+                            className="btn btn-warning btn-xs"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Edit"
+                          >
+                            <i className="fa fa-edit"></i>
+                          </button>{" "}
+                          <button
+                            type="button"
+                            onClick={() => this.deleteBook(book.bookId)}
+                            className="btn btn-danger btn-xs"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Delete"
+                          >
+                            <i className="fa fa-trash-o"></i>
+                          </button>{" "}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <div className="row mt-3">
-            <table className="table table-striped table-bordered">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Subject</th>
-                  <th>Author</th>
-                  <th>Published Year</th>
-                  <th>ISBN Code</th>
-                  <th>Quantity</th>
-                  <th>Book Cost</th>
-                  <th>Shelf Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.books.map((book) => (
-                  <tr key={book.bookId}>
-                    <td onClick={() => this.handleUpdate(book.bookId)}>
-                      {book.title}
-                    </td>
-                    <td>{book.subject}</td>
-                    <td>{book.author}</td>
-                    <td>{book.publishedYear}</td>
-                    <td>{book.isbnCode}</td>
-                    <td>{book.quantity}</td>
-                    <td>{book.bookCost}</td>
-                    <td>{book.shelfDetails}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        </section>
       </div>
     );
   }

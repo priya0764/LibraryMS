@@ -1,4 +1,7 @@
 import "./App.css";
+import "./design.css";
+
+
 import Readers from "./components/readers";
 import AddFeedback from './components/addFeedback';
 import FeedbackDetails from './components/feedbackDetails';
@@ -29,6 +32,12 @@ import UserLogin from './components/userLogin';
 import Logout from './components/logout';
 import Home from './components/home';
 import SearchBook from './components/searchBook';
+
+import Footer from './components/footer';
+import UserBooksList from './components/userBooks';
+import ViewBook from './components/viewBook';
+import CategoryListHome from "./components/categoryListHome";
+
 import UserBooksList from './components/userBooks';
 import UserPage from './components/userPage'
 import Publishers from './components/publishers';
@@ -78,7 +87,7 @@ function App() {
 
           <Route path="/book/details" component={UserBooksList} />
           <Route path="/book/add" component={AddBook} />
-          <Route path="/book/get/subject/:subject" component={SearchBook} />
+          <Route path="/getbook/subject/:subject" component={SearchBook} />
           <Route path="/book/update/:id" component={BookDetails} />
           <Route path="/book" component={Books} />
           <Route path="/booksorder/add" component={AddBooksOrder} />
@@ -89,6 +98,11 @@ function App() {
           <Route path="/damagedbook/get/:id" component={DamagedBooksDetails} />
           <Route path="/damagedbook/update/:id" component={DamagedBooksDetails} />
           <Route path="/damagedbook" component={DamagedBooks} />
+
+          <Route path="/viewbook/:title" component={ViewBook} />
+          <Route path="/category/books" component={CategoryListHome} />
+          <Route path="/" exact component={Home} />
+
 
         <Route exact path="/user/add" component={AddUser}/>
         <Route exact path="/user/update/:id" component={UserDetails}/>
@@ -131,6 +145,7 @@ function App() {
             <Route path="/view-returned/:id" component={ViewBooksReturned}></Route>
             <Route path="/dashboard" component={Dashboard}></Route>
             <Route path="/returnedBooks-delayed/:delayedDays" component={SearchReturnedBook}></Route>
+
         </Switch>
       </div>
 

@@ -6,43 +6,51 @@ class SearchBook extends Component {
     super(props);
     this.state = {
       books: [],
-      subject: this.props.match.params.subject,
-      book: {},
+      subject: this.props.match.params.subject
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     BookService.getBookBySubject(this.state.subject).then((res) => {
       this.setState({ books: res.data });
       console.log(this.state.books);
     });
-    // const books = this.state.books.filter(
-    //   (book) => book.subject === this.state.search
-    // )
-    // this.setState({books})
-
   }
   render() {
     return (
       <div className="w-75 mt-5 mx-auto">
         <h2>{this.props.match.params.subject}</h2>
-        <div className="row mt-3">
+        <div className="row mt-3" style={{fontFamily:"sans-serif"}}>
           <table className="table table-striped table-bordered">
             <thead>
               <tr>
+                <th>#</th>
+                <th>Cover Photo</th>
                 <th>Title</th>
                 <th>Subject</th>
                 <th>Author</th>
                 <th>Published Year</th>
                 <th>ISBN Code</th>
                 <th>Quantity</th>
-                <th>Book Cost</th>
+                <th>Cost</th>
                 <th>Shelf Details</th>
               </tr>
             </thead>
             <tbody>
               {this.state.books.map((book) => (
-                <tr key={book.bookId}>
+                <tr key={book.bookId}
+                  onClick={()=>this.props.history.push(`/book/update/${book.bookId}`)}
+                >
+                  <td data-title="#">{book.bookId}</td>
+                  <td data-title="Cover Photo">
+                    <img
+                      width="80"
+                      height="80"
+                      src={`./images/${book.imageName}`}
+                      className="rounded"
+                      alt=""
+                    />
+                  </td>
                   <td>{book.title}</td>
                   <td>{book.subject}</td>
                   <td>{book.author}</td>
