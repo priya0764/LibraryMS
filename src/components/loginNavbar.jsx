@@ -105,7 +105,7 @@ class LoginNavbar extends Component {
               <li>
                 <NavLink
                   className="container"
-                  to=""
+                  to="/disclaimer"
                 >
                   Ebook
                 </NavLink>

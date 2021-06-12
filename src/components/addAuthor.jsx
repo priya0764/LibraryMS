@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AuthorService from "../Services/authorService";
+import AuthorService from "../services/authorService";
 class AddAuthor extends Component {
   constructor(props) {
     super(props);

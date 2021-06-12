@@ -40,20 +40,25 @@ import SuggestedBooks from './components/suggestedBooks';
 import AddSuggestedBooks from './components/addSuggestedBooks';
 import UpdateSuggestedBooks from './components/updateSuggestedBooks';
 import ViewSuggestedBooks from './components/viewSuggestedBooks';
-import Author from './Components/author';
+import Author from './components/author';
 
-import ViewAuthor from './Components/viewAuthor';
-import UpdateAuthor from './Components/updateAuthor';
-import AddAuthor from './Components/addAuthor';
+import ViewAuthor from './components/viewAuthor';
+import UpdateAuthor from './components/updateAuthor';
+import AddAuthor from './components/addAuthor';
 
-import BooksReturned from './Components/booksReturned'
-import AddBooksReturned from './Components/addBooksReturned';
-import UpdateBooksReturned from './Components/updateBooksReturned';
-import ViewBooksReturned from './Components/viewBooksReturned';
+import BooksReturned from './components/booksReturned'
+import AddBooksReturned from './components/addBooksReturned';
+import UpdateBooksReturned from './components/updateBooksReturned';
+import ViewBooksReturned from './components/viewBooksReturned';
 
-import Dashboard from './Components/dashboard';
-import SearchAuthor from './Components/searchAuthorByName';
-import SearchReturnedBook from './Components/searchReturnedBookByDelayedDays';
+import Dashboard from './components/dashboard';
+import SearchAuthor from './components/searchAuthorByName';
+import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
+import Disclaimer from './components/disclaimer'
+import AddReader from './components/addReader'
+import ReaderDetails from './components/readerDetails'
+import Feedback from './components/feedback'
+import {Route, Switch ,Redirect} from 'react-router-dom'
 function App() {
   return (
     <div className="App">
@@ -123,6 +128,7 @@ function App() {
             <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
             <Route path="/add-author" component={AddAuthor}></Route>
             <Route path="/author-name/:firstName" component={SearchAuthor}></Route>
+            <Route path="/disclaimer" component={Disclaimer}></Route>
 
 
             <Route path="/booksReturned" component={BooksReturned}></Route>
