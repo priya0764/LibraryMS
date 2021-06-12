@@ -19,14 +19,15 @@ class AdminPage extends Component {
                   <div className="slider-menu">
                     <ul>
                       <li>
-                        <a href="http://demo.greensoftbd.xyz/greenlms/v2.2/myaccount/index">
+                        <Link to="/adminPage">
                           <i className="bi bi-person-circle"></i> My Profile
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="http://loaclhost/3000/booksorder">
+
+                        <Link to="/booksorder">
                           <i className="bi bi-bag"></i> My Order
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
