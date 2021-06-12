@@ -131,7 +131,12 @@ class LoginNavbar extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="container" to="">
+
+                <NavLink
+                  className="container"
+                  to="/disclaimer"
+                >
+
                   Ebook
                 </NavLink>
               </li>

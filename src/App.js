@@ -60,8 +60,14 @@ import ViewBooksReturned from './components/viewBooksReturned';
 import Dashboard from './components/dashboard';
 import SearchAuthor from './components/searchAuthorByName';
 import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
-import AddReader from './components/addReader';
-import ReaderDetails from './components/readerDetails';
+
+import Disclaimer from './components/disclaimer'
+import AddReader from './components/addReader'
+import ReaderDetails from './components/readerDetails'
+import Feedback from './components/feedback'
+import {Route, Switch ,Redirect} from 'react-router-dom'
+
+
 
 function App() {
   return (
@@ -128,11 +134,16 @@ function App() {
 
           <Route path="/userPage" component={UserPage} />
 
-          <Route path="/author" component={Author}></Route>
-          <Route path="/view-author/:authorId" component={ViewAuthor}></Route>
-          <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
-          <Route path="/add-author" component={AddAuthor}></Route>
-          <Route path="/author-name/:firstName" component={SearchAuthor}></Route>
+
+        <Route path="/" exact component={Author}></Route>
+            <Route path="/author" component={Author}></Route>
+            <Route path="/view-author/:authorId" component={ViewAuthor}></Route>
+            <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
+            <Route path="/add-author" component={AddAuthor}></Route>
+            <Route path="/author-name/:firstName" component={SearchAuthor}></Route>
+            <Route path="/disclaimer" component={Disclaimer}></Route>
+
+
 
 
           <Route path="/booksReturned" component={BooksReturned}></Route>
