@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LogoutNavbar from './logoutNavbar';
 
 
-class AdminPage extends Component {
+class UserPage extends Component {
   render() {
     return (
       <div>
@@ -19,15 +19,14 @@ class AdminPage extends Component {
                   <div className="slider-menu">
                     <ul>
                       <li>
-                        <Link to="/adminPage">
+                        <a href="http://demo.greensoftbd.xyz/greenlms/v2.2/myaccount/index">
                           <i className="bi bi-person-circle"></i> My Profile
-                        </Link>
+                        </a>
                       </li>
                       <li>
-
-                        <Link to="/booksorder">
+                        <a href="http://loaclhost/3000/booksorder">
                           <i className="bi bi-bag"></i> My Order
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -44,13 +43,13 @@ class AdminPage extends Component {
                           alt="Admin profile picture"
                         />
                         <h3>Admin</h3>
-                        <p className="text-muted text-center">Admin</p>
+                        <p className="text-muted text-center">User</p>
                       </div>
                     </div>
                     <div className="col-md-6">
                       <div className="profile_view_item">
                         <p>
-                          <b>Email</b>: admin@gmail.com
+                          <b>Email</b>: email
                         </p>
                       </div>
                       <div className="profile_view_item">
@@ -81,4 +80,4 @@ class AdminPage extends Component {
     );
   }
 }
-export default AdminPage;
+export default UserPage;

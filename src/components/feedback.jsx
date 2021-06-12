@@ -30,16 +30,7 @@ class Feedback extends Component {
   };
 
   viewFeedback = () => {
-    {
-      /* FeedbackService.viewFeedbackById(this.state.search).then((res) => {
-          console.log("**data: ", res.data);
-         this.setState({ feedback: res.data });
-        // reader = res.data;
-        });
-        //this.setState({ reader:reader});
-        console.log("** viewFeedback" + this.state.feedback);
-      };*/
-    }
+    
     let feedbacks = [];
     FeedbackService.viewFeedbackByRating(this.state.search).then((res) => {
       feedbacks = res.data;

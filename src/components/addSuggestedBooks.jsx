@@ -108,7 +108,7 @@ class AddSuggestedBooks extends Component {
                                     </div>
                                     <div className="form-group">
                                         <label>Suggested Date:</label>
-                                        <input placeholder="suggested date" name="" className="form-control" value={this.state.suggested_date} onChange={this.changeSuggested_DateHandler} />
+                                        <input placeholder="yyyy-mm-dd" name="" className="form-control" value={this.state.suggested_date} onChange={this.changeSuggested_DateHandler} />
                                     </div>
                                     <div className="form-group">
                                         <label>Status:</label>

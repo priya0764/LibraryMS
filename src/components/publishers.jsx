@@ -53,24 +53,7 @@ class Publishers extends Component {
             <i class="bi bi-plus-square"></i> Add
           </button>
         </div>
-        <form class="form-inline ">
-          <input
-            className="form-control ml-auto"
-            type="search"
-            placeholder="search by Id"
-            aria-label="search"
-            onChange={this.onChange}
-          />
-          <button
-            className="btn btn-outline-success mb-5"
-            type="button"
-            onClick={this.viewPublisher}
-          >
-            Search
-          </button>
-        </form>
-
-        <div className="row">
+                <div className="row">
           <table
             class="table"
             className="table table-sm table-bordered table-striped"
