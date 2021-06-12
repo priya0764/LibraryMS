@@ -5,12 +5,20 @@ import Footer from './footer';
 
 class UserOrAdmin extends Component {
   render() {
+    let LibraryWelcome="LibraryWelcome"
     return (
       <div className="container-fluid">
         <LoginNavbar />
         <div className="row">
-          <div className="col-sm-4 offset-md-4">
-            <div className="well text-center mt-4 mb-5">
+          <div className="col-sm-8">
+            <img 
+              width="1000"
+              height="500"
+              src={`./images/${LibraryWelcome}.jpg`}
+            />
+          </div>
+          <div className="col-sm-4" style={{marginTop:150}}>
+            <div className="well text-center mt-5">
               <strong>Login Panel</strong>
               <br/>
               <Link to={`/admin/login`}>
