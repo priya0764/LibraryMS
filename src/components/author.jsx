@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AuthorService from "../Services/authorService";
+import AuthorService from "../services/authorService";
 import {Link} from "react-router-dom";
 import "./raghu.css";
 

@@ -38,7 +38,7 @@ class LoginFormAdmin extends Component {
                         className="form-control "
                         placeholder="Enter Email"
                         id="membername"
-                        value=""
+                        value="admin@gmail.com"
                         onChange={this.handleChange}
                       />
                     </div>
@@ -51,7 +51,7 @@ class LoginFormAdmin extends Component {
                         className="form-control "
                         placeholder="Enter password"
                         id="password"
-                        value=""
+                        value="123456"
                         onChange={this.handleChange}
                       />
                     </div>

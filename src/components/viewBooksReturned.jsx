@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BooksReturnedService from '../Services/booksReturnedService';
+import BooksReturnedService from '../services/booksReturnedService';
 import "./raghu.css";
 import images from './pictures/images.jpg';
 

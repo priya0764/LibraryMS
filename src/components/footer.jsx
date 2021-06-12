@@ -74,14 +74,6 @@ class Footer extends Component {
                       className=""
                       to=""
                     >
-                      Shop
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className=""
-                      to=""
-                    >
                       Contact
                     </Link>
                   </li>

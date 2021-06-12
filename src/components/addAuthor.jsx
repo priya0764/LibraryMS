@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import AuthorService from "../Services/authorService";
+import AuthorService from "../services/authorService";
+
 class AddAuthor extends Component {
   constructor(props) {
     super(props);
@@ -70,7 +71,7 @@ class AddAuthor extends Component {
                   <div className="form-group">
                     <label>AuthorId:</label>
                     <input
-                    type="number"
+                      type="number"
                       placeholder="Id"
                       name="AuthorId"
                       className="form-control"
@@ -80,15 +81,15 @@ class AddAuthor extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="firstName" className="form-label">FirstName:</label>
+                    <label htmlFor="firstName" className="form-label">
+                      FirstName:
+                    </label>
                     <input
-                    type="text"
-                    className="form-control"
-                    id="firstName"
-                    name="firstName"
+                      type="text"
+                      className="form-control"
+                      id="firstName"
+                      name="firstName"
                       placeholder="firstname"
-                     
-                      
                       value={this.state.firstName}
                       onChange={this.changeFirstNameHandler}
                       required
@@ -97,7 +98,7 @@ class AddAuthor extends Component {
                   <div className="form-group">
                     <label>LastName:</label>
                     <input
-                    type="text"
+                      type="text"
                       placeholder="lastname"
                       name="lastName"
                       className="form-control"
@@ -109,7 +110,7 @@ class AddAuthor extends Component {
                   <div className="form-group">
                     <label>Email:</label>
                     <input
-                    type="email"
+                      type="email"
                       placeholder="Email"
                       name="Email"
                       className="form-control"
@@ -121,7 +122,7 @@ class AddAuthor extends Component {
                   <div className="form-group">
                     <label>Mobile Number:</label>
                     <input
-                    type="number"
+                      type="number"
                       placeholder="Mobile Number"
                       id="contactno"
                       name="contactno"
@@ -129,7 +130,6 @@ class AddAuthor extends Component {
                       className="form-control"
                       value={this.state.contactno}
                       onChange={this.changeMobileHandler}
-                      
                     />
                   </div>
                   <button className="btn btn-success" onClick={this.saveAuthor}>

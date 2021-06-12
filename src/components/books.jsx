@@ -38,40 +38,40 @@ class Books extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <section className="content-header">
           <h2 style={{ textAlign: "left" }}>Book</h2>
           <hr />
         </section>
-        <section className="content" style={{fontFamily:"revert"}}>
-          <div className="mt-5 mx-auto">
+        <section className="content" style={{ fontFamily: "revert" }}>
+          <div className="box-head">
             <div className="d-flex justify-content-between mb-3">
               <Link to="/book/add" className="btn btn-dark">
                 <i className="fa fa-plus"></i> Add Book
               </Link>
               <form className="form-inline my-2 my-lg-0">
-              <input
-                className="form-control ml-auto"
-                type="search"
-                name="subject"
-                placeholder="Search by subject"
-                aria-label="Search"
-                onChange={this.onChange}
-              />
-              <button
-                className="btn btn-success my-2 my-sm-0 ml-2 mr-5"
-                type="button"
-                onClick={() => this.getBookBySubject(this.state.search)}
-              >
-                Search
-              </button>
-            </form>
+                <input
+                  className="form-control ml-auto"
+                  type="search"
+                  name="subject"
+                  placeholder="Search by subject"
+                  aria-label="Search"
+                  onChange={this.onChange}
+                />
+                <button
+                  className="btn btn-success my-2 my-sm-0 ml-2 mr-5"
+                  type="button"
+                  onClick={() => this.getBookBySubject(this.state.search)}
+                >
+                  Search
+                </button>
+              </form>
             </div>
             <div className="box-body">
               <div id="hide-table">
                 <table
                   id="example1"
-                  className="table table-bordered table-striped"
+                  className="table table-bordered table-striped mt-2"
                 >
                   <thead>
                     <tr>
@@ -147,7 +147,7 @@ class Books extends Component {
             </div>
           </div>
         </section>
-      </div>
+      </React.Fragment>
     );
   }
 }

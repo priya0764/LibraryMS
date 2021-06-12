@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LogoutNavbar from './logoutNavbar';
 
-
 class UserPage extends Component {
   render() {
     return (
@@ -19,14 +18,14 @@ class UserPage extends Component {
                   <div className="slider-menu">
                     <ul>
                       <li>
-                        <a href="http://demo.greensoftbd.xyz/greenlms/v2.2/myaccount/index">
+                        <Link to="http://demo.greensoftbd.xyz/greenlms/v2.2/myaccount/index">
                           <i className="bi bi-person-circle"></i> My Profile
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="http://loaclhost/3000/booksorder">
+                        <Link to="http://loaclhost/3000/booksorder">
                           <i className="bi bi-bag"></i> My Order
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
