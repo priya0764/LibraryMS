@@ -2,6 +2,10 @@ import "./App.css";
 import Readers from "./components/readers";
 import AddFeedback from './components/addFeedback';
 import FeedbackDetails from './components/feedbackDetails';
+import AddReader from './components/addReader';
+import ReaderDetails from './components/readerDetails';
+import Feedback from './components/feedback';
+import usersService from "./services/usersService";
 import LoginFormUser from './components/loginFormUser'
 import UserOrAdmin from './components/userOrAdmin';
 import LoginFormAdmin from './components/loginFormAdmin';
@@ -32,7 +36,7 @@ import SearchBook from './components/searchBook';
 import UserBooksList from './components/userBooks';
 import UserPage from './components/userPage'
 import Publishers from './components/publishers';
-import { BrowserRouter as  Router } from 'react-router-dom';
+import { BrowserRouter as  Route,Router,Switch } from 'react-router-dom';
 import ViewPublisher from './components/viewPublisher';
 import UpdatePublisher from './components/updatePublisher';
 import AddPublisher from './components/addPublisher';
@@ -40,24 +44,25 @@ import SuggestedBooks from './components/suggestedBooks';
 import AddSuggestedBooks from './components/addSuggestedBooks';
 import UpdateSuggestedBooks from './components/updateSuggestedBooks';
 import ViewSuggestedBooks from './components/viewSuggestedBooks';
-import Author from './Components/author';
+import Author from './components/author';
 
-import ViewAuthor from './Components/viewAuthor';
-import UpdateAuthor from './Components/updateAuthor';
-import AddAuthor from './Components/addAuthor';
+import ViewAuthor from './components/viewAuthor';
+import UpdateAuthor from './components/updateAuthor';
+import AddAuthor from './components/addAuthor';
 
-import BooksReturned from './Components/booksReturned'
-import AddBooksReturned from './Components/addBooksReturned';
-import UpdateBooksReturned from './Components/updateBooksReturned';
-import ViewBooksReturned from './Components/viewBooksReturned';
+import BooksReturned from './components/booksReturned'
+import AddBooksReturned from './components/addBooksReturned';
+import UpdateBooksReturned from './components/updateBooksReturned';
+import ViewBooksReturned from './components/viewBooksReturned';
 
-import Dashboard from './Components/dashboard';
-import SearchAuthor from './Components/searchAuthorByName';
-import SearchReturnedBook from './Components/searchReturnedBookByDelayedDays';
+import Dashboard from './components/dashboard';
+import SearchAuthor from './components/searchAuthorByName';
+import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 function App() {
   return (
     <div className="App">
       <div className="container-fluid">
+        <Router>
         <Switch>
           <Route path="/reader/add" component={AddReader} />
           <Route path="/reader/update/:id" component={ReaderDetails} />
@@ -132,10 +137,11 @@ function App() {
             <Route path="/dashboard" component={Dashboard}></Route>
             <Route path="/returnedBooks-delayed/:delayedDays" component={SearchReturnedBook}></Route>
         </Switch>
+        </Router>
       </div>
 
     </div>
   );
 }
 
-export default App;
+export default App; 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import BooksReturnedService from '../Services/booksReturnedService';
+import BooksReturnedService from '../services/booksReturnedService';
 import {Link} from "react-router-dom";
 
 
@@ -97,7 +97,7 @@ class BooksReturned extends Component {
           </div>
                 <div className="row">
                     <table className="table table-sm table-striped table-bordered">
-                        <thead class="thead-dark">
+                        <thead className="thead-dark">
                             <tr>
                                 <th>Returned Date</th>
                                 <th>Delayed Days</th>

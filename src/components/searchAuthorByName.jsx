@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AuthorService from "../Services/authorService";
+import AuthorService from "../services/authorService";
 
 class SearchAuthor extends Component {
   constructor(props) {
@@ -27,8 +27,8 @@ class SearchAuthor extends Component {
       <div className="w-75 mt-5 mx-auto">
         <h2>{this.props.match.params.firstName}</h2>
         <div className="row mt-3">
-          <table className="table table-striped table-bordered">
-            <thead>
+          <table className="table table-sm table-striped table-bordered">
+            <thead class="thead-dark">
               <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
