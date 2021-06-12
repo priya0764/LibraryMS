@@ -1,4 +1,5 @@
 import "./App.css";
+import "./design.css";
 
 import Readers from "./components/readers";
 import { Route, Switch, Redirect } from "react-router-dom";
@@ -22,8 +23,10 @@ import AddDamagedBooks from './components/addDamagedBooks';
 import DamagedBooksDetails from './components/damagedBooksDetails';
 import Home from './components/home';
 import SearchBook from './components/searchBook';
-import UserBooksList from './components/userBooks';
 import Footer from './components/footer';
+import UserBooksList from './components/userBooks';
+import ViewBook from './components/viewBook';
+import CategoryListHome from "./components/categoryListHome";
 
 function App() {
   return (
@@ -47,7 +50,7 @@ function App() {
 
           <Route path="/book/details" component={UserBooksList} />
           <Route path="/book/add" component={AddBook} />
-          <Route path="/book/get/subject/:subject" component={SearchBook} />
+          <Route path="/getbook/subject/:subject" component={SearchBook} />
           <Route path="/book/update/:id" component={BookDetails} />
           <Route path="/book" component={Books} />
           <Route path="/booksorder/add" component={AddBooksOrder} />
@@ -58,6 +61,8 @@ function App() {
           <Route path="/damagedbook/get/:id" component={DamagedBooksDetails} />
           <Route path="/damagedbook/update/:id" component={DamagedBooksDetails} />
           <Route path="/damagedbook" component={DamagedBooks} />
+          <Route path="/viewbook/:title" component={ViewBook} />
+          <Route path="/category/books" component={CategoryListHome} />
           <Route path="/" exact component={Home} />
         </Switch>
       </div>

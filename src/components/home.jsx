@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import StoreBooksCategory from "./storeBooksCategory";
+import BooksCategory from "./booksCategory";
 import LoginNavbar from './loginNavbar';
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <LoginNavbar />
         <StoreBooksCategory />
-      </div>
+        <BooksCategory />
+      </React.Fragment>
     );
   }
 }
