@@ -1,7 +1,7 @@
 import "./App.css";
 import "./design.css";
 
-
+import { Route, Switch } from "react-router-dom";
 import Readers from "./components/readers";
 import Feedback from "./components/feedback"
 import AddFeedback from './components/addFeedback';
@@ -37,7 +37,6 @@ import UserBooksList from './components/userBooks';
 import ViewBook from './components/viewBook';
 import CategoryListHome from "./components/categoryListHome";
 
-import UserBooksList from './components/userBooks';
 import UserPage from './components/userPage'
 import Publishers from './components/publishers';
 import ViewPublisher from './components/viewPublisher';
@@ -47,22 +46,23 @@ import SuggestedBooks from './components/suggestedBooks';
 import AddSuggestedBooks from './components/addSuggestedBooks';
 import UpdateSuggestedBooks from './components/updateSuggestedBooks';
 import ViewSuggestedBooks from './components/viewSuggestedBooks';
-import Author from './Components/author';
+import Author from './components/author';
 
-import ViewAuthor from './Components/viewAuthor';
-import UpdateAuthor from './Components/updateAuthor';
-import AddAuthor from './Components/addAuthor';
+import ViewAuthor from './components/viewAuthor';
+import UpdateAuthor from './components/updateAuthor';
+import AddAuthor from './components/addAuthor';
 
-import BooksReturned from './Components/booksReturned'
-import AddBooksReturned from './Components/addBooksReturned';
-import UpdateBooksReturned from './Components/updateBooksReturned';
-import ViewBooksReturned from './Components/viewBooksReturned';
+import BooksReturned from './components/booksReturned'
+import AddBooksReturned from './components/addBooksReturned';
+import UpdateBooksReturned from './components/updateBooksReturned';
+import ViewBooksReturned from './components/viewBooksReturned';
 
-import Dashboard from './Components/dashboard';
-import SearchAuthor from './Components/searchAuthorByName';
-import SearchReturnedBook from './Components/searchReturnedBookByDelayedDays';
+import Dashboard from './components/dashboard';
+import SearchAuthor from './components/searchAuthorByName';
+import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 import AddReader from './components/addReader';
 import ReaderDetails from './components/readerDetails';
+
 function App() {
   return (
     <div className="App">

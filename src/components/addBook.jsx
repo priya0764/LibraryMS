@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BookService from "../services/bookService";
+import { Link } from "react-router-dom";
 
 class AddBook extends Component {
   state = {
@@ -12,6 +13,7 @@ class AddBook extends Component {
       quantity: "",
       bookCost: "",
       shelfDetails: "",
+      publications: "",
     },
   };
 
@@ -30,121 +32,194 @@ class AddBook extends Component {
 
   render() {
     return (
-      <div className="w-25 mx-auto">
-        <form onSubmit={this.handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="bookId">Book Id</label>
-            <input
-              type="text"
-              className="form-control"
-              id="bookId"
-              name="bookId"
-              value={this.state.book.bookId}
-              onChange={this.handleChange}
-              autoFocus
-              required
-            />
-            <label htmlFor="title">Title</label>
-            <input
-              type="text"
-              className="form-control"
-              id="title"
-              name="title"
-              value={this.state.book.title}
-              onChange={this.handleChange}
-              required
-            />
-            <label htmlFor="subject" className="form-label">
-              Subject
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="subject"
-              name="subject"
-              value={this.state.book.subject}
-              onChange={this.handleChange}
-              required
-            />
-            <label htmlFor="author" className="form-label">
-              Author
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="author"
-              name="author"
-              value={this.state.book.author}
-              onChange={this.handleChange}
-              required
-            />
-            <label htmlFor="publishedYear" className="form-label">
-              Published Year
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="publishedYear"
-              name="publishedYear"
-              value={this.state.book.publishedYear}
-              onChange={this.handleChange}
-              required
-            />
-            <label htmlFor="isbnCode" className="form-label">
-              ISBN Code
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="isbnCode"
-              name="isbnCode"
-              value={this.state.book.isbnCode}
-              onChange={this.handleChange}
-              required
-            />
-            <label htmlFor="quantity" className="form-label">
-              Quantity
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="quantity"
-              name="quantity"
-              value={this.state.book.quantity}
-              onChange={this.handleChange}
-              required
-            />
-            <label htmlFor="bookCost" className="form-label">
-              Book Cost
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="bookCost"
-              name="bookCost"
-              value={this.state.book.bookCost}
-              onChange={this.handleChange}
-              required
-            />
+      <React.Fragment>
+        <div className="content-wrapper" style={{minHeight: 757.08, textAlign:"left"}}>
+          <section className="content">
+            <div className="box box-mytheme">
+              <div className="row">
+                <div className="col-md-6">
+                  <form>
+                    <div className="box-body">
+                      <div className="form-group ">
+                        <label htmlFor="bookId">Book Id</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="number"
+                          className="form-control"
+                          id="bookId"
+                          name="bookId"
+                          value={this.state.book.bookId}
+                          onChange={this.handleChange}
+                          placeholder="Enter book id"
+                          required
+                          autoFocus
+                        />
+                      </div>
 
-            <label htmlFor="shelfDetails" className="form-label">
-              Shelf Details
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="shelfDetails"
-              name="shelfDetails"
-              value={this.state.book.shelfDetails}
-              onChange={this.handleChange}
-              required
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </form>
-      </div>
+                      <div className="form-group ">
+                        <label htmlFor="title">Title</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="title"
+                          name="title"
+                          value={this.state.book.title}
+                          onChange={this.handleChange}
+                          placeholder="Enter title"
+                          required
+                        />
+                      </div>
+
+                      <div className="form-group ">
+                        <label htmlFor="subject">Subject</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="subject"
+                          name="subject"
+                          value={this.state.book.subject}
+                          onChange={this.handleChange}
+                          placeholder="Enter Subject"
+                          required
+                        />
+                      </div>
+
+                      <div className="form-group ">
+                        <label htmlFor="author">Author</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="author"
+                          name="author"
+                          value={this.state.book.author}
+                          onChange={this.handleChange}
+                          placeholder="Enter Author"
+                          required
+                        />
+                      </div>
+
+                      <div className="form-group ">
+                        <label htmlFor="publishedYear">Published Year</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="number"
+                          className="form-control"
+                          id="publishedYear"
+                          name="publishedYear"
+                          value={this.state.book.publishedYear}
+                          onChange={this.handleChange}
+                          placeholder="Enter Year"
+                          required
+                        />
+                      </div>
+
+                      <div className="form-group ">
+                        <label htmlFor="imageName">Cover Photo</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="imageName"
+                          name="imageName"
+                          value={this.state.book.imageName}
+                          onChange={this.handleChange}
+                          placeholder="Enter file Name"
+                          required
+                        />
+                      </div>
+
+                      <div className="form-group ">
+                        <label htmlFor="isbnCode">Isbn No</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="isbnCode"
+                          name="isbnCode"
+                          value={this.state.book.isbnCode}
+                          onChange={this.handleChange}
+                          placeholder="Enter ISBN Code"
+                          required
+                        />
+                      </div>
+
+                      <div className="form-group ">
+                        <label htmlFor="shelfDetails">Rack</label>
+                        <select
+                          name="shelfDetails"
+                          id="shelfDetails"
+                          className="form-control"
+                          value={this.state.book.shelfDetails}
+                          onChange={this.handleChange}
+                          placeholder="Enter Shelf"
+                          required
+                        >
+                          <option value="0">Please Select</option>
+                          <option value="5">E</option>
+                          <option value="4">D</option>
+                          <option value="3">C</option>
+                          <option value="2">B</option>
+                          <option value="1">A</option>
+                        </select>
+                        
+                      </div>
+
+                      <div className="form-group ">
+                        <label htmlFor="quantity">Quantity</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="quantity"
+                          name="quantity"
+                          value={this.state.book.quantity}
+                          onChange={this.handleChange}
+                          placeholder="Enter Quantity"
+                          required
+                        />
+                      </div>
+
+                      <div className="form-group ">
+                        <label htmlFor="bookCost">Cost</label>
+                        <input
+                          type="text"
+                          className="form-control datepicker"
+                          id="bookCost"
+                          name="bookCost"
+                          value={this.state.book.bookCost}
+                          onChange={this.handleChange}
+                          placeholder="Enter Cost"
+                          required
+                        />
+                      </div>
+
+                      <div className="form-group ">
+                        <label htmlFor="publications">Publications</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="publications"
+                          name="publications"
+                          value={this.state.book.publications}
+                          onChange={this.handleChange}
+                          placeholder="Enter publications"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="box-footer">
+                      <button type="submit" className="btn btn-dark">
+                        Add Book
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </React.Fragment>
     );
   }
 }

@@ -54,7 +54,7 @@ class LoginNavbar extends Component {
         <section className="header ml-5">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-sm-3">
+              <div className="col-sm-2">
                 <NavLink to="/">
                   <img
                     className="header-logo"
@@ -95,7 +95,7 @@ class LoginNavbar extends Component {
                   </form>
                 </div>
               </div>
-              <div className="col-sm-3">
+              <div className="col-sm-4">
                 <div className="carts float-right">
                   <button
                     className="btn btn-success btn btn-lg cart-item-badge mr-5"

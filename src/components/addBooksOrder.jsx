@@ -7,6 +7,7 @@ class AddBooksOrder extends Component {
       quantity: "",
       orderDate: "",
       orderStatus: "",
+      publications:""
     },
   };
 
@@ -69,6 +70,18 @@ class AddBooksOrder extends Component {
               id="orderStatus"
               name="orderStatus"
               value={this.state.booksOrder.orderStatus}
+              onChange={this.handleChange}
+              required
+            />
+            <label htmlFor="orderStatus" className="form-label">
+              Publications
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="publications"
+              name="publications"
+              value={this.state.booksOrder.publications}
               onChange={this.handleChange}
               required
             />
