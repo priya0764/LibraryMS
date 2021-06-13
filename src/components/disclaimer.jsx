@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import LoginNavbar from './loginNavbar';
-import Footer from './footer'
 import login from './pictures/login.jpg'
 
 class Disclaimer extends Component {
@@ -14,7 +13,7 @@ class Disclaimer extends Component {
         <div className="text-centre ">
           <h3>Login to know more... </h3>
         </div>
-        <img width='500' height='200' src={login}/>
+        <img className="mx-auto" width='500' height='200' src={login}/>
        
       </div>
     );
