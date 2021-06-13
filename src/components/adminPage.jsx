@@ -39,7 +39,7 @@ class AdminPage extends Component {
                     <div className="col-md-12">
                       <div className="user-profile-image">
                         <img
-                          className="img-thumbnail"
+                          className="img-thumbnail mx-auto"
                           src="http://demo.greensoftbd.xyz/greenlms/v2.2/uploads/member/default.png"
                           alt="Admin profile picture"
                         />

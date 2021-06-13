@@ -3,15 +3,14 @@ import "./design.css";
 
 import { Route, Switch } from "react-router-dom";
 import Readers from "./components/readers";
-import Feedback from "./components/feedback"
+
 import AddFeedback from './components/addFeedback';
 import FeedbackDetails from './components/feedbackDetails';
 
 import AddReader from './components/addReader';
 import ReaderDetails from './components/readerDetails';
 import Feedback from './components/feedback';
-import usersService from "./services/usersService";
-import LoginFormUser from './components/loginFormUser'
+
 
 
 import UserOrAdmin from './components/userOrAdmin';
@@ -48,7 +47,7 @@ import CategoryListHome from "./components/categoryListHome";
 import UserPage from './components/userPage'
 import Publishers from './components/publishers';
 
-import { BrowserRouter as  Route,Router,Switch } from 'react-router-dom';
+import { BrowserRouter as  Router } from 'react-router-dom';
 
 
 import ViewPublisher from './components/viewPublisher';
@@ -73,25 +72,11 @@ import Dashboard from './components/dashboard';
 import SearchAuthor from './components/searchAuthorByName';
 import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
-
-import ViewAuthor from './components/viewAuthor';
-import UpdateAuthor from './components/updateAuthor';
-import AddAuthor from './components/addAuthor';
-
-import BooksReturned from './components/booksReturned'
-import AddBooksReturned from './components/addBooksReturned';
-import UpdateBooksReturned from './components/updateBooksReturned';
-import ViewBooksReturned from './components/viewBooksReturned';
-
-import Dashboard from './components/dashboard';
-import SearchAuthor from './components/searchAuthorByName';
-import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
-
 import Disclaimer from './components/disclaimer'
-import AddReader from './components/addReader'
-import ReaderDetails from './components/readerDetails'
-import Feedback from './components/feedback'
-import {Route, Switch ,Redirect} from 'react-router-dom'
+
+import UserNavbar from './components/userNavbar';
+
+
 
 
 
@@ -161,16 +146,17 @@ function App() {
           <Route path="/view-suggestedbooks/:id" component={ViewSuggestedBooks}></Route>
 
           <Route path="/userPage" component={UserPage} />
+          <Route path="/userNavbar" component={UserNavbar}/>
 
 
-        <Route path="/" exact component={Author}></Route>
+        <Route path="/author" exact component={Author}></Route>
             <Route path="/author" component={Author}></Route>
             <Route path="/view-author/:authorId" component={ViewAuthor}></Route>
             <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
             <Route path="/add-author" component={AddAuthor}></Route>
             <Route path="/author-name/:firstName" component={SearchAuthor}></Route>
             <Route path="/disclaimer" component={Disclaimer}></Route>
-
+           
 
 
 

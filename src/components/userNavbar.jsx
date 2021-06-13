@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
-class LogoutNavbar extends Component {
+class UserNavbar extends Component {
   state = {
     search: "",
   };
@@ -17,7 +17,7 @@ class LogoutNavbar extends Component {
         <section className="header-top">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12" style={{textAlign:"left", fontSize:20}}>
+            <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12" style={{textAlign:"left", fontSize:20}}>
                 <NavLink to="mailto:admin@gmail.com" className="header-email ml-5">
                   <i className="fa fa-envelope"></i> admin@gmail.com{" "}
                 </NavLink>
@@ -25,20 +25,20 @@ class LogoutNavbar extends Component {
                   <i className="fa fa-phone"></i> 123456{" "}
                 </NavLink>
               </div>
-              <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12" style={{textAlign:"right", fontSize:20}}>
-                <ul className="header-items">
+              <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 " style={{textAlign:"right", fontSize:20}}>
+                <ul className="header-items float-right">
                   <li>
-                    <NavLink to="" className="mr-2">
+                    <NavLink to="#" className="mr-2 ">
                       <i className="fa fa-dashboard"></i> DashBoard
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="" className="mr-2">
+                    <NavLink to="#" className="mr-2">
                     <i class="fa fa-lock"></i> My Account
                     </NavLink>                    
                   </li>
                   <li>
-                    <NavLink to="" className="mr-5">
+                    <NavLink to="#" className="mr-2">
                     <i class="fa fa-sign-out"></i> Logout
                     </NavLink>
                   </li>
@@ -111,7 +111,7 @@ class LogoutNavbar extends Component {
               <li>
                 <NavLink
                   className="container-fluid ml-5"
-                  to=""
+                  to="#"
                 >
                   <i className="fa fa-home"></i>Home
                 </NavLink>
@@ -119,7 +119,7 @@ class LogoutNavbar extends Component {
               <li>
                 <NavLink
                   className="container"
-                  to=""
+                  to="#"
                 >
                   Ebook
                 </NavLink>
@@ -136,7 +136,7 @@ class LogoutNavbar extends Component {
               <li>
                 <NavLink
                   className="container"
-                  to=""
+                  to="#"
                 >
                   Contact
                 </NavLink>
@@ -149,4 +149,4 @@ class LogoutNavbar extends Component {
   }
 }
 
-export default LogoutNavbar;
+export default UserNavbar;

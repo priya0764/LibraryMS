@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReaderService from "../services/readerService";
-import { Joi } from "joi-browser";
+
 
 class AddReader extends Component {
   state = {
