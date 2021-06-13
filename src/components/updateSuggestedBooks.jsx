@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import SuggestedBooksService from '../services/suggestedBooksService';
-class UpdateSuggestedBooks extends Component {
 
-    constructor(props) {
+class UpdateSuggestedBooks extends Component {
+        constructor(props) {
         super(props)
         this.state = {
-            id: '',
+            id: this.props.match.params.id,
             title: '',
             subject: '',
             author: '',
