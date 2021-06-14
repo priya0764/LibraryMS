@@ -32,6 +32,7 @@ class AddFeedback extends Component {
   };
   render() {
     return (
+      <React.Fragment>
       <div className="mt-5">
         <h4 className="ml-5 mt-2 pl-5" style={{ color: "GrayText" }}>
           Give your valuable feedback
@@ -134,6 +135,7 @@ class AddFeedback extends Component {
         </tr>
         </table>
       </div>
+      </React.Fragment>
     );
   }
 }

@@ -44,7 +44,7 @@ class Readers extends Component {
     }
   render() {
     return (
-      <div>
+      <React.Fragment>
       <DashboardNav/>
       <section className="content " style={{ fontFamily: "revert", marginLeft:300 }}>
           <div className="box-head">
@@ -127,7 +127,7 @@ class Readers extends Component {
         </div>
       </div>
       </section>
-      </div>
+      </React.Fragment>
     );
   }
 }

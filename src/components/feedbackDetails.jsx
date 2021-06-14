@@ -31,7 +31,7 @@ class FeedbackDetails extends Component {
   };
   render() {
     return (
-      <div>
+      <React.Fragment>
         <form onSubmit={this.handleSubmit} className='w-50 ml-5 mt-5' style={{textAlign:'left'}}>
           <h1>{this.props.match.params.id}</h1>
           <div className="mb-3">
@@ -108,7 +108,7 @@ class FeedbackDetails extends Component {
               Cancel
             </button>
         </form>
-      </div>
+        </React.Fragment>
     );
   }
 }

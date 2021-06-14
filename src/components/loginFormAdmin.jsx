@@ -19,7 +19,7 @@ class LoginFormAdmin extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <LoginNavbar />
         <section className="main-login">
           <div className="container">
@@ -69,7 +69,7 @@ class LoginFormAdmin extends Component {
             </div>
           </div>
         </section>
-      </div>
+        </React.Fragment>
     );
   }
 }

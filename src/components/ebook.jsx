@@ -11,7 +11,7 @@ import Footer from './footer'
 class Ebook extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
      
         <div className="container-fluid">
           <LogoutNavbar />
@@ -135,7 +135,7 @@ class Ebook extends Component {
           </div>
         </div>
       <Footer/>
-      </div>
+      </React.Fragment>
     );
   }
 }

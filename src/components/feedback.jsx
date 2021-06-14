@@ -47,7 +47,7 @@ class Feedback extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
       <DashboardNav/>
       <section className="content " style={{ fontFamily: "revert", marginLeft:300 }}>
           <div className="box-head">
@@ -128,7 +128,7 @@ class Feedback extends Component {
           </div>
         </div>
       </div>
-      </section></div>
+      </section></React.Fragment>
     );
   }
 }

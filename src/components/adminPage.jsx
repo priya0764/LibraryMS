@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LogoutNavbar from './logoutNavbar';
+import Footer from './footer'
 
 
 class AdminPage extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <LogoutNavbar/>
         <section className="main-slider">
           <div className="container">
@@ -71,13 +72,17 @@ class AdminPage extends Component {
                         </p>
                       </div>
                     </div>
+                      
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            
+          
         </section>
-      </div>
+        <Footer/>
+        </React.Fragment>
     );
   }
 }
