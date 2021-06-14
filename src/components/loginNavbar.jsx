@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import ContactPage from "./contactPage";
 
 class LoginNavbar extends Component {
   state = {
@@ -137,7 +138,7 @@ class LoginNavbar extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="container" to="">
+                <NavLink className="container" to="/contact-page">
                   Contact
                 </NavLink>
               </li>

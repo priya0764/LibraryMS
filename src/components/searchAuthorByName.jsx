@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AuthorService from "../services/authorService";
+import DashboardNav from "./dashboardnav";
 
 class SearchAuthor extends Component {
   constructor(props) {
@@ -24,10 +25,12 @@ class SearchAuthor extends Component {
   }
   render() {
     return (
+      <React.Fragment>
+        <DashboardNav />
       <div className="w-75 mt-5 mx-auto">
         <h2>{this.props.match.params.firstName}</h2>
         <div className="row mt-3">
-          <table className="table table-sm table-striped table-bordered">
+          <table className="table table-sm table-striped table-bordered" style={{marginLeft: 300, width:1200, marginTop:50}}>
             <thead class="thead-dark">
               <tr>
                 <th>First Name</th>
@@ -51,6 +54,7 @@ class SearchAuthor extends Component {
           </table>
         </div>
       </div>
+      </React.Fragment>
     );
   }
 }

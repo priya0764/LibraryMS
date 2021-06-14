@@ -53,7 +53,7 @@ import Publishers from './components/publishers';
 
 
 //import { BrowserRouter as  Route,Router,Switch } from 'react-router-dom';
-import { BrowserRouter as  Router } from 'react-router-dom';
+//import { BrowserRouter as  Router } from 'react-router-dom';
 
 
 

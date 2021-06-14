@@ -103,9 +103,9 @@ class Register extends Component {
                       />
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn btn-success btn-block">
+                      <button type="submit" class="btn btn-success btn-block" onSubmit={this.handleSubmit}>
                         Register
-                      </button>
+                      </button> 
                     </div>
                   </form>
                 </div>
