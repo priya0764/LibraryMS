@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PublisherService from "../services/publisherService";
+import DashboardNav from "./dashboardnav";
 
 class ViewPublisher extends Component {
   constructor(props) {
@@ -17,7 +18,10 @@ class ViewPublisher extends Component {
   }
   render() {
     return (
+      <React.Fragment>
+        <DashboardNav />
       <div className="card col-md-6 offset-md-3">
+        
         <h3 className="text-center"> View Publisher Details</h3>
         <div className="card bg-dark text-white">
           <div className="card-body">
@@ -72,7 +76,9 @@ class ViewPublisher extends Component {
             </div>
           </div>
         </div>
+        <div><a class="btn btn-primary" href="\publisher" role="button">Back</a></div>
       </div>
+      </React.Fragment>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PublisherService from '../services/publisherService';
+import DashboardNav from './dashboardnav';
 
 class UpdatePublisher extends Component {
 
@@ -94,6 +95,7 @@ class UpdatePublisher extends Component {
     render() {
         return (
             <div>
+                <DashboardNav />
                 <div className="container">
                     <div className="row">
                         <div className="caed col-md-6 offset-md-3 offset-md-3">

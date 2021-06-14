@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PublisherService from '../services/publisherService';
+import DashboardNav from "./dashboardnav";
 class AddPublisher extends Component {
 
     constructor(props) {
@@ -79,6 +80,7 @@ class AddPublisher extends Component {
     render() {
         return (
             <div>
+                 <DashboardNav />
                 <div className="container">
                     <div className="row">
                         <div className="caed col-md-6 offset-md-3 offset-md-3">
@@ -87,39 +89,39 @@ class AddPublisher extends Component {
                                 <form>
                                     <div className="form-group">
                                         <label>PublisherId:</label>
-                                        <input placeholder="Id" name="PublisherId" className="form-control" value={this.state.publisherId} onChange={this.changeIdHandler} />
+                                        <input placeholder="Id" name="PublisherId" className="form-control" value={this.state.publisherId} onChange={this.changeIdHandler}required />
                                     </div>
                                     <div className="form-group">
                                         <label>PublisherName:</label>
-                                        <input placeholder="publishername" name="publisherName" className="form-control" value={this.state.publisherName} onChange={this.changePublisherNameHandler} />
+                                        <input placeholder="publishername" name="publisherName" className="form-control" value={this.state.publisherName} onChange={this.changePublisherNameHandler} required/>
                                     </div>
                                     <div className="form-group">
                                         <label>ContactNo:</label>
-                                        <input placeholder="contactno" name="contactno" className="form-control" value={this.state.contactno} onChange={this.changeContactNoHandler} />
+                                        <input placeholder="contactno" name="contactno" className="form-control" value={this.state.contactno} onChange={this.changeContactNoHandler} required/>
                                     </div>
                                     <div className="form-group">
                                         <label>Email:</label>
-                                        <input placeholder="email" name="Email" className="form-control" value={this.state.email} onChange={this.changeEmailHandler} />
+                                        <input placeholder="email" name="Email" className="form-control" value={this.state.email} onChange={this.changeEmailHandler} required/>
                                     </div>
                                     <div className="form-group">
                                         <label>Address1:</label>
-                                        <input placeholder="address1" name="address1" className="form-control" value={this.state.address1} onChange={this.changeAddress1Handler} />
+                                        <input placeholder="address1" name="address1" className="form-control" value={this.state.address1} onChange={this.changeAddress1Handler} required />
                                     </div>
                                     <div className="form-group">
                                         <label>Address2:</label>
-                                        <input placeholder="address2" name="address2" className="form-control" value={this.state.address2} onChange={this.changeAddress2Handler} />
+                                        <input placeholder="address2" name="address2" className="form-control" value={this.state.address2} onChange={this.changeAddress2Handler} required />
                                     </div>
                                     <div className="form-group">
                                         <label>City:</label>
-                                        <input placeholder="city" name="city" className="form-control" value={this.state.city} onChange={this.changeCityHandler} />
+                                        <input placeholder="city" name="city" className="form-control" value={this.state.city} onChange={this.changeCityHandler} required/>
                                     </div>
                                     <div className="form-group">
                                         <label>State:</label>
-                                        <input placeholder="state" name="state" className="form-control" value={this.state.state} onChange={this.changeStateHandler} />
+                                        <input placeholder="state" name="state" className="form-control" value={this.state.state} onChange={this.changeStateHandler} required />
                                     </div>
                                     <div className="form-group">
                                         <label>Pincode:</label>
-                                        <input placeholder="pincode" name="pincode" className="form-control" value={this.state.pincode} onChange={this.changePincodeHandler} />
+                                        <input placeholder="pincode" name="pincode" className="form-control" value={this.state.pincode} onChange={this.changePincodeHandler} required/>
                                     </div>
                                     <button className="btn btn-success" onClick={this.savePublisher}> Save</button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Cancel</button>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PublisherService from "../services/publisherService";
+import DashboardNav from "./dashboardnav";
 import "./style.css";
 
 class Publishers extends Component {
@@ -44,8 +45,9 @@ class Publishers extends Component {
   render() {
     return (
       <div>
-        <h2 className="text-center"> Publisher List </h2>
-        <div className="row">
+        <DashboardNav />
+        <h2 className="text-center" style={{paddingLeft:200}} >  Publisher List </h2>
+        <div className="row" style={{marginLeft:250}}>
           <button
             className="btn btn-info btn-large mb-2 ml-3"
             onClick={this.addPublisher}
@@ -56,6 +58,7 @@ class Publishers extends Component {
                 <div className="row">
           <table
             class="table"
+            style={{marginLeft:280,marginTop:80,width:1050}}
             className="table table-sm table-bordered table-striped"
           >
             <thead class="thead-dark">
@@ -84,9 +87,9 @@ class Publishers extends Component {
                       onClick={() =>
                         this.deletePublisher(publishers.publisherId)
                       }
-                      className="btn btn-danger mt-1 ml-2"
-                      data-toggle="tooltip"
-                      data-placement="top"
+                      className="btn btn-danger btn-xs mt-1 ml-2"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
                       title="Delete"
                     >
                       <i class="bi bi-trash-fill"></i>

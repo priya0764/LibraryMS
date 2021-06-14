@@ -49,21 +49,18 @@ import UserBooksList from './components/userBooks';
 import ViewBook from './components/viewBook';
 
 import UserPage from './components/userPage'
+
+
 import Publishers from './components/publishers';
-
-
-//import { BrowserRouter as  Route,Router,Switch } from 'react-router-dom';
-import { BrowserRouter as  Router } from 'react-router-dom';
-
-
-
 import ViewPublisher from './components/viewPublisher';
 import UpdatePublisher from './components/updatePublisher';
 import AddPublisher from './components/addPublisher';
+
 import SuggestedBooks from './components/suggestedBooks';
 import AddSuggestedBooks from './components/addSuggestedBooks';
 import UpdateSuggestedBooks from './components/updateSuggestedBooks';
 import ViewSuggestedBooks from './components/viewSuggestedBooks';
+import SearchTitle from './components/searchSuggestedBookTitle';
 
 import Author from './components/author';
 import ViewAuthor from './components/viewAuthor';
@@ -168,6 +165,7 @@ function App() {
           <Route path="/booksIssued" component={BooksIssued} />
           <Route path="/register" component={Register} />
           <Route path="/logout" component={Logout} />
+
           <Route path="/publisher" component={Publishers}></Route>
           <Route path="/update-publisher/:publisherId" component={UpdatePublisher}></Route>
           <Route path="/add-publisher" component={AddPublisher}></Route>
@@ -177,6 +175,7 @@ function App() {
           <Route path="/update-suggestedbooks/:id" component={UpdateSuggestedBooks}></Route>
           <Route path="/add-suggestedbooks" component={AddSuggestedBooks}></Route>
           <Route path="/view-suggestedbooks/:id" component={ViewSuggestedBooks}></Route>
+          <Route path="/suggestedbooks-title/:title" component={SearchTitle}></Route>
 
           <Route path="/userPage" component={UserPage} />
           <Route path="/userNavbar" component={UserNavbar}/>
