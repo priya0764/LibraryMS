@@ -3,7 +3,6 @@ import LoginNavbar from "./loginNavbar";
 
 import UsersService from "../services/usersService";
 
-import UsersService from "../services/usersService"
 
 
 class LoginFormUser extends Component {

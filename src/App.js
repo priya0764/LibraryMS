@@ -1,7 +1,7 @@
 import "./App.css";
 import "./design.css";
 
-import { Route, Switch } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Readers from "./components/readers";
 import Feedback from "./components/feedback"
 import AddFeedback from './components/addFeedback';
@@ -9,9 +9,9 @@ import FeedbackDetails from './components/feedbackDetails';
 
 import AddReader from './components/addReader';
 import ReaderDetails from './components/readerDetails';
-import Feedback from './components/feedback';
 import usersService from "./services/usersService";
 import LoginFormUser from './components/loginFormUser'
+
 
 
 import UserOrAdmin from './components/userOrAdmin';
@@ -48,7 +48,7 @@ import CategoryListHome from "./components/categoryListHome";
 import UserPage from './components/userPage'
 import Publishers from './components/publishers';
 
-import { BrowserRouter as  Route,Router,Switch } from 'react-router-dom';
+//import { BrowserRouter as  Route,Router,Switch } from 'react-router-dom';
 
 
 import ViewPublisher from './components/viewPublisher';
@@ -58,8 +58,8 @@ import SuggestedBooks from './components/suggestedBooks';
 import AddSuggestedBooks from './components/addSuggestedBooks';
 import UpdateSuggestedBooks from './components/updateSuggestedBooks';
 import ViewSuggestedBooks from './components/viewSuggestedBooks';
+
 import Author from './components/author';
-
 import ViewAuthor from './components/viewAuthor';
 import UpdateAuthor from './components/updateAuthor';
 import AddAuthor from './components/addAuthor';
@@ -70,28 +70,34 @@ import UpdateBooksReturned from './components/updateBooksReturned';
 import ViewBooksReturned from './components/viewBooksReturned';
 
 import Dashboard from './components/dashboard';
+import Dashboard2 from "./components/dashboard2";
+import Dashboard3 from "./components/dashboard3";
+
 import SearchAuthor from './components/searchAuthorByName';
 import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
+import ContactPage from './components/contactPage';
+import ThankyouPage from "./components/thankyouPage";
 
-import ViewAuthor from './components/viewAuthor';
-import UpdateAuthor from './components/updateAuthor';
-import AddAuthor from './components/addAuthor';
 
-import BooksReturned from './components/booksReturned'
-import AddBooksReturned from './components/addBooksReturned';
-import UpdateBooksReturned from './components/updateBooksReturned';
-import ViewBooksReturned from './components/viewBooksReturned';
+//import ViewAuthor from './components/viewAuthor';
+//import UpdateAuthor from './components/updateAuthor';
+//import AddAuthor from './components/addAuthor';
 
-import Dashboard from './components/dashboard';
-import SearchAuthor from './components/searchAuthorByName';
-import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
+//import BooksReturned from './components/booksReturned'
+//import AddBooksReturned from './components/addBooksReturned';
+//import UpdateBooksReturned from './components/updateBooksReturned';
+//import ViewBooksReturned from './components/viewBooksReturned';
+
+//import Dashboard from './components/dashboard';
+//import SearchAuthor from './components/searchAuthorByName';
+//import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
 import Disclaimer from './components/disclaimer'
-import AddReader from './components/addReader'
-import ReaderDetails from './components/readerDetails'
-import Feedback from './components/feedback'
-import {Route, Switch ,Redirect} from 'react-router-dom'
+//import AddReader from './components/addReader'
+//import ReaderDetails from './components/readerDetails'
+//import Feedback from './components/feedback'
+//import {Route, Switch ,Redirect} from 'react-router-dom'
 
 
 
@@ -163,12 +169,16 @@ function App() {
           <Route path="/userPage" component={UserPage} />
 
 
-        <Route path="/" exact component={Author}></Route>
+        
             <Route path="/author" component={Author}></Route>
             <Route path="/view-author/:authorId" component={ViewAuthor}></Route>
             <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
             <Route path="/add-author" component={AddAuthor}></Route>
             <Route path="/author-name/:firstName" component={SearchAuthor}></Route>
+
+            <Route path="/contact-Page" component={ContactPage}></Route>
+            <Route path="/thankyou-Page" component={ThankyouPage}></Route>
+
             <Route path="/disclaimer" component={Disclaimer}></Route>
 
 
@@ -179,6 +189,9 @@ function App() {
           <Route path="/update-returned/:id" exact component={UpdateBooksReturned}></Route>
           <Route path="/view-returned/:id" component={ViewBooksReturned}></Route>
           <Route path="/dashboard" component={Dashboard}></Route>
+          <Route path="/dashboard2" component={Dashboard2}></Route>
+          <Route path="/dashboard3" component={Dashboard3}></Route>
+          
           <Route path="/returnedBooks-delayed/:delayedDays" component={SearchReturnedBook}></Route>
           <Route path="/" exact component={Home} />
         </Switch>
