@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReaderService from "../services/readerService";
 import { Link } from "react-router-dom";
+import DashboardNav from "./dashboardnav";
 
 class Readers extends Component {
   state = {

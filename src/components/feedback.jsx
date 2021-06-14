@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FeedbackService from "../services/feedbackService";
 import { Link } from "react-router-dom";
+import DashboardNav from './dashboardnav'
 
 class Feedback extends Component {
   state = {
