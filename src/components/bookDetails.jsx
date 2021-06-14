@@ -15,6 +15,7 @@ class BookDetails extends Component {
         quantity: '',
         bookCost: '',
         shelfDetails: '',
+        imageName:''
       },
     };
   
@@ -168,6 +169,20 @@ class BookDetails extends Component {
               id="shelfDetails"
               name="shelfDetails"
               value={this.state.book.shelfDetails}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="imageName" className="form-label">
+            <b>Image Name</b>
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="imageName"
+              name="imageName"
+              placeholder="should be in .jpg"
+              value={this.state.book.imageName}
               onChange={this.handleChange}
             />
           </div>

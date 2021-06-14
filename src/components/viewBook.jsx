@@ -8,7 +8,6 @@ class ViewBook extends Component {
     this.state = {
       books: [],
       title: this.props.match.params.title,
-      book: {},
     };
   }
 
@@ -21,54 +20,57 @@ class ViewBook extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
+        <LogoutNavbar/>
         {this.state.books.map((book) => (
           <section className="content">
             <div className="box box-mytheme">
               <div className="box-body">
-                <div className="row">
-                  <div className="col-sm-6">
+                <div className="row" style={{marginLeft:200}}>
+                  <div className="col-sm-3">
                     <img
-                      src={`./images/${book.imageName}`}
+                      src={`/images/${book.imageName}`}
+                      width="250"
+                      height="250"
                       class="img-thumbnail"
-                      alt="..."
+                      alt={book.title}
                     />
                   </div>
-                  <div className="col-sm-6" style={{ textAlign: "left" }}>
+                  <div className="col-sm-8" style={{ textAlign: "left" }}>
                     <div className="profile_view_item">
                       <p>
-                        <b>Title</b>: {book.title}
+                        <b>Title</b> : {book.title}
                       </p>
                     </div>
                     <div className="profile_view_item">
                       <p>
-                        <b>Book Category</b>: {book.subject}
+                        <b>Book Category</b> : {book.subject}
                       </p>
                     </div>
                     <div className="profile_view_item">
                       <p>
-                        <b>Author</b>: {book.author}
+                        <b>Author</b> : {book.author}
                       </p>
                     </div>
                     <div className="profile_view_item">
                       <p>
-                        <b>Quantity</b>: {book.quantity}
+                        <b>Quantity</b> : {book.quantity}
                       </p>
                     </div>
                     <div className="profile_view_item">
                       <p>
-                        <b>Price</b>: {book.bookCost}
+                        <b>Price</b> : {book.bookCost}
                       </p>
                     </div>
                     <div className="profile_view_item">
                       <p>
-                        <b>Code No</b>: {book.isbnCode}
+                        <b>Code No</b> : {book.isbnCode}
                       </p>
                     </div>
 
                     <div className="profile_view_item">
                       <p>
-                        <b>Published Year</b>: {book.publishedYear}
+                        <b>Published Year</b> : {book.publishedYear}
                       </p>
                     </div>
                   </div>
@@ -89,7 +91,7 @@ class ViewBook extends Component {
             </div>
           </div>
         </div>  */}
-      </div>
+      </React.Fragment>
     );
   }
 }

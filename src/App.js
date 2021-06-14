@@ -107,6 +107,12 @@ import Disclaimer from './components/disclaimer'
 
 
 import CategoryBookHome from './components/categoryBookHome';
+import Mystery from './components/mystery';
+import Thriller from './components/thriller';
+import ScienceFiction from './components/scienceFiction'
+import Horror from './components/horror'
+import Adventure from "./components/adventure";
+import Fantasy from './components/fantasy'
 
 
 
@@ -141,15 +147,21 @@ function App() {
           <Route path="/book/update/:id" component={BookDetails} />
           <Route path="/book" component={Books} />
           <Route path="/booksorder/add" component={AddBooksOrder} />
-          <Route path="/booksorder/get/:id" component={BooksOrderDetails} />
+          <Route path="/getbooksorder/quantity/:quantity" component={BooksOrder} />
           <Route path="/booksorder/update/:id" component={BooksOrderDetails} />
           <Route path="/booksorder" component={BooksOrder} />
           <Route path="/damagedbook/add" component={AddDamagedBooks} />
-          <Route path="/damagedbook/get/:id" component={DamagedBooksDetails} />
+          <Route path="/getdamagedbook/quantity/:quantity" component={DamagedBooksDetails} />
           <Route path="/damagedbook/update/:id" component={DamagedBooksDetails} />
           <Route path="/damagedbook" component={DamagedBooks} />
 
           <Route path="/viewbook/:title" component={ViewBook} />
+          <Route path="/category/books/fantasy" component={Fantasy} />
+          <Route path="/category/books/adventure" component={Adventure} />
+          <Route path="/category/books/sciencefiction" component={ScienceFiction} />
+          <Route path="/category/books/horror" component={Horror} />
+          <Route path="/category/books/thriller" component={Thriller} />
+          <Route path="/category/books/mystery" component={Mystery} />
           <Route path="/category/books" component={CategoryBookHome} />
 
           <Route path="/user/add" component={AddUser} />
