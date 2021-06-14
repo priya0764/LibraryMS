@@ -26,22 +26,8 @@ class UserBooksList extends Component {
   viewBookDetails = (title) =>{
     this.props.history.push(`/viewbook/${title}`)
   }
+  
   render() {
-    // let images = [
-    //   "Harry Potter",
-    //   "The Kite Runner",
-    //   "Pride and Prejudice",
-    //   "Wings of Fire",
-    //   "The Adventure of Hukkleberry Finn",
-    // ].map((image) => {
-    //   return (
-    //     <img
-    //       className="img-responsive"
-    //       alt=""
-    //       src={`/images/${image}.jpg`}
-    //     />
-    //   );
-    // });
     return (
       <div className="container-fluid">
         <LogoutNavbar />

@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import CategoryBookHome from "./categoryBookHome";
-import LoginNavbar from "./loginNavbar";
 
 class CategoryListHome extends Component {
   state = {};
   render() {
     return (
       <React.Fragment>
-            <div className="col-xs-6 ml-5">
+            <div className="col-sm-2 ml-5">
               <div className="main-slider-menu">
                 <span className="sidebar-title">
                   <i className="fa fa-list"></i> All Categories
@@ -16,22 +14,22 @@ class CategoryListHome extends Component {
                 <div className="slider-menu">
                   <ul>
                     <li>
-                      <Link to="">Mystery</Link>
+                      <Link to="/category/books/mystery">Mystery</Link>
                     </li>
                     <li>
-                      <Link to="">Thriller</Link>
+                      <Link to="/category/books/thriller">Thriller</Link>
                     </li>
                     <li>
-                      <Link to="">Horror</Link>
+                      <Link to="/category/books/horror">Horror</Link>
                     </li>
                     <li>
-                      <Link to="">Science Fiction</Link>
+                      <Link to="/category/books/sciencefiction">Science Fiction</Link>
                     </li>
                     <li>
-                      <Link to="">Adventure</Link>
+                      <Link to="/category/books/adventure">Adventure</Link>
                     </li>
                     <li>
-                      <Link to="">Fantasy</Link>
+                      <Link to="/category/books/fantasy">Fantasy</Link>
                     </li>
                     <li>
                       <Link to="/home"> + More Category</Link>
