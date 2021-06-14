@@ -51,10 +51,10 @@ class Users extends Component {
   };
 
   render() {
-    const { search, sortColumn, userList }=this.state;
+    const { search, sortColumn, userList } = this.state;
     var sorted=[];
     if(search){
-      sorted=userList.filter((user)=>user.userId==search);
+      sorted=userList.filter((user)=>user.userId === search);
     }else{
       sorted=_.orderBy(
         this.state.userList,

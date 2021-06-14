@@ -132,22 +132,6 @@ class LogoutNavbar extends Component {
                   Book
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  className="container"
-                  to=""
-                >
-                  Shop
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className="container"
-                  to=""
-                >
-                  Contact
-                </NavLink>
-              </li>
             </ul>
           </div>
         </section>

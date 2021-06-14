@@ -23,12 +23,12 @@ class BooksOrder extends Component {
     console.log("Books Order : ", this.state.booksOrderList);
   }
 
-  viewOrderByQuantity = () => {
+  viewOrderByQuantity = (quantity) => {
     let booksOrderList = [];
-    BooksOrderService.getBooksOrderByquantity(this.state.search).then((res) => {
+    BooksOrderService.getBooksOrderByquantity(quantity).then((res) => {
       booksOrderList = res.data;
+      this.setState({ booksOrderList });
     });
-    this.setState({ booksOrderList });
     console.log("Books: " + this.state.booksOrder);
   };
 
@@ -57,7 +57,10 @@ class BooksOrder extends Component {
         <LogoutNavbar />
         <div className="container">
           <div className="row mt-5">
-            <div className="col-sm-3 mt-4" style={{textAlign:"left", fontSize:18}}>
+            <div
+              className="col-sm-3 mt-4"
+              style={{ textAlign: "left", fontSize: 18 }}
+            >
               <div className="main-slider-menu">
                 <span className="sidebar-title">
                   <i className="bi bi-list"></i> My Account
@@ -79,67 +82,73 @@ class BooksOrder extends Component {
               </div>
             </div>
             <div className="col-sm-9">
-            <section className="content-header">
-              <h2 style={{ textAlign: "left", fontFamily: "revert"}}>Order List</h2>
-              <hr />
-            </section>
-            <section className="content" style={{ fontFamily: "revert" }}>
-              <div className="box-head">
-                <div className="d-flex justify-content-between mb-3">
-                  <Link to="/booksorder/add" className="btn btn-dark">
-                    <i className="fa fa-plus"></i> Place Order
-                  </Link>
-                  <form className="form-inline my-2 my-lg-0">
-                <input
-                  className="form-control ml-auto"
-                  type="search"
-                  name="subject"
-                  placeholder="Search by subject"
-                  aria-label="Search"
-                  onChange={this.onChange}
-                />
-                <button
-                  className="btn btn-success my-2 my-sm-0 ml-2 mr-5"
-                  type="button"
-                  onClick={() => this.getBooksOrderByQuantity(this.state.search)}
-                >
-                  Search
-                </button>
-              </form>
+              <section className="content-header">
+                <h2 style={{ textAlign: "left", fontFamily: "revert" }}>
+                  Order List
+                </h2>
+                <hr />
+              </section>
+              <section className="content" style={{ fontFamily: "revert" }}>
+                <div className="box-head">
+                  <div className="d-flex justify-content-between mb-3">
+                    <Link to="/booksorder/add" className="btn btn-dark">
+                      <i className="fa fa-plus"></i> Place Order
+                    </Link>
+                    <form className="form-inline my-2 my-lg-0">
+                      <input
+                        className="form-control ml-auto"
+                        type="search"
+                        name="subject"
+                        placeholder="Search by quantity"
+                        aria-label="Search"
+                        onChange={this.onChange}
+                      />
+                      <button
+                        className="btn btn-success my-2 my-sm-0 ml-2 mr-5"
+                        type="button"
+                        onClick={() =>
+                          this.viewOrderByQuantity(this.state.search)
+                        }
+                      >
+                        Search
+                      </button>
+                    </form>
+                  </div>
                 </div>
-              </div>
-              <div className="box-body">
-                <div id="hide-table">
-                  <table
-                    id="example1"
-                    className="table table-bordered table-striped ml-4"
-                    style={{ marginTop: 100 }}
-                  >
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Quantity</th>
-                        <th>Order Date</th>
-                        <th>Status</th>
-                        <th>Publications</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {this.state.booksOrderList.map((booksOrder) => (
+                <div className="box-body">
+                  <div id="hide-table">
+                    <table
+                      id="example1"
+                      className="table table-bordered table-striped ml-4"
+                      style={{ marginTop: 100 }}
+                    >
+                      <thead>
                         <tr>
-                          <td data-title="#">{booksOrder.orderId}</td>
-                          <td data-title="Quantity">{booksOrder.quantity}</td>
-                          <td data-title="Order Date">
-                            {booksOrder.orderDate}
-                          </td>
-                          <td data-title="Status">{booksOrder.orderStatus}</td>
-                          <td data-title="Publications">
-                            {booksOrder.publications}
-                          </td>
+                          <th>#</th>
+                          <th>Quantity</th>
+                          <th>Order Date</th>
+                          <th>Status</th>
+                          <th>Publications</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {this.state.booksOrderList.map((booksOrder) => (
+                          <tr>
+                            <td data-title="#">{booksOrder.orderId}</td>
+                            <td data-title="Quantity">{booksOrder.quantity}</td>
+                            <td data-title="Order Date">
+                              {booksOrder.orderDate}
+                            </td>
+                            <td data-title="Status">
+                              {booksOrder.orderStatus}
+                            </td>
+                            <td data-title="Publications">
+                              {booksOrder.publications}
+                            </td>
 
-                          <td data-title="Action">
-                            {/* <button
+                            <td data-title="Action">
+                              {/* <button
                             type="button"
                             onClick={() =>
                               this.props.history.push(`/viewbooksorder/${booksOrder.quantity}`)
@@ -151,38 +160,38 @@ class BooksOrder extends Component {
                           >
                             <i className="fa fa-check-square-o"></i>
                           </button>{" "} */}
-                            <button
-                              type="button"
-                              onClick={() =>
-                                this.handleUpdate(booksOrder.orderId)
-                              }
-                              className="btn btn-warning btn-xs"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title="Edit"
-                            >
-                              <i className="fa fa-edit"></i>
-                            </button>{" "}
-                            <button
-                              type="button"
-                              onClick={() =>
-                                this.deleteOrder(booksOrder.orderId)
-                              }
-                              className="btn btn-danger btn-xs"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title="Delete"
-                            >
-                              <i className="fa fa-trash-o"></i>
-                            </button>{" "}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  this.handleUpdate(booksOrder.orderId)
+                                }
+                                className="btn btn-warning btn-xs"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Edit"
+                              >
+                                <i className="fa fa-edit"></i>
+                              </button>{" "}
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  this.deleteOrder(booksOrder.orderId)
+                                }
+                                className="btn btn-danger btn-xs"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Delete"
+                              >
+                                <i className="fa fa-trash-o"></i>
+                              </button>{" "}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
             </div>
           </div>
         </div>
