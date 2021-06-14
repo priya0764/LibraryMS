@@ -123,7 +123,7 @@ class AddFeedback extends Component {
         </form>
         </td>
         <td width='520' style={{backgroundImage:`url(${feedback3})`}}>
-          <h5></h5>
+          
         </td>
         </tr>
         </table>

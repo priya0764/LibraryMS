@@ -1,17 +1,26 @@
 import React, { Component } from "react";
 import SuggestedBooksService from "../services/suggestedBooksService";
+import {Link} from "react-router-dom";
+import DashboardNav from "./dashboardnav";
 import "./style.css";
+
 
 class SuggestedBooks extends Component {
   constructor(props) {
     super(props);
     this.state = {
       suggestedBooks: [],
+      search:""
     };
     this.addSuggestedBooks = this.addSuggestedBooks.bind(this);
     this.deleteSuggestedBooks = this.deleteSuggestedBooks.bind(this);
     this.viewSuggestedBooks = this.viewSuggestedBooks.bind(this);
     this.updateSuggestedBooks = this.updateSuggestedBooks.bind(this);
+    
+  }
+  onChange=(event)=>{
+    console.log(event.target.value);
+    this.setState({search:event.target.value})
   }
   addSuggestedBooks() {
     this.props.history.push("/add-suggestedbooks");
@@ -23,6 +32,10 @@ class SuggestedBooks extends Component {
 
   updateSuggestedBooks(id) {
     this.props.history.push(`/update-suggestedbooks/${id}`);
+  }
+
+  getSuggestedBooksByTitle=(title)=>{
+    this.props.history.push(`/suggestedbooks-title/${title}`);
   }
 
   deleteSuggestedBooks(id) {
@@ -39,33 +52,49 @@ class SuggestedBooks extends Component {
       this.setState({ suggestedBooks: res.data });
     });
   }
-  getBookBySubject = (subject) => {
-    this.props.history.push(`/book/get/subject/${subject}`);
-  };
-
+  
   render() {
     return (
       <div>
-        <h2 className="text-center">Suggested Books List </h2>
-        <div className="row">
-          <button
-           
+        <DashboardNav />
+        <h2 className="text-center" style={{paddingLeft:200}}>Suggested Books List </h2>
+        {/* <div className="row">
+          <button           
             className="btn btn-info btn-large mb-2 ml-3"
             onClick={this.addSuggestedBooks}
           >
             <i class="bi bi-plus-square"></i> Add
           </button>
-        </div>
-        <div className="row">
-          <table className="table table-sm table-striped table-bordered ">
+        </div> */}
+        <div className="d-flex justify-content-between">
+            <Link to="/add-suggestedbooks" className="btn btn-info btn-large mb-1" style={{marginLeft:270}}>
+            <i class="bi bi-plus-square"></i> Add
+            </Link>
+            <form className="form-inline my-2 my-lg-0">
+              <input
+                className="form-control mr-sm-2"
+                type="search"
+                name="title"
+                placeholder="Search by title"
+                aria-label="Search"
+                onChange={this.onChange}
+              />
+              <button
+                className="btn btn-success my-2 my-sm-0"
+                type="button"
+                onClick={() => this.getSuggestedBooksByTitle(this.state.search)}
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        <div className="row" style={{marginLeft:250}}>
+          <table className="table table-sm table-striped table-bordered "  style={{marginLeft:280,marginTop:80,width:1050}}>
             <thead class="thead-dark">
               <tr>
                 <th>Title</th>
                 <th>Subject</th>
                 <th>Author</th>
-                {/*<th>Publications</th>
-                                <th>Description</th>
-                                <th>Suggested Date</th>*/}
                 <th>Status</th>
                 <th>Actions</th>
               </tr>

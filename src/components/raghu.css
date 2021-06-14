@@ -58,6 +58,7 @@ h3 {
 
 .drop {
   position: absolute;
+  width: 100%;
   top: 12%;
   width: 75%;
 }

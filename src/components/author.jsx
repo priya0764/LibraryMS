@@ -64,7 +64,7 @@ class Author extends Component {
           </button>
         </div> */}
         <div className="d-flex justify-content-between">
-            <Link to="/add-author" className="btn btn-success btn-large mb-1">
+            <Link to="/add-author" className="btn btn-success btn-large mb-1" style={{marginLeft : "200px" }} >
               Add
             </Link>
             <form className="form-inline my-2 my-lg-0">
@@ -78,6 +78,7 @@ class Author extends Component {
               />
               <button
                 className="btn btn-warning my-2 my-sm-0"
+                style={{marginRight : "200px" }} 
                 type="button"
                 onClick={() => this.getAuthorByName(this.state.search)}
               >
@@ -86,7 +87,7 @@ class Author extends Component {
             </form>
           </div>
         <div className="row" class="drop">
-          <table className="table table-sm table-striped  table-bordered " >
+          <table className="table table-sm table-striped  table-bordered " style={{marginLeft : "200px" }} >
             <thead class="thead-dark">
               <tr>
                 <th>First Name</th>
@@ -130,8 +131,9 @@ class Author extends Component {
               ))}
             </tbody>
           </table>
+          <div><a class="btn btn-primary " style={{marginTop:"350px", marginLeft:"100px"}} href="\dashboard" role="button">Back</a></div>
         </div>
-      
+        
  
       </div>
     );
