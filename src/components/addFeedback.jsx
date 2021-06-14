@@ -32,19 +32,19 @@ class AddFeedback extends Component {
   render() {
     return (
       <React.Fragment>
-      <div className="mt-5">
-
+     <div className="mt-5">
         <h4 className="ml-5 mt-2 pl-5" style={{ color: "GrayText" }}>
           Give your valuable feedback
         </h4>
         <table>
           <tr>
             <td width='900'>
-        <form className="w-50 ml-5 pl-5"  onSubmit={this.handleSubmit}>
+        <form className="w-50 ml-5 pl-5"  onSubmit={this.handleSubmit} style={{textAlign:'left'}}>
           <div className="mb-0 mt-1">
             <label htmlFor="user_id" className="form-label">
               UserId
             </label>
+            <span className="text-red">*</span>
             <input
               type="text"
               className="form-control"
@@ -59,6 +59,7 @@ class AddFeedback extends Component {
             <label htmlFor="FeedbackDate" className="form-label">
               Feedback_Date
             </label>
+            <span className="text-red">*</span>
             <input
               type="text"
               className="form-control"
@@ -75,6 +76,7 @@ class AddFeedback extends Component {
             <label htmlFor="Description" className="form-label">
               Description
             </label>
+            <span className="text-red">*</span>
             <input
               type="text"
               className="form-control"
@@ -89,12 +91,13 @@ class AddFeedback extends Component {
             <label htmlFor="Rating" className="form-label">
               Rating
             </label>
+            <span className="text-red">*</span>
             <input
-              type="text"
+              type="number"
               className="form-control"
               id="rating"
-              minLength="1"
-              maxLength="5"
+              min="1"
+              max="5"
               name="rating"
               value={this.state.feedback.rating}
               onChange={this.handleChange}
@@ -105,6 +108,7 @@ class AddFeedback extends Component {
             <label htmlFor="comments" className="form-label">
               Comments
             </label>
+            <span className="text-red">*</span>
             <input
               type="text"
               className="form-control"
