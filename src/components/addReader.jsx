@@ -28,26 +28,14 @@ class AddReader extends Component {
   };
   render() {
     return (
-      <div className="w-50 mx-auto">
+      <div className="w-50 mx-auto mt-5" style={{textAlign:'left'}}>
         <form onSubmit={this.handleSubmit}>
-          <div className="mb-1">
-            <label htmlFor="Id" className="form-label">
-              Id
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="id"
-              name="id"
-              value={this.state.reader.id}
-              onChange={this.handleChange}
-              required
-            />
-          </div>
+        
           <div className="mb-1">
             <label htmlFor="FirstName" className="form-label">
               First Name
             </label>
+            <span className="text-red">*</span>
             <input
               type="text"
               className="form-control"
@@ -63,6 +51,7 @@ class AddReader extends Component {
             <label htmlFor="LastName" className="form-label">
               Last Name
             </label>
+            <span className="text-red">*</span>
             <input
               type="text"
               className="form-control"
@@ -78,6 +67,7 @@ class AddReader extends Component {
             <label htmlFor="MobileNo" className="form-label">
               Mobile No
             </label>
+            <span className="text-red">*</span>
             <input
               type="text"
               className="form-control"
@@ -94,8 +84,9 @@ class AddReader extends Component {
             <label htmlFor="Email" className="form-label">
               Email
             </label>
+            <span className="text-red">*</span>
             <input
-              type="text"
+              type="email"
               className="form-control"
               id="email"
               name="email"
@@ -108,6 +99,7 @@ class AddReader extends Component {
             <label htmlFor="Password" className="form-label">
               Password
             </label>
+            <span className="text-red">*</span>
             <input
               type="password"
               className="form-control"
