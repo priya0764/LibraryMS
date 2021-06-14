@@ -17,7 +17,7 @@ class UpdateBooksReturned extends Component {
         this.changeDelayedDaysHandler = this.changeDelayedDaysHandler.bind(this);
         this.changePenaltyHandler = this.changePenaltyHandler.bind(this);
         this.changePenalty_StatusHandler = this.changePenalty_StatusHandler.bind(this);
-        this.UpdateBooksReturned = this.UpdateBooksReturned.bind(this);
+        this.updateBooksReturned = this.updateBooksReturned.bind(this);
 
     }
 
@@ -34,7 +34,7 @@ class UpdateBooksReturned extends Component {
         });
     }
 
-    UpdateBooksReturned = (e) => {
+    updateBooksReturned = (e) => {
         e.preventDefault();
         let returned = { returnedDate: this.state.returnedDate, delayedDays: this.state.delayedDays, penalty: this.state.penalty, penalty_Status: this.state.penalty_Status };
         console.log('returned => ' + JSON.stringify(returned));
@@ -93,7 +93,7 @@ class UpdateBooksReturned extends Component {
                                         <label>Penalty_Status:</label>
                                         <input placeholder="Penalty_Status" name="Penalty_Status" className="form-control" value={this.state.penalty_Status} onChange={this.changePenalty_StatusHandler} />
                                     </div>
-                                    <button className="btn btn-success" onClick={this.UpdateBooksReturned}> Save</button>
+                                    <button className="btn btn-success" onClick={this.updateBooksReturned}> Save</button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Cancel</button>
 
                                 </form>

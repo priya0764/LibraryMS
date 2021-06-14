@@ -46,13 +46,14 @@ class Feedback extends Component {
   render() {
     return (
       <div className="w-75 mt-5 mx-auto">
-        <div className="d-flex justify-content-between">
-          <Link to="/feedback/add" className="btn btn-secondary btn-large mb-1">
-            Add
+        <div className="d-flex justify-content-between ">
+          <Link to="/feedback/add" className="btn btn-dark">
+          <i className="fa fa-plus"></i>
+            Add Feedback
           </Link>
-          <form class="form-inline my-2 my-lg-0">
+          <form className="form-inline my-2 my-lg-0 mr-0">
             <input
-              className="form-control ml-auto"
+              className="form-control  "
               type="search"
               placeholder="Search by Rating"
               aria-label="Search"
@@ -68,8 +69,8 @@ class Feedback extends Component {
           </form>
         </div>
         <div>
-          <div className="row">
-            <table className="table table-striped table-bordered">
+          <div className="row ">
+            <table className="table table-striped table-bordered mt-2">
               <thead>
                 <tr>
                   <th>Feedback_Date</th>
@@ -88,14 +89,25 @@ class Feedback extends Component {
                     <td>{feedback.comments}</td>
                     <td>
                       <Link to={`/feedback/update/${feedback.id}`}>
-                        <button className="btn btn-secondary">Update</button>
+                        <button 
+                        type="button"
+                  
+                        className="btn btn-warning btn-xs"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Edit"> <i className="fa fa-edit"></i></button>{" "}
                       </Link>
                       <button
-                        className="btn btn-danger ml-2"
+                        
+                        type="button"
+                        className="btn btn-danger btn-xs"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Delete"
                         onClick={() => this.deleteFeedback(feedback.id)}
                       >
-                        Delete
-                      </button>
+                        <i className="fa fa-trash-o"></i>
+                      </button>{" "}
                     </td>
                   </tr>
                 ))}

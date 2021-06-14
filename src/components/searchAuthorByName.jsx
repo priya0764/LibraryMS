@@ -27,8 +27,8 @@ class SearchAuthor extends Component {
       <div className="w-75 mt-5 mx-auto">
         <h2>{this.props.match.params.firstName}</h2>
         <div className="row mt-3">
-          <table className="table table-striped table-bordered">
-            <thead>
+          <table className="table table-sm table-striped table-bordered">
+            <thead class="thead-dark">
               <tr>
                 <th>First Name</th>
                 <th>Last Name</th>

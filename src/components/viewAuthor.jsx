@@ -48,9 +48,10 @@ class ViewAuthor extends Component {
                 as emailId and moblineNumber.</p>
                 <img src={download} width="150px" alt="bye" class="center"></img>
                 
-
+<div><a class="btn btn-primary" href="\author" role="button">Back</a></div>
 
             </div>
+            
         )
     }
 }

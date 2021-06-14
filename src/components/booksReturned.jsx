@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BooksReturnedService from '../services/booksReturnedService';
 import {Link} from "react-router-dom";
+import Dashboard2 from './dashboard2';
 
 
 class BooksReturned extends Component {
@@ -67,6 +68,7 @@ class BooksReturned extends Component {
     render() {
         return (
             <div>
+                <Dashboard2 />
                 <h2 className="text-center">ReturnedBooks List</h2>
                 {/* <div className="row">
                     <button c
@@ -97,7 +99,7 @@ class BooksReturned extends Component {
           </div>
                 <div className="row">
                     <table className="table table-sm table-striped table-bordered">
-                        <thead class="thead-dark">
+                        <thead className="thead-dark">
                             <tr>
                                 <th>Returned Date</th>
                                 <th>Delayed Days</th>

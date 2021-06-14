@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import SuggestedBooksService from '../services/suggestedBooksService';
-class UpdateSuggestedBooks extends Component {
+import DashboardNav from './dashboardnav';
 
-    constructor(props) {
+class UpdateSuggestedBooks extends Component {
+        constructor(props) {
         super(props)
         this.state = {
-            id: '',
+            id: this.props.match.params.id,
             title: '',
             subject: '',
             author: '',
@@ -54,7 +55,6 @@ class UpdateSuggestedBooks extends Component {
         });
 
     }
-
    
     changeTitleHandler = (event) => {
         this.setState({ title: event.target.value })
@@ -89,6 +89,7 @@ class UpdateSuggestedBooks extends Component {
     render() {
         return (
             <div>
+                <DashboardNav />
                 <div className="container">
                     <div className="row">
                         <div className="caed col-md-6 offset-md-3 offset-md-3">
