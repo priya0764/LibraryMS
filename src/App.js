@@ -67,6 +67,7 @@ import ScienceFiction from './components/scienceFiction'
 import Horror from './components/horror'
 import Adventure from "./components/adventure";
 import Fantasy from './components/fantasy'
+import ViewBookDashboard from './components/viewBookDashboard';
 
 function App() {
   return (
@@ -105,6 +106,7 @@ function App() {
           <Route path="/damagedbook" component={DamagedBooks} />
 
           <Route path="/viewbook/:title" component={ViewBook} />
+          <Route path="/bookdetail/dashboard/:title" component={ViewBookDashboard} />
           <Route path="/category/books/fantasy" component={Fantasy} />
           <Route path="/category/books/adventure" component={Adventure} />
           <Route path="/category/books/sciencefiction" component={ScienceFiction} />
