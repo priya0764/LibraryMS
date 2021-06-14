@@ -38,11 +38,9 @@ import Register from './components/register';
 import UserLogin from './components/userLogin';
 import Logout from './components/logout';
 import Home from './components/home';
-import SearchBook from './components/searchBook';
 
 import UserBooksList from './components/userBooks';
 import ViewBook from './components/viewBook';
-import CategoryListHome from "./components/categoryListHome";
 
 import UserPage from './components/userPage'
 import Publishers from './components/publishers';
@@ -72,14 +70,11 @@ import Dashboard from './components/dashboard';
 import SearchAuthor from './components/searchAuthorByName';
 import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
+import CategoryBookHome from './components/categoryBookHome';
+
 import Disclaimer from './components/disclaimer'
 
 import UserNavbar from './components/userNavbar';
-
-
-
-
-
 
 function App() {
   return (
@@ -106,7 +101,7 @@ function App() {
 
           <Route path="/book/details" component={UserBooksList} />
           <Route path="/book/add" component={AddBook} />
-          <Route path="/getbook/subject/:subject" component={SearchBook} />
+          <Route path="/getbook/subject/:subject" component={Books} />
           <Route path="/book/update/:id" component={BookDetails} />
           <Route path="/book" component={Books} />
           <Route path="/booksorder/add" component={AddBooksOrder} />
@@ -119,7 +114,7 @@ function App() {
           <Route path="/damagedbook" component={DamagedBooks} />
 
           <Route path="/viewbook/:title" component={ViewBook} />
-          <Route path="/category/books" component={CategoryListHome} />
+          <Route path="/category/books" component={CategoryBookHome} />
 
           <Route path="/user/add" component={AddUser} />
           <Route path="/user/update/:id" component={UserDetails} />
@@ -170,7 +165,6 @@ function App() {
         </Switch>
         </Router>
       </div>
-
     </div>
   );
 }
