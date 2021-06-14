@@ -46,6 +46,7 @@ class FeedbackDetails extends Component {
               name="feedbackDate"
               value={this.state.feedback.feedbackDate}
               onChange={this.handleChange}
+              required
             />
             </div>
             <div className="mb-3">
@@ -60,6 +61,7 @@ class FeedbackDetails extends Component {
                 name="description"
                 value={this.state.feedback.description}
                 onChange={this.handleChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -76,6 +78,7 @@ class FeedbackDetails extends Component {
                 max='5'
                 value={this.state.feedback.rating}
                 onChange={this.handleChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -90,6 +93,7 @@ class FeedbackDetails extends Component {
                 name="comments"
                 value={this.state.feedback.comments}
                 onChange={this.handleChange}
+                required
               />
             </div>
             <button type="submit" className="btn btn-primary float-right mt-3">
