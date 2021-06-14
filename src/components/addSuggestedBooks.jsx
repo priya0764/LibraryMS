@@ -1,135 +1,178 @@
-import React, { Component } from 'react';
-import SuggestedBooksService from '../services/suggestedBooksService';
+import React, { Component } from "react";
+import SuggestedBooksService from "../services/suggestedBooksService";
 import DashboardNav from './dashboardnav';
+
 class AddSuggestedBooks extends Component {
+  state = {
+    suggestedbook: {
+        id:'',
+        title: '',
+        subject: '',
+        author: '',
+        publications: '',
+        description: '',
+        suggested_date: '',
+        status: ''
+    },
+  };
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            id: '',
-            title: '',
-            subject: '',
-            author: '',
-            publications: '',
-            description: '',
-            suggested_date: '',
-            status: ''
+  handleSubmit = (event) => {
+    event.preventDefault();
+    SuggestedBooksService.addSuggestedBooks(this.state.suggestedbook).then((res) => {
+      this.props.history.push("/suggestedbooks");
+    });
+  };
 
-        }
+  handleChange = (event) => {
+    const suggestedbook = { ...this.state.suggestedbook };
+    suggestedbook[event.currentTarget.name] = event.currentTarget.value;
+    this.setState({ suggestedbook });
+  };
 
-        this.changeTitleHandler = this.changeTitleHandler.bind(this);
-        this.changeSubjectHandler = this.changeSubjectHandler.bind(this);
-        this.changeAuthorHandler = this.changeAuthorHandler.bind(this);
-        this.changePublicationsHandler = this.changePublicationsHandler.bind(this);
-        this.changeDescriptionHandler = this.changeDescriptionHandler.bind(this);
-        this.changeSuggested_DateHandler = this.changeSuggested_DateHandler.bind(this);
-        this.changeStatusHandler = this.changeStatusHandler.bind(this);
-        this.saveSuggestedBooks = this.saveSuggestedBooks.bind(this);
-        this.changeIdHandler = this.changeIdHandler.bind(this);
+  render() {
+    return (
+      <React.Fragment>
+          <DashboardNav />
+        <div className="content-wrapper" style={{minHeight: 757.08, textAlign:"left"}}>
+          <section className="content">
+            <div className="box box-mytheme">
+            <h3 className="text-center">Add Suggested Books</h3>
+              <div className="row">
+                <div className="col-md-6">
+                  <form onSubmit={this.handleSubmit}>
+                    <div className="box-body">
+                      <div className="form-group ">
+                        <label htmlFor="id">Id</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="number"
+                          className="form-control"
+                          id="id"
+                          name="id"
+                          value={this.state.suggestedbook.id}
+                          onChange={this.handleChange}
+                          placeholder="Enter book id"
+                          required
+                          autoFocus
+                        />
+                      </div>
 
-    }
+                      <div className="form-group ">
+                        <label htmlFor="title">Title</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="title"
+                          name="title"
+                          value={this.state.suggestedbook.title}
+                          onChange={this.handleChange}
+                          placeholder="Enter title"
+                          required
+                        />
+                      </div>
 
-    saveSuggestedBooks = (e) => {
-        e.preventDefault();
-        let suggestedBooks = { id: this.state.id, title: this.state.title, subject: this.state.subject, author: this.state.author, publications: this.state.publications, description: this.state.description, suggested_date: this.state.suggested_date, status: this.state.status };
-        console.log('suggestedBooks => ' + JSON.stringify(suggestedBooks));
+                      <div className="form-group ">
+                        <label htmlFor="subject">Subject</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="subject"
+                          name="subject"
+                          value={this.state.suggestedbook.subject}
+                          onChange={this.handleChange}
+                          placeholder="Enter Subject"
+                          required
+                        />
+                      </div>
 
-        SuggestedBooksService.addSuggestedBooks(suggestedBooks).then(res => {
-            this.props.history.push(`/suggestedbooks`);
-        });
+                      <div className="form-group ">
+                        <label htmlFor="author">Author</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="author"
+                          name="author"
+                          value={this.state.suggestedbook.author}
+                          onChange={this.handleChange}
+                          placeholder="Enter Author"
+                          required
+                        />
+                      </div>
 
-    }
+                      <div className="form-group ">
+                        <label htmlFor="publications">Publications</label>{" "}
+                         <input
+                          type="text"
+                          className="form-control"
+                          id="publications"
+                          name="publications"
+                          value={this.state.suggestedbook.publications}
+                          onChange={this.handleChange}
+                          placeholder="Enter Publications"
+                          required
+                        />
+                      </div>
 
-    changeIdHandler = (event) => {
-        this.setState({ id: event.target.value })
-    }
+                      <div className="form-group ">
+                        <label htmlFor="description">Description</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="description"
+                          name="description"
+                          value={this.state.suggestedbook.description}
+                          onChange={this.handleChange}
+                          placeholder="Enter Description"
+                          required
+                        />
+                      </div>
 
-    changeTitleHandler = (event) => {
-        this.setState({ title: event.target.value })
-    }
+                      <div className="form-group ">
+                        <label htmlFor="suggested_date">Suggested Date</label>
+                        <input
+                          type="date"
+                          className="form-control"
+                          id="suggested_date"
+                          name="suggested_date"
+                          value={this.state.suggestedbook.suggested_date}
+                          onChange={this.handleChange}
+                          placeholder="yyyy-mm-dd"
+                          required
+                        />
+                      </div>
 
-    changeSubjectHandler = (event) => {
-        this.setState({ subject: event.target.value })
-    }
-
-    changeAuthorHandler = (event) => {
-        this.setState({ author: event.target.value })
-    }
-    changePublicationsHandler = (event) => {
-        this.setState({ publications: event.target.value })
-    }
-    changeDescriptionHandler = (event) => {
-        this.setState({ description: event.target.value })
-    }
-    changeSuggested_DateHandler = (event) => {
-        this.setState({ suggested_date: event.target.value })
-    }
-    changeStatusHandler = (event) => {
-        this.setState({ status: event.target.value })
-    }
-
-    cancel() {
-        this.props.history.push('/suggestedbooks');
-    }
-
-
-
-    render() {
-        return (
-            <div>
-                <DashboardNav />
-                <div className="container">
-                    <div className="row">
-                        <div className="caed col-md-6 offset-md-3 offset-md-3">
-                            <h3 className="text-center">Add Suggested Books</h3>
-                            <div className="card-body">
-                                <form>
-                                    <div className="form-group">
-                                        <label>Id:</label>
-                                        <input placeholder="Id" name="Id" className="form-control" value={this.state.id} onChange={this.changeIdHandler} required />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Title:</label>
-                                        <input placeholder="title" name="title" className="form-control" value={this.state.title} onChange={this.changeTitleHandler} required />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Subject:</label>
-                                        <input placeholder="subject" name="subject" className="form-control" value={this.state.subject} onChange={this.changeSubjectHandler}  required/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Author:</label>
-                                        <input placeholder="author" name="author" className="form-control" value={this.state.author} onChange={this.changeAuthorHandler}  required/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Publications:</label>
-                                        <input placeholder="publications" name="publications" className="form-control" value={this.state.publications} onChange={this.changePublicationsHandler} required/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Description</label>
-                                        <input placeholder="description" name="description" className="form-control" value={this.state.description} onChange={this.changeDescriptionHandler} required />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Suggested Date:</label>
-                                        <input placeholder="yyyy-mm-dd" name="" className="form-control" value={this.state.suggested_date} onChange={this.changeSuggested_DateHandler} required/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Status:</label>
-                                        <input placeholder="status" name="status" className="form-control" value={this.state.status} onChange={this.changeStatusHandler} required />
-                                    </div>
-
-                                    <button className="btn btn-success" onClick={this.saveSuggestedBooks}> Save </button>
-                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Cancel</button>
-
-                                </form>
-
-                            </div>
-                        </div>
+                      <div className="form-group ">
+                        <label htmlFor="status">Status</label>
+                        <input
+                          name="status"
+                          id="status"
+                          className="form-control"
+                          value={this.state.suggestedbook.status}
+                          onChange={this.handleChange}
+                          placeholder="Enter the Status"
+                          required
+                        />                                              
+                       
+                      </div>                                  
+                      
                     </div>
+                    <div className="box-footer">
+                    <button className="btn btn-success" onClick={this.handleSubmit}> Save </button>
+                    <button className="btn btn-danger" onClick={()=>{this.props.history.push("/suggestedbooks")}} style={{ marginLeft: "10px" }}>Cancel</button>
+                    </div>
+                  </form>
                 </div>
-
+              </div>
             </div>
-        )
-    }
+          </section>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
 export default AddSuggestedBooks;
