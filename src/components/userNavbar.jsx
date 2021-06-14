@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
-class LoginNavbar extends Component {
+class UserNavbar extends Component {
   state = {
     search: "",
   };
@@ -10,40 +10,36 @@ class LoginNavbar extends Component {
     console.log(event.target.value);
     this.setState({ search: event.target.value });
   };
-
+  
   render() {
     return (
       <React.Fragment>
         <section className="header-top">
           <div className="container-fluid">
             <div className="row">
-              <div
-                className="col-lg-5 col-md-5 col-sm-12 col-xs-12"
-                style={{ textAlign: "left", fontSize: 20 }}
-              >
-                <NavLink
-                  to="mailto:admin@gmail.com"
-                  className="header-email ml-5"
-                >
+            <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12" style={{textAlign:"left", fontSize:20}}>
+                <NavLink to="mailto:admin@gmail.com" className="header-email ml-5">
                   <i className="fa fa-envelope"></i> admin@gmail.com{" "}
                 </NavLink>
                 <NavLink to="" className="header-phone ml-5">
                   <i className="fa fa-phone"></i> 123456{" "}
                 </NavLink>
               </div>
-              <div
-                className="col-lg-7 col-md-7 col-sm-12 col-xs-12"
-                style={{ textAlign: "right", fontSize: 20 }}
-              >
-                <ul className="header-items">
+              <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 " style={{textAlign:"right", fontSize:20}}>
+                <ul className="header-items float-right">
                   <li>
-                    <NavLink to="/userOrAdmin" className="mr-2">
-                      <i className="fa fa-sign-in"></i> Login
+                    <NavLink to="#" className="mr-2 ">
+                      <i className="fa fa-dashboard"></i> DashBoard
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/register" className="mr-5">
-                      <i className="fa fa-user-plus ml-2"></i> Register
+                    <NavLink to="#" className="mr-2">
+                    <i class="fa fa-lock"></i> My Account
+                    </NavLink>                    
+                  </li>
+                  <li>
+                    <NavLink to="#" className="mr-2">
+                    <i class="fa fa-sign-out"></i> Logout
                     </NavLink>
                   </li>
                 </ul>
@@ -54,7 +50,7 @@ class LoginNavbar extends Component {
         <section className="header ml-5">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-sm-2">
+              <div className="col-sm-3">
                 <NavLink to="/">
                   <img
                     className="header-logo"
@@ -74,19 +70,18 @@ class LoginNavbar extends Component {
                         name="search"
                         onChange={this.onChange}
                       />
-                      <NavLink to="/category/books"
-                      className="input-group-append search-btn">
+                      <div className="input-group-append search-btn">
                         <input
                           type="submit"
                           className="input-group-text"
                           value="Search"
                         />
-                      </NavLink>
+                      </div>
                     </div>
                   </form>
                 </div>
               </div>
-              <div className="col-sm-4">
+              <div className="col-sm-3">
                 <div className="carts float-right">
                   <button
                     className="btn btn-success btn btn-lg cart-item-badge mr-5"
@@ -111,33 +106,38 @@ class LoginNavbar extends Component {
           </div>
         </section>
         <section className="mainmenu">
-          <div
-            className="container-fluid"
-            style={{ textAlign: "left", fontSize: 20 }}
-          >
+          <div className="container-fluid" style={{textAlign:"left", fontSize:20}}>
             <ul>
               <li>
-                <NavLink className="container-fluid ml-5" to="/">
+                <NavLink
+                  className="container-fluid ml-5"
+                  to="#"
+                >
                   <i className="fa fa-home"></i>Home
                 </NavLink>
               </li>
               <li>
-
                 <NavLink
                   className="container"
-                  to="/disclaimer"
+                  to="#"
                 >
-
                   Ebook
                 </NavLink>
               </li>
               <li>
-                <NavLink className="container" to="/category/books">
+                <NavLink
+                  className="container"
+                  to="/book/details"
+                >
                   Book
                 </NavLink>
               </li>
+  
               <li>
-                <NavLink className="container" to="">
+                <NavLink
+                  className="container"
+                  to="#"
+                >
                   Contact
                 </NavLink>
               </li>
@@ -149,4 +149,4 @@ class LoginNavbar extends Component {
   }
 }
 
-export default LoginNavbar;
+export default UserNavbar;

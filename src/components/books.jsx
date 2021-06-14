@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BookService from "../services/bookService";
 import { Link } from "react-router-dom";
+import DashboardNav from "./dashboardnav";
 
 class Books extends Component {
   state = {
@@ -18,7 +19,11 @@ class Books extends Component {
   }
 
   getBookBySubject = (subject) => {
-    this.props.history.push(`/getbook/subject/${subject}`);
+    // this.props.history.push(`/getbook/subject/${subject}`);
+    BookService.getBookBySubject(subject).then((res) => {
+      this.setState({ books: res.data });
+      console.log(this.state.books);
+    });
   };
 
   handleUpdate = (id) => {
@@ -39,13 +44,14 @@ class Books extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className="content-header">
+        <DashboardNav/>
+        <section className="content-header" style={{marginLeft:230}}>
           <h2 style={{ textAlign: "left" }}>Book</h2>
           <hr />
         </section>
-        <section className="content" style={{ fontFamily: "revert" }}>
+        <section className="content" style={{ fontFamily: "revert", marginLeft:300 }}>
           <div className="box-head">
-            <div className="d-flex justify-content-between mb-3">
+            <div className="d-flex justify-content-between">
               <Link to="/book/add" className="btn btn-dark">
                 <i className="fa fa-plus"></i> Add Book
               </Link>
@@ -71,7 +77,8 @@ class Books extends Component {
               <div id="hide-table">
                 <table
                   id="example1"
-                  className="table table-bordered table-striped mt-2"
+                  className="table table-bordered table-striped"
+                  style={{ marginTop: 100, marginLeft:330, width:"auto"}}
                 >
                   <thead>
                     <tr>

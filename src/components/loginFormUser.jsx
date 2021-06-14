@@ -3,28 +3,25 @@ import LoginNavbar from "./loginNavbar";
 
 import UsersService from "../services/usersService";
 
-
-
 class LoginFormUser extends Component {
   state = {
     login: {
-      email:'',
-      password:'',
+      email: "",
+      password: "",
     },
   };
-  handleSubmit=(event)=>{
+  handleSubmit = (event) => {
     event.preventDefault();
     console.log("loggedIn");
-    UsersService.login(this.state.login).then((res)=>{
-        this.props.history.push("/home");
-
+    UsersService.login(this.state.login).then((res) => {
+      this.props.history.push("/home");
     });
-};
-handleChange=(event)=>{
-    const login={...this.state.login};
-    login[event.currentTarget.name]=event.currentTarget.value;
-    this.setState({login})
-}
+  };
+  handleChange = (event) => {
+    const login = { ...this.state.login };
+    login[event.currentTarget.name] = event.currentTarget.value;
+    this.setState({ login });
+  };
   render() {
     return (
       <div>

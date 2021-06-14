@@ -18,27 +18,27 @@ class LogoutNavbar extends Component {
           <div className="container-fluid">
             <div className="row">
               <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12" style={{textAlign:"left", fontSize:20}}>
-                <NavLink to="mailto:admin@gmail.com" className="header-email ml-5">
+                <div className="header-email ml-5">
                   <i className="fa fa-envelope"></i> admin@gmail.com{" "}
-                </NavLink>
-                <NavLink to="" className="header-phone ml-5">
+                </div>
+                <div className="header-phone ml-5">
                   <i className="fa fa-phone"></i> 123456{" "}
-                </NavLink>
+                </div>
               </div>
               <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12" style={{textAlign:"right", fontSize:20}}>
                 <ul className="header-items">
                   <li>
-                    <NavLink to="" className="mr-2">
+                    <NavLink to="/dashboard" className="mr-2">
                       <i className="fa fa-dashboard"></i> DashBoard
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="" className="mr-2">
+                    <NavLink to="/adminPage" className="mr-2 ml-2">
                     <i class="fa fa-lock"></i> My Account
                     </NavLink>                    
                   </li>
                   <li>
-                    <NavLink to="" className="mr-5">
+                    <NavLink to="" className="mr-5 ml-2">
                     <i class="fa fa-sign-out"></i> Logout
                     </NavLink>
                   </li>
@@ -132,14 +132,7 @@ class LogoutNavbar extends Component {
                   Book
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  className="container"
-                  to=""
-                >
-                  Shop
-                </NavLink>
-              </li>
+  
               <li>
                 <NavLink
                   className="container"

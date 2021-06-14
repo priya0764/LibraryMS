@@ -3,14 +3,19 @@ import "./design.css";
 
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Readers from "./components/readers";
-import Feedback from "./components/feedback"
+
 import AddFeedback from './components/addFeedback';
 import FeedbackDetails from './components/feedbackDetails';
 
 import AddReader from './components/addReader';
 import ReaderDetails from './components/readerDetails';
-import usersService from "./services/usersService";
+
+
 import LoginFormUser from './components/loginFormUser'
+
+import Feedback from './components/feedback';
+
+
 
 
 
@@ -39,16 +44,17 @@ import Register from './components/register';
 import UserLogin from './components/userLogin';
 import Logout from './components/logout';
 import Home from './components/home';
-import SearchBook from './components/searchBook';
 
 import UserBooksList from './components/userBooks';
 import ViewBook from './components/viewBook';
-import CategoryListHome from "./components/categoryListHome";
 
 import UserPage from './components/userPage'
 import Publishers from './components/publishers';
 
+
 //import { BrowserRouter as  Route,Router,Switch } from 'react-router-dom';
+import { BrowserRouter as  Router } from 'react-router-dom';
+
 
 
 import ViewPublisher from './components/viewPublisher';
@@ -76,6 +82,7 @@ import Dashboard3 from "./components/dashboard3";
 import SearchAuthor from './components/searchAuthorByName';
 import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
+
 import ContactPage from './components/contactPage';
 import ThankyouPage from "./components/thankyouPage";
 
@@ -101,6 +108,11 @@ import Disclaimer from './components/disclaimer'
 
 
 
+import CategoryBookHome from './components/categoryBookHome';
+
+
+
+import UserNavbar from './components/userNavbar';
 
 function App() {
   return (
@@ -127,7 +139,7 @@ function App() {
 
           <Route path="/book/details" component={UserBooksList} />
           <Route path="/book/add" component={AddBook} />
-          <Route path="/getbook/subject/:subject" component={SearchBook} />
+          <Route path="/getbook/subject/:subject" component={Books} />
           <Route path="/book/update/:id" component={BookDetails} />
           <Route path="/book" component={Books} />
           <Route path="/booksorder/add" component={AddBooksOrder} />
@@ -140,7 +152,7 @@ function App() {
           <Route path="/damagedbook" component={DamagedBooks} />
 
           <Route path="/viewbook/:title" component={ViewBook} />
-          <Route path="/category/books" component={CategoryListHome} />
+          <Route path="/category/books" component={CategoryBookHome} />
 
           <Route path="/user/add" component={AddUser} />
           <Route path="/user/update/:id" component={UserDetails} />
@@ -167,9 +179,9 @@ function App() {
           <Route path="/view-suggestedbooks/:id" component={ViewSuggestedBooks}></Route>
 
           <Route path="/userPage" component={UserPage} />
+          <Route path="/userNavbar" component={UserNavbar}/>
 
 
-        
             <Route path="/author" component={Author}></Route>
             <Route path="/view-author/:authorId" component={ViewAuthor}></Route>
             <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
@@ -180,7 +192,7 @@ function App() {
             <Route path="/thankyou-Page" component={ThankyouPage}></Route>
 
             <Route path="/disclaimer" component={Disclaimer}></Route>
-
+           
 
 
 
@@ -197,7 +209,6 @@ function App() {
         </Switch>
         </Router>
       </div>
-
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DamagedBooksService from "../services/damagedBooksService";
+import DashboardNav from './dashboardnav';
 
 class DamagedBooksDetails extends Component {
   state = {
@@ -48,11 +49,14 @@ class DamagedBooksDetails extends Component {
 
   render() {
     return (
+      <React.Fragment>
+        <DashboardNav/>
       <div className="w-25 mx-auto">
-        <form onSubmit={this.handleSubmit}>
           <h2>{this.state.damagedBook.id}</h2>
+        <form onSubmit={this.handleSubmit} style={{textAlign:"left"}}>
           <div className="mb-3">
             <label htmlFor="quantity">Quantity</label>
+            <span className="text-red">*</span>
             <input
               type="text"
               className="form-control"
@@ -61,12 +65,14 @@ class DamagedBooksDetails extends Component {
               value={this.state.damagedBook.quantity}
               onChange={this.handleChange}
               autoFocus
+              required
             />
           </div>
           <div className="mb-3">
             <label htmlFor="description" className="form-label">
               Description
             </label>
+            <span className="text-red">*</span>
             <input
               type="text"
               className="form-control"
@@ -74,6 +80,7 @@ class DamagedBooksDetails extends Component {
               name="description"
               value={this.state.damagedBook.description}
               onChange={this.handleChange}
+              required
             />
           </div>
           <button
@@ -99,6 +106,7 @@ class DamagedBooksDetails extends Component {
           </button>
         </form>
       </div>
+      </React.Fragment>
     );
   }
 }

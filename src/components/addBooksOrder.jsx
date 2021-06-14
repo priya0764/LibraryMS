@@ -28,11 +28,12 @@ class AddBooksOrder extends Component {
     return (
       <div className="w-25 mx-auto">
         <form onSubmit={this.handleSubmit}>
-          <div className="mb-3">
+          <div className="mb-3" style={{textAlign:"left"}}>
             <label htmlFor="orderId">Order Id</label>
+            <span className="text-red">*</span>
             <input
-              type="text"
-              className="form-control"
+              type="number"
+              className="form-control mb-2"
               id="orderId"
               name="orderId"
               value={this.state.booksOrder.orderId}
@@ -40,9 +41,10 @@ class AddBooksOrder extends Component {
               autoFocus
             />
             <label htmlFor="quantity">Quantity</label>
+            <span className="text-red">*</span>
             <input
-              type="text"
-              className="form-control"
+              type="number"
+              className="form-control mb-2"
               id="quantity"
               name="quantity"
               value={this.state.booksOrder.quantity}
@@ -52,9 +54,10 @@ class AddBooksOrder extends Component {
             <label htmlFor="orderDate" className="form-label">
               Order Date
             </label>
+            <span className="text-red">*</span>
             <input
-              type="text"
-              className="form-control"
+              type="date"
+              className="form-control mb-2"
               id="orderDate"
               name="orderDate"
               value={this.state.booksOrder.orderDate}
@@ -64,9 +67,10 @@ class AddBooksOrder extends Component {
             <label htmlFor="orderStatus" className="form-label">
               Order Status
             </label>
+            <span className="text-red">*</span>
             <input
               type="text"
-              className="form-control"
+              className="form-control mb-2"
               id="orderStatus"
               name="orderStatus"
               value={this.state.booksOrder.orderStatus}
@@ -76,9 +80,10 @@ class AddBooksOrder extends Component {
             <label htmlFor="orderStatus" className="form-label">
               Publications
             </label>
+            <span className="text-red">*</span>
             <input
               type="text"
-              className="form-control"
+              className="form-control mb-2"
               id="publications"
               name="publications"
               value={this.state.booksOrder.publications}

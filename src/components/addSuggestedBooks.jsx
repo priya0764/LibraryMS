@@ -84,35 +84,35 @@ class AddSuggestedBooks extends Component {
                                 <form>
                                     <div className="form-group">
                                         <label>Id:</label>
-                                        <input placeholder="Id" name="Id" className="form-control" value={this.state.id} onChange={this.changeIdHandler} />
+                                        <input placeholder="Id" name="Id" className="form-control" value={this.state.id} onChange={this.changeIdHandler} required />
                                     </div>
                                     <div className="form-group">
                                         <label>Title:</label>
-                                        <input placeholder="title" name="title" className="form-control" value={this.state.title} onChange={this.changeTitleHandler} />
+                                        <input placeholder="title" name="title" className="form-control" value={this.state.title} onChange={this.changeTitleHandler} required />
                                     </div>
                                     <div className="form-group">
                                         <label>Subject:</label>
-                                        <input placeholder="subject" name="subject" className="form-control" value={this.state.subject} onChange={this.changeSubjectHandler} />
+                                        <input placeholder="subject" name="subject" className="form-control" value={this.state.subject} onChange={this.changeSubjectHandler}  required/>
                                     </div>
                                     <div className="form-group">
                                         <label>Author:</label>
-                                        <input placeholder="author" name="author" className="form-control" value={this.state.author} onChange={this.changeAuthorHandler} />
+                                        <input placeholder="author" name="author" className="form-control" value={this.state.author} onChange={this.changeAuthorHandler}  required/>
                                     </div>
                                     <div className="form-group">
                                         <label>Publications:</label>
-                                        <input placeholder="publications" name="publications" className="form-control" value={this.state.publications} onChange={this.changePublicationsHandler} />
+                                        <input placeholder="publications" name="publications" className="form-control" value={this.state.publications} onChange={this.changePublicationsHandler} required/>
                                     </div>
                                     <div className="form-group">
                                         <label>Description</label>
-                                        <input placeholder="description" name="description" className="form-control" value={this.state.description} onChange={this.changeDescriptionHandler} />
+                                        <input placeholder="description" name="description" className="form-control" value={this.state.description} onChange={this.changeDescriptionHandler} required />
                                     </div>
                                     <div className="form-group">
                                         <label>Suggested Date:</label>
-                                        <input placeholder="yyyy-mm-dd" name="" className="form-control" value={this.state.suggested_date} onChange={this.changeSuggested_DateHandler} />
+                                        <input placeholder="yyyy-mm-dd" name="" className="form-control" value={this.state.suggested_date} onChange={this.changeSuggested_DateHandler} required/>
                                     </div>
                                     <div className="form-group">
                                         <label>Status:</label>
-                                        <input placeholder="status" name="status" className="form-control" value={this.state.status} onChange={this.changeStatusHandler} />
+                                        <input placeholder="status" name="status" className="form-control" value={this.state.status} onChange={this.changeStatusHandler} required />
                                     </div>
 
                                     <button className="btn btn-success" onClick={this.saveSuggestedBooks}> Save</button>

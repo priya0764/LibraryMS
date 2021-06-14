@@ -45,8 +45,9 @@ class Readers extends Component {
     return (
       <div className="w-75 mt-5 mx-auto">
         <div className="d-flex justify-content-between">
-          <Link to="/reader/add" className="btn btn-secondary btn-large mb-1">
-            Add
+          <Link to="/reader/add" className="btn btn-dark">
+          <i className="fa fa-plus"></i>
+            Add Reader
           </Link>
           <form class="form-inline my-2 my-lg-0">
             <input
@@ -67,7 +68,7 @@ class Readers extends Component {
         </div>
         <div>
           <div className="row">
-            <table className="table table-striped table-bordered ">
+            <table className="table table-striped table-bordered mt-2">
               <thead>
                 <tr>
                   <th>Reader FirstName</th>
@@ -87,15 +88,27 @@ class Readers extends Component {
                     <td>{reader.email}</td>
                     <td>
                       <Link to={`/reader/update/${reader.id}`}>
-                        <button className="btn btn-secondary">Update</button>
+                        <button 
+                        type="button"
+                  
+                        className="btn btn-warning btn-xs"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Edit"
+                       >  <i className="fa fa-edit"></i></button>{" "}
                 </Link>
 
                       <button
-                        className="btn btn-danger ml-2"
+                       type="button"
+                        className="btn btn-danger btn-xs"
                         onClick={() => this.deleteReader(reader.id)}
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Delete"
                       >
-                        Delete
-                      </button>
+                         <i className="fa fa-trash-o"></i>
+                       
+                      </button>{" "}
                     </td>
                   </tr>
                 ))}

@@ -19,5 +19,8 @@ class SuggestedBooksService {
   async deleteSuggestedBooks(id) {
     return await axios.delete(SUGGESTED_BOOKS_API_BASE_URL + "/deletebook/" + id);
   }
+  async getSuggestedBooksByTitle(title){
+    return await axios.get(SUGGESTED_BOOKS_API_BASE_URL + "/title/" + title)
+  }
 }
 export default new SuggestedBooksService();
