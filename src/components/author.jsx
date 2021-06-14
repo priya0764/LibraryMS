@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AuthorService from "../services/authorService";
 import {Link} from "react-router-dom";
+import DashboardNav from "./dashboardnav";
 import "./raghu.css";
 
 class Author extends Component {
@@ -38,7 +39,7 @@ class Author extends Component {
     AuthorService.deleteAuthor(authorId).then((res) => {
       this.setState({
         authors: this.state.authors.filter(
-          (author) => author.authorId !== authorId
+          (authors) => authors.authorId !== authorId
         ),
       });
     });
@@ -56,6 +57,7 @@ class Author extends Component {
   render() {
     return (
       <div>
+        <DashboardNav />
         
         <h2 className="text-center">Authors List</h2>
         {/* <div className="row">
@@ -63,11 +65,11 @@ class Author extends Component {
             Add
           </button>
         </div> */}
-        <div className="d-flex justify-content-between">
-            <Link to="/add-author" className="btn btn-success btn-large mb-1" style={{marginLeft : "200px" }} >
-              Add
+        <div className="d-flex justify-content-between" style={{marginLeft:300, marginTop:25,  width:1200}}>
+            <Link to="/add-author" className="btn btn-success " >
+            <i class="bi bi-plus-square" style={{marginRight:10}}></i>Add
             </Link>
-            <form className="form-inline my-2 my-lg-0">
+            <form className="form-inline my-2 my-lg-0" style={{marginLeft: 500}}>
               <input
                 className="form-control mr-sm-2"
                 type="search"
@@ -82,14 +84,15 @@ class Author extends Component {
                 type="button"
                 onClick={() => this.getAuthorByName(this.state.search)}
               >
-                Search
+                <i class="bi bi-search" style={{marginRight:10}}></i>Search
               </button>
             </form>
           </div>
         <div className="row" class="drop">
-          <table className="table table-sm table-striped  table-bordered " style={{marginLeft : "200px" }} >
+          <table className="table table-sm table-striped  table-bordered " style={{marginLeft :250, marginTop: 90, width:1200 }} >
             <thead class="thead-dark">
               <tr>
+                <th>Photo</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email Id</th>
@@ -98,40 +101,45 @@ class Author extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.authors.map((author) => (
-                <tr key={author.authorId}>
-                  <td>{author.firstName}</td>
-                  <td>{author.lastName}</td>
-                  <td>{author.email}</td>
-                  <td>{author.contactno}</td>
+              {this.state.authors.map((authors) => (
+                <tr key={authors.authorId}>
+                  <td>
+                    <img src="http://demo.greensoftbd.xyz/greenlms/v2.2/uploads/member/default.png" 
+                    alt="" width="60" height="60"></img>
+                  </td>
+                  <td>{authors.firstName}</td>
+                  <td>{authors.lastName}</td>
+                  <td>{authors.email}</td>
+                  <td>{authors.contactno}</td>
 
                   <td>
                     <button
-                      onClick={() => this.deleteAuthor(author.authorId)}
+                      onClick={() => this.deleteAuthor(authors.authorId)}
                       className="btn btn-danger"
                     >
-                      Delete
+                     <i class="bi bi-trash-fill"></i> Delete
                     </button>
                     <button
                       style={{ marginLeft: "10px" }}
-                      onClick={() => this.viewAuthor(author.authorId)}
+                      onClick={() => this.viewAuthor(authors.authorId)}
                       className="btn btn-primary"
                     >
-                      View
+                      <i class="bi bi-eye-fill"></i>View
                     </button>
                     <button
                       style={{ marginLeft: "10px" }}
-                      onClick={() => this.updateAuthor(author.authorId)}
+                      onClick={() => this.updateAuthor(authors.authorId)}
                       className="btn btn-secondary"
                     >
-                      Update
+                     <i class="bi bi-pencil-square"></i> Update
                     </button>
                   </td>
                 </tr>
               ))}
             </tbody>
+          
           </table>
-          <div><a class="btn btn-primary " style={{marginTop:"350px", marginLeft:"100px"}} href="\dashboard" role="button">Back</a></div>
+          
         </div>
         
  

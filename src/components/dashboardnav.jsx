@@ -25,8 +25,8 @@ class DashboardNav extends Component {
                 >
                   <span className="sr-only">Toggle navigation</span>
                 </NavLink>
-
-                <div className="navbar-custom-menu pull-right">
+<NavLink to="/adminPage">
+                <div className="navbar-custom-menu pull-right" style={{color:"white"}}>
                   <ul className="nav navbar-nav">
                     <li className="dropdown user user-menu">
                       <img
@@ -38,7 +38,9 @@ class DashboardNav extends Component {
                     </li>
                   </ul>
                 </div>
+                </NavLink>
               </div>
+              
             </header>
           </div>
         {/* </div>
@@ -102,6 +104,12 @@ class DashboardNav extends Component {
                     <Link to="/suggestedbooks">
                       <i className="fa fa-book"></i>{" "}
                       <span>Suggested Books</span>
+                    </Link>
+                  </li>
+                  <li className=" ">
+                    <Link to="/booksReturned">
+                      <i className="fa fa-book"></i>{" "}
+                      <span>Books Returned</span>
                     </Link>
                   </li>
 
