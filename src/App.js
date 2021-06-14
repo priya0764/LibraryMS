@@ -3,9 +3,16 @@ import "./design.css";
 
 import { Route, Switch } from "react-router-dom";
 import Readers from "./components/readers";
-import Feedback from "./components/feedback"
+
 import AddFeedback from './components/addFeedback';
 import FeedbackDetails from './components/feedbackDetails';
+
+import AddReader from './components/addReader';
+import ReaderDetails from './components/readerDetails';
+import Feedback from './components/feedback';
+
+
+
 import UserOrAdmin from './components/userOrAdmin';
 import LoginFormAdmin from './components/loginFormAdmin';
 import AdminPage from './components/adminPage'
@@ -37,6 +44,10 @@ import ViewBook from './components/viewBook';
 
 import UserPage from './components/userPage'
 import Publishers from './components/publishers';
+
+import { BrowserRouter as  Router } from 'react-router-dom';
+
+
 import ViewPublisher from './components/viewPublisher';
 import UpdatePublisher from './components/updatePublisher';
 import AddPublisher from './components/addPublisher';
@@ -58,14 +69,18 @@ import ViewBooksReturned from './components/viewBooksReturned';
 import Dashboard from './components/dashboard';
 import SearchAuthor from './components/searchAuthorByName';
 import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
-import AddReader from './components/addReader';
-import ReaderDetails from './components/readerDetails';
+
 import CategoryBookHome from './components/categoryBookHome';
+
+import Disclaimer from './components/disclaimer'
+
+import UserNavbar from './components/userNavbar';
 
 function App() {
   return (
     <div className="App">
       <div className="container-fluid">
+        <Router>
         <Switch>
           <Route path="/reader/add" component={AddReader} />
           <Route path="/reader/update/:id" component={ReaderDetails} />
@@ -126,12 +141,18 @@ function App() {
           <Route path="/view-suggestedbooks/:id" component={ViewSuggestedBooks}></Route>
 
           <Route path="/userPage" component={UserPage} />
+          <Route path="/userNavbar" component={UserNavbar}/>
 
-          <Route path="/author" component={Author}></Route>
-          <Route path="/view-author/:authorId" component={ViewAuthor}></Route>
-          <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
-          <Route path="/add-author" component={AddAuthor}></Route>
-          <Route path="/author-name/:firstName" component={SearchAuthor}></Route>
+
+        <Route path="/author" exact component={Author}></Route>
+            <Route path="/author" component={Author}></Route>
+            <Route path="/view-author/:authorId" component={ViewAuthor}></Route>
+            <Route path="/update-author/:authorId" component={UpdateAuthor}></Route>
+            <Route path="/add-author" component={AddAuthor}></Route>
+            <Route path="/author-name/:firstName" component={SearchAuthor}></Route>
+            <Route path="/disclaimer" component={Disclaimer}></Route>
+           
+
 
 
           <Route path="/booksReturned" component={BooksReturned}></Route>
@@ -142,9 +163,10 @@ function App() {
           <Route path="/returnedBooks-delayed/:delayedDays" component={SearchReturnedBook}></Route>
           <Route path="/" exact component={Home} />
         </Switch>
+        </Router>
       </div>
     </div>
   );
 }
 
-export default App;
+export default App; 

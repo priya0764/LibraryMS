@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LogoutNavbar from './logoutNavbar';
+import Footer from './footer'
 
 class UserPage extends Component {
   render() {
@@ -18,14 +19,26 @@ class UserPage extends Component {
                   <div className="slider-menu">
                     <ul>
                       <li>
-                        <Link to="http://demo.greensoftbd.xyz/greenlms/v2.2/myaccount/index">
-                          <i className="bi bi-person-circle"></i> My Profile
-                        </Link>
+
+                        <a href="http://demo.greensoftbd.xyz/greenlms/v2.2/myaccount/index">
+                          <i className="bi bi-person-circle"></i> Update Profile
+                        </a>
+
                       </li>
                       <li>
                         <Link to="http://loaclhost/3000/booksorder">
                           <i className="bi bi-bag"></i> My Order
                         </Link>
+                      </li>
+                      <li>
+                        <a href="http://loaclhost/3000/booksorder">
+                          <i className="bi bi-book"></i> Suggest books
+                        </a>
+                      </li>
+                      <li>
+                        <a href="http://loaclhost/3000/booksorder">
+                          <i className="bi bi-pencil-fill"></i> Feedback
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -41,7 +54,7 @@ class UserPage extends Component {
                           src="http://demo.greensoftbd.xyz/greenlms/v2.2/uploads/member/default.png"
                           alt="Admin profile picture"
                         />
-                        <h3>Admin</h3>
+                        <h3>User</h3>
                         <p className="text-muted text-center">User</p>
                       </div>
                     </div>
@@ -75,6 +88,7 @@ class UserPage extends Component {
             </div>
           </div>
         </section>
+        <Footer/>
       </div>
     );
   }

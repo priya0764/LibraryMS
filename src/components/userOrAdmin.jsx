@@ -15,6 +15,7 @@ class UserOrAdmin extends Component {
               width="1000"
               height="500"
               src={`./images/${LibraryWelcome}.jpg`}
+              alt=""
             />
           </div>
           <div className="col-sm-4" style={{marginTop:150}}>
