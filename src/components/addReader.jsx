@@ -28,7 +28,9 @@ class AddReader extends Component {
   };
   render() {
     return (
-      <div className="w-50 mx-auto">
+      <React.Fragment>
+      <div className="w-50 mx-auto mt-5" style={{textAlign:'left'}}>
+
         <form onSubmit={this.handleSubmit}>
           <div className="mb-1">
             <label htmlFor="Id" className="form-label">
@@ -124,6 +126,7 @@ class AddReader extends Component {
           </button>
         </form>
       </div>
+      </React.Fragment>
     );
   }
 }

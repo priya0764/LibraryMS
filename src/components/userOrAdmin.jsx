@@ -7,6 +7,7 @@ class UserOrAdmin extends Component {
   render() {
     let LibraryWelcome="LibraryWelcome"
     return (
+      <React.Fragment>
       <div className="container-fluid">
         <LoginNavbar />
         <div className="row">
@@ -40,6 +41,7 @@ class UserOrAdmin extends Component {
         </div>
         <Footer/>
     </div>
+    </React.Fragment>
     );
   }
 }

@@ -43,6 +43,12 @@ class Readers extends Component {
     }
   render() {
     return (
+      <React.Fragment>
+      <DashboardNav/>
+      <section className="content " style={{ fontFamily: "revert", marginLeft:300 }}>
+          <div className="box-head">
+    
+        <div className="d-flex justify-content-between " style={{width:'auto'}}>
       <div className="w-75 mt-5 mx-auto">
         <div className="d-flex justify-content-between">
           <Link to="/reader/add" className="btn btn-dark">
@@ -117,6 +123,11 @@ class Readers extends Component {
           </div>
         </div>
       </div>
+                  </div>
+                  </div>
+      </section>
+      </React.Fragment>
+
     );
   }
 }

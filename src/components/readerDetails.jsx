@@ -32,8 +32,9 @@ class ReaderDetails extends Component {
   };
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit} className='w-75 mx-auto'>
+      <React.Fragment>
+      <div className='mt-4' >
+        <form onSubmit={this.handleSubmit} className='w-75 mx-auto' style={{textAlign:'left'}}>
           <h1>{this.props.match.params.id}</h1>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
@@ -112,7 +113,8 @@ class ReaderDetails extends Component {
               Cancel
             </button>
         </form>
-      </div>
+        </div>
+        </React.Fragment>
     );
   }
 }
