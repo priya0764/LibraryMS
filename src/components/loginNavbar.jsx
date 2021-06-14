@@ -74,23 +74,14 @@ class LoginNavbar extends Component {
                         name="search"
                         onChange={this.onChange}
                       />
-                      {/* <NavLink
-                        className="input-group-append search-btn"
-                        to={`/getbook/subject/${this.state.search}`}
-                      >
+                      <NavLink to="/category/books"
+                      className="input-group-append search-btn">
                         <input
                           type="submit"
                           className="input-group-text"
                           value="Search"
                         />
-                      </NavLink> */}
-                      <div className="input-group-append search-btn">
-                        <input
-                          type="submit"
-                          className="input-group-text"
-                          value="Search"
-                        />
-                      </div>
+                      </NavLink>
                     </div>
                   </form>
                 </div>
@@ -136,7 +127,7 @@ class LoginNavbar extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="container" to="/">
+                <NavLink className="container" to="/category/books">
                   Book
                 </NavLink>
               </li>

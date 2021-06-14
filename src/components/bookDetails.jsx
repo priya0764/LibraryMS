@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BookService from "../services/bookService";
+import DashboardNav from './dashboardnav';
 
 class BookDetails extends Component {
   state = {
@@ -51,11 +52,13 @@ class BookDetails extends Component {
 
   render() {
     return (
-      <div className="w-25 mx-auto">
-        <form onSubmit={this.handleSubmit}>
+      <React.Fragment>
+        <DashboardNav/>
           <h2>{this.state.book.bookId}</h2>
+      <div className="w-25 mx-auto" style={{textAlign:"left"}}>
+        <form onSubmit={this.handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="bookId">Book Id</label>
+            <label htmlFor="bookId"><b>Book Id</b></label>
             <input
               type="text"
               className="form-control"
@@ -67,7 +70,7 @@ class BookDetails extends Component {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="title">Title</label>
+            <label htmlFor="title"><b>Title</b></label>
             <input
               type="text"
               className="form-control"
@@ -75,12 +78,11 @@ class BookDetails extends Component {
               name="title"
               value={this.state.book.title}
               onChange={this.handleChange}
-              //autoFocus
             />
           </div>
           <div className="mb-3">
             <label htmlFor="subject" className="form-label">
-              Subject
+            <b>Subject</b>
             </label>
             <input
               type="text"
@@ -93,7 +95,7 @@ class BookDetails extends Component {
           </div>
           <div className="mb-3">
             <label htmlFor="author" className="form-label">
-              Author
+            <b>Author</b>
             </label>
             <input
               type="text"
@@ -106,7 +108,7 @@ class BookDetails extends Component {
           </div>
           <div className="mb-3">
             <label htmlFor="publishedYear" className="form-label">
-              Published Year
+            <b>Published Year</b>
             </label>
             <input
               type="text"
@@ -119,7 +121,7 @@ class BookDetails extends Component {
           </div>
           <div className="mb-3">
             <label htmlFor="isbnCode" className="form-label">
-              ISBN Code
+            <b>ISBN Code</b>
             </label>
             <input
               type="text"
@@ -132,7 +134,7 @@ class BookDetails extends Component {
           </div>
           <div className="mb-3">
             <label htmlFor="quantity" className="form-label">
-              Quantity
+            <b>Quantity</b>
             </label>
             <input
               type="text"
@@ -145,7 +147,7 @@ class BookDetails extends Component {
           </div>
           <div className="mb-3">
             <label htmlFor="bookCost" className="form-label">
-              Book Cost
+            <b>Book Code</b>
             </label>
             <input
               type="text"
@@ -158,7 +160,7 @@ class BookDetails extends Component {
           </div>
           <div className="mb-3">
             <label htmlFor="shelfDetails" className="form-label">
-              Shelf Details
+            <b>Shelf Details</b>
             </label>
             <input
               type="text"
@@ -192,6 +194,7 @@ class BookDetails extends Component {
           </button>
         </form>
       </div>
+      </React.Fragment>
     );
   }
 }

@@ -31,7 +31,7 @@ class StoreBooksCategory extends Component {
                     </Link>
                   </div>
                   <div className="book-category-content">
-                    <Link to="/category/books" className="book-category-title">
+                    <Link to="" className="book-category-title">
                       Mystery
                     </Link>
                   </div>

@@ -15,6 +15,10 @@ class BooksOrderService {
         return await axios.get(LOCAL_HOST_URL + "/" + orderId);
     }
 
+    async getBooksOrderByquantity(quantity){
+        return await axios.get(LOCAL_HOST_URL+"/quantity/"+quantity)
+    }
+
     async updateBooksOrder(orderId, booksOrder){
         return await axios.put(LOCAL_HOST_URL + "/" + orderId, booksOrder);
     }

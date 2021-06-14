@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import BooksOrderService from "../services/booksOrderService";
 import { Link } from "react-router-dom";
-import LogoutNavbar from './logoutNavbar';
+import LogoutNavbar from "./logoutNavbar";
 
 class BooksOrder extends Component {
   state = {
     booksOrderList: [],
     search: "",
     booksOrder: {
-        orderId: "",
-        quantity: "",
-        orderDate: "",
-        orderStatus: "",
-        publications:"",
-      },
+      orderId: "",
+      quantity: "",
+      orderDate: "",
+      orderStatus: "",
+      publications: "",
+    },
   };
 
   componentDidMount() {
@@ -23,13 +23,23 @@ class BooksOrder extends Component {
     console.log("Books Order : ", this.state.booksOrderList);
   }
 
-  viewOrderById = () => {
+  viewOrderByQuantity = () => {
     let booksOrderList = [];
-    BooksOrderService.getBooksOrderById(this.state.search).then((res) => {
+    BooksOrderService.getBooksOrderByquantity(this.state.search).then((res) => {
       booksOrderList = res.data;
     });
     this.setState({ booksOrderList });
     console.log("Books: " + this.state.booksOrder);
+  };
+
+  deleteOrder = (id) => {
+    const booksOrderList = this.state.booksOrderList.filter(
+      (booksOrder) => booksOrder.orderId !== id
+    );
+    this.setState({ booksOrderList });
+    BooksOrderService.deleteOrder(id).then((res) =>
+      this.props.history.push("/booksorder")
+    );
   };
 
   handleUpdate = (id) => {
@@ -44,18 +54,42 @@ class BooksOrder extends Component {
   render() {
     return (
       <React.Fragment>
-        <LogoutNavbar/>
-        <section className="content-header">
-          <h2 style={{ textAlign: "left" }}>Order List</h2>
-          <hr/>
-        </section>
-        <section className="content" style={{ fontFamily: "revert" }}>
-          <div className="box-head">
-            <div className="d-flex justify-content-between mb-3">
-              <Link to="/booksorder/add" className="btn btn-dark">
-                <i className="fa fa-plus"></i> Place Order
-              </Link>
-              {/* <form className="form-inline my-2 my-lg-0">
+        <LogoutNavbar />
+        <div className="container">
+          <div className="row mt-5">
+            <div className="col-sm-3 mt-4" style={{textAlign:"left", fontSize:18}}>
+              <div className="main-slider-menu">
+                <span className="sidebar-title">
+                  <i className="bi bi-list"></i> My Account
+                </span>
+                <div className="slider-menu">
+                  <ul>
+                    <li>
+                      <Link to="/adminPage">
+                        <i className="bi bi-person-circle"></i> My Profile
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/booksorder">
+                        <i className="bi bi-bag"></i> My Order
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-9">
+            <section className="content-header">
+              <h2 style={{ textAlign: "left", fontFamily: "revert"}}>Order List</h2>
+              <hr />
+            </section>
+            <section className="content" style={{ fontFamily: "revert" }}>
+              <div className="box-head">
+                <div className="d-flex justify-content-between mb-3">
+                  <Link to="/booksorder/add" className="btn btn-dark">
+                    <i className="fa fa-plus"></i> Place Order
+                  </Link>
+                  <form className="form-inline my-2 my-lg-0">
                 <input
                   className="form-control ml-auto"
                   type="search"
@@ -67,39 +101,45 @@ class BooksOrder extends Component {
                 <button
                   className="btn btn-success my-2 my-sm-0 ml-2 mr-5"
                   type="button"
-                  onClick={() => this.getBookBySubject(this.state.search)}
+                  onClick={() => this.getBooksOrderByQuantity(this.state.search)}
                 >
                   Search
                 </button>
-              </form> */}
-            </div>
-            <div className="box-body">
-              <div id="hide-table">
-                <table
-                  id="example1"
-                  className="table table-bordered table-striped mt-2"
-                >
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Quantity</th>
-                      <th>Order Date</th>
-                      <th>Status</th>
-                      <th>Publications</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {this.state.booksOrderList.map((booksOrder) => (
+              </form>
+                </div>
+              </div>
+              <div className="box-body">
+                <div id="hide-table">
+                  <table
+                    id="example1"
+                    className="table table-bordered table-striped ml-4"
+                    style={{ marginTop: 100 }}
+                  >
+                    <thead>
                       <tr>
-                        <td data-title="#">{booksOrder.orderId}</td>
-                        <td data-title="Quantity">{booksOrder.quantity}</td>
-                        <td data-title="Order Date">{booksOrder.orderDate}</td>
-                        <td data-title="Status">{booksOrder.orderStatus}</td>
-                        <td data-title="Publications">{booksOrder.publications}</td>
-                        
-                        <td data-title="Action">
-                          {/* <button
+                        <th>#</th>
+                        <th>Quantity</th>
+                        <th>Order Date</th>
+                        <th>Status</th>
+                        <th>Publications</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.state.booksOrderList.map((booksOrder) => (
+                        <tr>
+                          <td data-title="#">{booksOrder.orderId}</td>
+                          <td data-title="Quantity">{booksOrder.quantity}</td>
+                          <td data-title="Order Date">
+                            {booksOrder.orderDate}
+                          </td>
+                          <td data-title="Status">{booksOrder.orderStatus}</td>
+                          <td data-title="Publications">
+                            {booksOrder.publications}
+                          </td>
+
+                          <td data-title="Action">
+                            {/* <button
                             type="button"
                             onClick={() =>
                               this.props.history.push(`/viewbooksorder/${booksOrder.quantity}`)
@@ -111,87 +151,42 @@ class BooksOrder extends Component {
                           >
                             <i className="fa fa-check-square-o"></i>
                           </button>{" "} */}
-                          <button
-                            type="button"
-                            onClick={() => this.handleUpdate(booksOrder.orderId)}
-                            className="btn btn-warning btn-xs"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            title="Edit"
-                          >
-                            <i className="fa fa-edit"></i>
-                          </button>{" "}
-                          <button
-                            type="button"
-                            onClick={() => this.deleteBook(booksOrder.orderId)}
-                            className="btn btn-danger btn-xs"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            title="Delete"
-                          >
-                            <i className="fa fa-trash-o"></i>
-                          </button>{" "}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                this.handleUpdate(booksOrder.orderId)
+                              }
+                              className="btn btn-warning btn-xs"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="top"
+                              title="Edit"
+                            >
+                              <i className="fa fa-edit"></i>
+                            </button>{" "}
+                            <button
+                              type="button"
+                              onClick={() =>
+                                this.deleteOrder(booksOrder.orderId)
+                              }
+                              className="btn btn-danger btn-xs"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="top"
+                              title="Delete"
+                            >
+                              <i className="fa fa-trash-o"></i>
+                            </button>{" "}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
+            </section>
             </div>
           </div>
-        </section>
+        </div>
       </React.Fragment>
-      // <div>
-      //   <h2 className="text-center mt-5">Books Order List</h2>
-      //   <div className="w-75 mt-5 mx-auto">
-      //     <div className="d-flex justify-content-between">
-      //       <Link
-      //         to="/booksorder/add"
-      //         className="btn btn-success btn-large mb-1"
-      //       >
-      //         Add
-      //       </Link>
-      //       <form className="form-inline my-2 my-lg-0">
-      //         <input
-      //           className="form-control ml-auto"
-      //           type="search"
-      //           placeholder="Search"
-      //           aria-label="Search"
-      //           onChange={this.onChange}
-      //         />
-      //         <button
-      //           className="btn btn-outline-success my-2 my-sm-0"
-      //           type="button"
-      //           onClick={this.viewOrderById}
-      //         >
-      //           Search
-      //         </button>
-      //       </form>
-      //     </div>
-      //     <div className="row mt-3">
-      //       <table className="table table-striped table-bordered">
-      //         <thead>
-      //           <tr>
-      //             <th>Quantity</th>
-      //             <th>Order Date</th>
-      //             <th>Order Status</th>
-      //           </tr>
-      //         </thead>
-      //         <tbody>
-      //           {this.state.booksOrderList.map((booksOrder) => (
-      //             <tr key={booksOrder.orderId}>
-      //               <td onClick={() => this.handleUpdate(booksOrder.orderId)}>
-      //                 {booksOrder.quantity}
-      //               </td>
-      //               <td>{booksOrder.orderDate}</td>
-      //               <td>{booksOrder.orderStatus}</td>
-      //             </tr>
-      //           ))}
-      //         </tbody>
-      //       </table>
-      //     </div>
-      //   </div>
-      // </div>
     );
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BookService from "../services/bookService";
 import LogoutNavbar from "./logoutNavbar";
+
 class ViewBook extends Component {
   constructor(props) {
     super(props);

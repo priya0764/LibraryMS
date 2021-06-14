@@ -8,10 +8,7 @@ class CategoryListHome extends Component {
   render() {
     return (
       <React.Fragment>
-      <LoginNavbar />
-        <div className="container-fluid ml-5" style={{textAlign:"left", fontSize:20}}>
-          <div className="row mt-5">
-            <div className="col-xs-6">
+            <div className="col-xs-6 ml-5">
               <div className="main-slider-menu">
                 <span className="sidebar-title">
                   <i className="fa fa-list"></i> All Categories
@@ -19,7 +16,7 @@ class CategoryListHome extends Component {
                 <div className="slider-menu">
                   <ul>
                     <li>
-                      <Link to="category/books">Mystery</Link>
+                      <Link to="">Mystery</Link>
                     </li>
                     <li>
                       <Link to="">Thriller</Link>
@@ -43,9 +40,6 @@ class CategoryListHome extends Component {
                 </div>
               </div>
             </div>
-            <CategoryBookHome />
-          </div>
-        </div>
       </React.Fragment>
     );
   }
