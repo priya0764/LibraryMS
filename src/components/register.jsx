@@ -36,18 +36,19 @@ class Register extends Component {
                 <div class="my-login">
                   <h2 class="text-center">Register</h2>
 
-                  <form  onSubmit={this.handleSubmit}>
+                  <form  onSubmit={this.handleSubmit} style={{textAlign:'left'}}>
                     
                     
                     <div class="form-group">
                       <label>Email</label> <span class="text-danger">*</span>
                       <input
-                        type="text"
+                        type="email"
                         class="form-control "
                         id="email"
                         name="email"
                         value={this.state.user.email}
                         onChange={this.handleChange}
+                        required
                       />
                     </div>
                     <div class="form-group">
@@ -61,6 +62,7 @@ class Register extends Component {
                         name="password"
                         value={this.state.user.password}
                         onChange={this.handleChange}
+                        required
                       />
                     </div>
                     <div class="form-group">
@@ -74,6 +76,7 @@ class Register extends Component {
                         name="firstname"
                         value={this.state.user.firstname}
                         onChange={this.handleChange}
+                        required
                       />
                     </div>
                     <div class="form-group">
@@ -87,6 +90,7 @@ class Register extends Component {
                         name="lastname"
                         value={this.state.user.lastname}
                         onChange={this.handleChange}
+                        required
                       />
                     </div>
                     <div class="form-group">
@@ -100,6 +104,7 @@ class Register extends Component {
                         name="mobileNumber"
                         value={this.state.user.mobileNumber}
                         onChange={this.handleChange}
+                        required
                       />
                     </div>
                     <div class="form-group">
