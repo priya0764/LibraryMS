@@ -44,19 +44,17 @@ class Readers extends Component {
     }
   render() {
     return (
-      <React.Fragment>
+      <div>
       <DashboardNav/>
       <section className="content " style={{ fontFamily: "revert", marginLeft:300 }}>
           <div className="box-head">
     
         <div className="d-flex justify-content-between " style={{width:'auto'}}>
-      <div className="w-75 mt-5 mx-auto">
-        <div className="d-flex justify-content-between">
           <Link to="/reader/add" className="btn btn-dark">
           <i className="fa fa-plus"></i>
             Add Reader
           </Link>
-          <form class="form-inline my-2 my-lg-0">
+          <form class="form-inline my-2 my-lg-0 ">
             <input
               className="form-control ml-auto"
               type="search"
@@ -65,7 +63,7 @@ class Readers extends Component {
               onChange={this.onChange}
             />
             <button
-              className="btn btn-outline-success my-2 my-sm-0"
+              className="btn btn-outline-success my-2 my-sm-0 ml-2 mr-5 "
               type="button"
               onClick={this.viewReader}
             >
@@ -73,9 +71,13 @@ class Readers extends Component {
             </button>
           </form>
         </div>
-        <div>
-          <div className="row">
-            <table className="table table-striped table-bordered mt-2">
+        <div className="box-body">
+              <div id="hide-table">
+          <table
+                  id="example1"
+                  className="table table-bordered table-striped mr-5"
+                  style={{ marginTop: 50, marginLeft:330, width:810}}
+                >
               <thead>
                 <tr>
                   <th>Reader FirstName</th>
@@ -124,11 +126,8 @@ class Readers extends Component {
           </div>
         </div>
       </div>
-                  </div>
-                  </div>
       </section>
-      </React.Fragment>
-
+      </div>
     );
   }
 }
