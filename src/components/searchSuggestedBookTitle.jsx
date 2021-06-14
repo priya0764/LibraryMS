@@ -54,7 +54,7 @@ class SearchTitle extends Component {
             </tbody>
           </table>
         </div>
-        <div><a class="btn btn-primary" href="\suggestedbooks" role="button" style={{marginTop:280}}>Back</a></div>
+        <div><a class="btn btn-primary" href="\suggestedbooks" role="button" style={{marginTop:280}}> Back</a></div>
       </div>
       </React.Fragment>
     );

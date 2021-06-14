@@ -95,9 +95,6 @@ class SuggestedBooks extends Component {
                 <th>Title</th>
                 <th>Subject</th>
                 <th>Author</th>
-                {/*<th>Publications</th>
-                                <th>Description</th>
-                                <th>Suggested Date</th>*/}
                 <th>Status</th>
                 <th>Actions</th>
               </tr>

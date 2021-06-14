@@ -124,7 +124,7 @@ class AddPublisher extends Component {
                                         <input placeholder="pincode" name="pincode" className="form-control" value={this.state.pincode} onChange={this.changePincodeHandler} required/>
                                     </div>
                                     <button className="btn btn-success" onClick={this.savePublisher}> Save</button>
-                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Cancel</button>
+                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Cancel </button>
 
                                 </form>
 

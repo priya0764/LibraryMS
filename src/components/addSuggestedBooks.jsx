@@ -117,7 +117,7 @@ class AddSuggestedBooks extends Component {
                                         <input placeholder="status" name="status" className="form-control" value={this.state.status} onChange={this.changeStatusHandler} required />
                                     </div>
 
-                                    <button className="btn btn-success" onClick={this.saveSuggestedBooks}> Save</button>
+                                    <button className="btn btn-success" onClick={this.saveSuggestedBooks}> Save </button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Cancel</button>
 
                                 </form>

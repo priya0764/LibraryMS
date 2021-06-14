@@ -55,7 +55,6 @@ class UpdateSuggestedBooks extends Component {
         });
 
     }
-
    
     changeTitleHandler = (event) => {
         this.setState({ title: event.target.value })

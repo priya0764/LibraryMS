@@ -82,6 +82,7 @@ import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
 import ContactPage from './components/contactPage';
 import ThankyouPage from "./components/thankyouPage";
+import Ebook from "./components/ebook"
 
 
 //import ViewAuthor from './components/viewAuthor';
@@ -191,7 +192,7 @@ function App() {
             <Route path="/thankyou-Page" component={ThankyouPage}></Route>
 
             <Route path="/disclaimer" component={Disclaimer}></Route>
-           
+           <Route path="/ebook" component={Ebook}></Route>
 
 
 

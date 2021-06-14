@@ -89,9 +89,7 @@ class UpdatePublisher extends Component {
     cancel() {
         this.props.history.push('/publisher');
     }
-
-
-
+    
     render() {
         return (
             <div>

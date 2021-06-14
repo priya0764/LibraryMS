@@ -54,12 +54,8 @@ class ViewSuggestedBooks extends Component {
                         <div className="row">
                             <label><b>Status: </b></label>
                             <div>&nbsp;{this.state.suggestedBooks.status}</div>
-                        </div>
-                    
-                      
-
+                        </div>                                     
                     </div>
-
                 </div>
                 <div><a class="btn btn-primary" href="\suggestedbooks" role="button">Back</a></div>
                 </div>

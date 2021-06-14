@@ -77,12 +77,7 @@ class Publishers extends Component {
                   <td> {publishers.contactno}</td>
                   <td> {publishers.email}</td>
                   <td> {publishers.city}</td>
-                  {/*<td> {publishers.address1}</td>
-                                            <td> {publishers.address2}</td>                                           
-                                            <td> {publishers.state}</td>
-                                <td> {publishers.pincode}</td>*/}
-
-                  <td>
+                   <td>
                     <button
                       onClick={() =>
                         this.deletePublisher(publishers.publisherId)

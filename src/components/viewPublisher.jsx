@@ -16,6 +16,7 @@ class ViewPublisher extends Component {
       this.setState({ publishers: res.data });
     });
   }
+  
   render() {
     return (
       <React.Fragment>
