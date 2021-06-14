@@ -23,7 +23,7 @@ class UserLogin extends Component {
     console.log("loginentity => " + JSON.stringify(loginentity));
 
     UsersService.login(loginentity).then((res) => {
-      this.props.history.push("/userPage");
+      this.props.history.push("");
     });
   };
   changeEmailHandler = (event) => {
@@ -65,7 +65,6 @@ class UserLogin extends Component {
                         maxLength="15"
                         type="Password"
                         name="password"
-                      
                         className="form-control"
                         value={this.state.password}
                         onChange={this.changePasswordHandler}
