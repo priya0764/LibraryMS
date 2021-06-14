@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import {Link} from "react-router-dom";
-import Dashboard from "./dashboard";
 
 import "./raghu.css";
 
@@ -57,7 +56,7 @@ class DashboardNav extends Component {
                       src="http://demo.greensoftbd.xyz/greenlms/v2.2/uploads/member/default.png"
                       className="img-rounded"
                       style={{ height: 45, width: 50 }}
-                      alt="User Image"
+                      alt="User"
                     />
                   </div>
                   <div className="pull-left info">
@@ -123,12 +122,12 @@ class DashboardNav extends Component {
                     <Link to="/book">
                       <i className="fa fa-book"></i> <span>Books</span>
                     </Link>
-                    <li className="dropdown-item">
+                  </li>
+                  <li className=" ">
                       <Link to="/damagedbook">
-                        <i className="fa fa-book"></i>{" "} Damaged Books
+                        <i className="fa fa-book"></i> <span>Damaged Books</span> 
                       </Link>
                     </li>
-                  </li>
                   <li className=" ">
                     <Link to="/address">
                       <i className="fa fa-shopping-cart"></i>{" "}

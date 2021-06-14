@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SuggestedBooksService from "../services/suggestedBooksService";
+import DashboardNav from "./dashboardnav";
 
 class SearchTitle extends Component {
   constructor(props) {
@@ -24,10 +25,12 @@ class SearchTitle extends Component {
   }
   render() {
     return (
+      <React.Fragment>
+        <DashboardNav />
       <div className=" w-75 mt-5 mx-auto">
         <h2>{this.props.match.params.title}</h2>
         <div className="row mt-1">
-          <table className="table table-sm table-striped table-bordered">
+          <table className="table table-sm table-striped table-bordered" style={{marginLeft:260,marginTop:60,width:1000}}>
             <thead class="thead-dark">
               <tr>
              
@@ -51,7 +54,9 @@ class SearchTitle extends Component {
             </tbody>
           </table>
         </div>
+        <div><a class="btn btn-primary" href="\suggestedbooks" role="button" style={{marginTop:280}}> Back</a></div>
       </div>
+      </React.Fragment>
     );
   }
 }

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import BookService from "../services/bookService";
-import LogoutNavbar from "./logoutNavbar";
+import DashboardNav from './dashboardnav';
 
-class ViewBook extends Component {
+class ViewBookDashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,12 +21,15 @@ class ViewBook extends Component {
   render() {
     return (
       <React.Fragment>
-        <LogoutNavbar/>
+        <DashboardNav/>
+        <section className="content-header" style={{marginLeft:230}}>
+          <h2 style={{ textAlign: "left" }}>Book</h2>
+        </section>
         {this.state.books.map((book) => (
           <section className="content">
             <div className="box box-mytheme">
               <div className="box-body">
-                <div className="row" style={{marginLeft:200}}>
+                <div className="row" style={{marginLeft:300}}>
                   <div className="col-sm-3">
                     <img
                       src={`/images/${book.imageName}`}
@@ -79,21 +82,9 @@ class ViewBook extends Component {
             </div>
           </section>
         ))}
-        {/* <LogoutNavbar />
-        <div className="row pt-5 ml-5">
-          <div className="col-3">
-            <img width="200" src={`/images/${this.state.book.imageName}`} alt="title" />
-          </div>
-          <div className="col-9">
-            <div className="card-body" style={{textAlign:"left"}}>
-              <p className="card-title" style={{fontFamily:"cursive", fontSize:25}}>{title}</p>
-              <p className="card-text"></p>
-            </div>
-          </div>
-        </div>  */}
       </React.Fragment>
     );
   }
 }
 
-export default ViewBook;
+export default ViewBookDashboard;

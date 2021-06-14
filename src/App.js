@@ -49,21 +49,19 @@ import UserBooksList from './components/userBooks';
 import ViewBook from './components/viewBook';
 
 import UserPage from './components/userPage'
+
+
+
 import Publishers from './components/publishers';
-
-
-//import { BrowserRouter as  Route,Router,Switch } from 'react-router-dom';
-//import { BrowserRouter as  Router } from 'react-router-dom';
-
-
-
 import ViewPublisher from './components/viewPublisher';
 import UpdatePublisher from './components/updatePublisher';
 import AddPublisher from './components/addPublisher';
+
 import SuggestedBooks from './components/suggestedBooks';
 import AddSuggestedBooks from './components/addSuggestedBooks';
 import UpdateSuggestedBooks from './components/updateSuggestedBooks';
 import ViewSuggestedBooks from './components/viewSuggestedBooks';
+import SearchTitle from './components/searchSuggestedBookTitle';
 
 import Author from './components/author';
 import ViewAuthor from './components/viewAuthor';
@@ -85,6 +83,7 @@ import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
 import ContactPage from './components/contactPage';
 import ThankyouPage from "./components/thankyouPage";
+import Ebook from "./components/ebook"
 
 
 //import ViewAuthor from './components/viewAuthor';
@@ -109,6 +108,13 @@ import Disclaimer from './components/disclaimer'
 
 
 import CategoryBookHome from './components/categoryBookHome';
+import Mystery from './components/mystery';
+import Thriller from './components/thriller';
+import ScienceFiction from './components/scienceFiction'
+import Horror from './components/horror'
+import Adventure from "./components/adventure";
+import Fantasy from './components/fantasy'
+import ViewBookDashboard from './components/viewBookDashboard';
 
 
 
@@ -143,15 +149,22 @@ function App() {
           <Route path="/book/update/:id" component={BookDetails} />
           <Route path="/book" component={Books} />
           <Route path="/booksorder/add" component={AddBooksOrder} />
-          <Route path="/booksorder/get/:id" component={BooksOrderDetails} />
+          <Route path="/getbooksorder/quantity/:quantity" component={BooksOrder} />
           <Route path="/booksorder/update/:id" component={BooksOrderDetails} />
           <Route path="/booksorder" component={BooksOrder} />
           <Route path="/damagedbook/add" component={AddDamagedBooks} />
-          <Route path="/damagedbook/get/:id" component={DamagedBooksDetails} />
+          <Route path="/getdamagedbook/quantity/:quantity" component={DamagedBooksDetails} />
           <Route path="/damagedbook/update/:id" component={DamagedBooksDetails} />
           <Route path="/damagedbook" component={DamagedBooks} />
 
           <Route path="/viewbook/:title" component={ViewBook} />
+          <Route path="/bookdetail/dashboard/:title" component={ViewBookDashboard} />
+          <Route path="/category/books/fantasy" component={Fantasy} />
+          <Route path="/category/books/adventure" component={Adventure} />
+          <Route path="/category/books/sciencefiction" component={ScienceFiction} />
+          <Route path="/category/books/horror" component={Horror} />
+          <Route path="/category/books/thriller" component={Thriller} />
+          <Route path="/category/books/mystery" component={Mystery} />
           <Route path="/category/books" component={CategoryBookHome} />
 
           <Route path="/user/add" component={AddUser} />
@@ -168,6 +181,7 @@ function App() {
           <Route path="/booksIssued" component={BooksIssued} />
           <Route path="/register" component={Register} />
           <Route path="/logout" component={Logout} />
+
           <Route path="/publisher" component={Publishers}></Route>
           <Route path="/update-publisher/:publisherId" component={UpdatePublisher}></Route>
           <Route path="/add-publisher" component={AddPublisher}></Route>
@@ -177,6 +191,7 @@ function App() {
           <Route path="/update-suggestedbooks/:id" component={UpdateSuggestedBooks}></Route>
           <Route path="/add-suggestedbooks" component={AddSuggestedBooks}></Route>
           <Route path="/view-suggestedbooks/:id" component={ViewSuggestedBooks}></Route>
+          <Route path="/suggestedbooks-title/:title" component={SearchTitle}></Route>
 
           <Route path="/userPage" component={UserPage} />
           <Route path="/userNavbar" component={UserNavbar}/>
@@ -192,7 +207,7 @@ function App() {
             <Route path="/thankyou-Page" component={ThankyouPage}></Route>
 
             <Route path="/disclaimer" component={Disclaimer}></Route>
-           
+           <Route path="/ebook" component={Ebook}></Route>
 
 
 

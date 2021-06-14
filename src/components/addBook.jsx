@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BookService from "../services/bookService";
 import { Link } from "react-router-dom";
+import DashboardNav from './dashboardnav';
 
 class AddBook extends Component {
   state = {
@@ -13,7 +14,6 @@ class AddBook extends Component {
       quantity: "",
       bookCost: "",
       shelfDetails: "",
-      publications: "",
     },
   };
 
@@ -33,7 +33,11 @@ class AddBook extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="content-wrapper" style={{minHeight: 757.08, textAlign:"left"}}>
+        <DashboardNav/>
+        <div
+          className="content-wrapper"
+          style={{ minHeight: 757.08, textAlign: "left" }}
+        >
           <section className="content">
             <div className="box box-mytheme">
               <div className="row">
@@ -133,6 +137,7 @@ class AddBook extends Component {
 
                       <div className="form-group ">
                         <label htmlFor="isbnCode">Isbn No</label>
+                        <span className="text-red">*</span>
                         <input
                           type="text"
                           className="form-control"
@@ -147,6 +152,7 @@ class AddBook extends Component {
 
                       <div className="form-group ">
                         <label htmlFor="shelfDetails">Rack</label>
+                        <span className="text-red">*</span>
                         <select
                           name="shelfDetails"
                           id="shelfDetails"
@@ -163,11 +169,11 @@ class AddBook extends Component {
                           <option value="2">B</option>
                           <option value="1">A</option>
                         </select>
-                        
                       </div>
 
                       <div className="form-group ">
                         <label htmlFor="quantity">Quantity</label>
+                        <span className="text-red">*</span>
                         <input
                           type="text"
                           className="form-control"
@@ -182,6 +188,7 @@ class AddBook extends Component {
 
                       <div className="form-group ">
                         <label htmlFor="bookCost">Cost</label>
+                        <span className="text-red">*</span>
                         <input
                           type="text"
                           className="form-control datepicker"
@@ -193,24 +200,19 @@ class AddBook extends Component {
                           required
                         />
                       </div>
-
-                      <div className="form-group ">
-                        <label htmlFor="publications">Publications</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="publications"
-                          name="publications"
-                          value={this.state.book.publications}
-                          onChange={this.handleChange}
-                          placeholder="Enter publications"
-                          required
-                        />
-                      </div>
                     </div>
                     <div className="box-footer">
                       <button type="submit" className="btn btn-dark">
                         Add Book
+                      </button>
+                      <button
+                        type="submit"
+                        className="btn btn-danger ml-3"
+                        onClick={() => {
+                          this.props.history.push("/book");
+                        }}
+                      >
+                        Cancel
                       </button>
                     </div>
                   </form>

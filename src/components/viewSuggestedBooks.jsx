@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SuggestedBooksService from '../services/suggestedBooksService';
+import DashboardNav from "./dashboardnav";
 
 
 class ViewSuggestedBooks extends Component {
@@ -18,8 +19,10 @@ class ViewSuggestedBooks extends Component {
     }
     render() {
         return (
-            <div className="card col-md-6 offset-md-3">
-                <h3 className="text-center"> View SuggestedBooks Details</h3>
+            <React.Fragment>
+                <DashboardNav />
+            <div className="card col-md-6 offset-md-3" style={{marginTop:50}}>
+                <h3 className="text-center" > View SuggestedBooks Details</h3>
                 <div className="card bg-dark text-white">
                     <div className="card-body" >
                         <h1>{this.props.match.params.id}</h1>
@@ -51,14 +54,12 @@ class ViewSuggestedBooks extends Component {
                         <div className="row">
                             <label><b>Status: </b></label>
                             <div>&nbsp;{this.state.suggestedBooks.status}</div>
-                        </div>
-                    
-                      
-
+                        </div>                                     
                     </div>
-
                 </div>
+                <div><a class="btn btn-primary" href="\suggestedbooks" role="button">Back</a></div>
                 </div>
+                </React.Fragment>
             
         )
         

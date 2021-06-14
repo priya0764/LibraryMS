@@ -49,7 +49,7 @@ class Books extends Component {
           <h2 style={{ textAlign: "left" }}>Book</h2>
           <hr />
         </section>
-        <section className="content" style={{ fontFamily: "revert", marginLeft:300 }}>
+        <section className="content" style={{ fontFamily: "revert", marginLeft:230 }}>
           <div className="box-head">
             <div className="d-flex justify-content-between">
               <Link to="/book/add" className="btn btn-dark">
@@ -78,7 +78,7 @@ class Books extends Component {
                 <table
                   id="example1"
                   className="table table-bordered table-striped"
-                  style={{ marginTop: 100, marginLeft:330, width:"auto"}}
+                  style={{ marginTop: 100, marginLeft:260, width:"auto"}}
                 >
                   <thead>
                     <tr>
@@ -116,7 +116,7 @@ class Books extends Component {
                           <button
                             type="button"
                             onClick={() =>
-                              this.props.history.push(`/viewbook/${book.title}`)
+                              this.props.history.push(`/bookdetail/dashboard/${book.title}`)
                             }
                             className="btn btn-success btn-xs"
                             data-bs-toggle="tooltip"
