@@ -20,12 +20,12 @@ class DamagedBooks extends Component {
     console.log("Damaged Books:", this.state.damagedBooks);
   }
 
-  viewDamagedBookById = () => {
+  viewDamagedBookByQuantity = (quantity) => {
     let damagedBooks = [];
-    DamagedBooksService.getDamagedBookById(this.state.search).then((res) => {
+    DamagedBooksService.getDamagedBookByQuantity(quantity).then((res) => {
       damagedBooks = res.data;
+      this.setState({ damagedBooks });
     });
-    this.setState({ damagedBooks });
     console.log("Damaged Books: " + this.state.damagedBook);
   };
 
@@ -62,6 +62,23 @@ class DamagedBooks extends Component {
               <Link to="/damagedbook/add" className="btn btn-dark">
                 <i className="fa fa-plus"></i> Add Damaged Book
               </Link>
+              <form className="form-inline my-2 my-lg-0">
+                <input
+                  className="form-control ml-auto"
+                  type="search"
+                  name="subject"
+                  placeholder="Search by quantity"
+                  aria-label="Search"
+                  onChange={this.onChange}
+                />
+                <button
+                  className="btn btn-success my-2 my-sm-0 ml-2 mr-5"
+                  type="button"
+                  onClick={() => this.viewDamagedBookByQuantity(this.state.search)}
+                >
+                  Search
+                </button>
+              </form>
             </div>
             <div className="box-body">
               <div id="hide-table">

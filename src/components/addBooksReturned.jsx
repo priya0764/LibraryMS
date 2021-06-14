@@ -1,104 +1,136 @@
-import React, { Component } from 'react';
-import BooksReturnedService from '../services/booksReturnedService';
+import React, { Component } from "react";
+import BooksReturnedService from "../services/booksReturnedService";
+import { Link } from "react-router-dom";
+import DashboardNav from './dashboardnav';
+
 class AddBooksReturned extends Component {
+  state = {
+    returned: {
+        returnedDate: '',
+        delayedDays: '',
+        penalty: '',
+        penalty_Status: ''
+    },
+  };
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            id: '',
-            returnedDate: '',
-            delayedDays: '',
-            penalty: '',
-            penalty_Status: ''
+  handleSubmit = (event) => {
+    event.preventDefault();
+    BooksReturnedService.addReturnedBooks(this.state.returned).then((res) => {
+      this.props.history.push("/booksReturned");
+    });
+  };
 
-        }
-        this.changeReturnedDateHandler = this.changeReturnedDateHandler.bind(this);
-        this.changeDelayedDaysHandler = this.changeDelayedDaysHandler.bind(this);
-        this.changePenaltyHandler = this.changePenaltyHandler.bind(this);
-        this.changePenalty_StatusHandler = this.changePenalty_StatusHandler.bind(this);
-        this.saveBooksReturned = this.saveBooksReturned.bind(this);
-        this.changeIdHandler = this.changeIdHandler.bind(this);
-    }
+  handleChange = (event) => {
+    const returned = { ...this.state.returned };
+    returned[event.currentTarget.name] = event.currentTarget.value;
+    this.setState({ returned });
+  };
 
-    saveBooksReturned = (e) => {
-        e.preventDefault();
-        let returned = { id: this.state.id, returnedDate: this.state.returnedDate, delayedDays: this.state.delayedDays, penalty: this.state.penalty, penalty_Status: this.state.penalty_Status };
-        console.log('returnedBooks => ' + JSON.stringify(returned));
+  render() {
+    return (
+      <React.Fragment>
+          <DashboardNav />
+        <div className="content-wrapper" style={{minHeight: 757.08, textAlign:"left"}}>
+          <section className="content">
+            <div className="box box-mytheme">
+            <h3 className="text-center">Add Returned Books</h3>
+              <div className="row">
+                <div className="col-md-6">
+                  <form onSubmit={this.handleSubmit}>
+                    <div className="box-body">
+                      <div className="form-group ">
+                        <label htmlFor="id">Id</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="number"
+                          className="form-control"
+                          id="id"
+                          name="id"
+                          value={this.state.returned.id}
+                          onChange={this.handleChange}
+                          placeholder="Enter book id"
+                          required
+                          autoFocus
+                        />
+                      </div>
 
-        BooksReturnedService.addReturnedBooks(returned).then(res => {
-            this.props.history.push(`/booksReturned`);
-        });
+                      <div className="form-group ">
+                        <label htmlFor="returnedDate">Returned Date</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="date"
+                          className="form-control"
+                          id="returnedDate"
+                          name="returnedDate"
+                          value={this.state.returned.returnedDate}
+                          onChange={this.handleChange}
+                          placeholder="dd-mm-yyyy"
+                          required="true"
+                        />
+                      </div>
 
-    }
+                      <div className="form-group ">
+                        <label htmlFor="delayedDays">Delayed Days</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="number"
+                          className="form-control"
+                          id="delayedDays"
+                          name="delayedDays"
+                          value={this.state.returned.delayedDays}
+                          onChange={this.handleChange}
+                          placeholder="Enter DelayedDays"
+                          required
+                        />
+                      </div>
 
-    changeIdHandler = (event) => {
-        this.setState({ id: event.target.value })
-    }
+                      <div className="form-group ">
+                        <label htmlFor="penalty">Penalty Amount</label>{" "}
+                        <span className="text-red">*</span>
+                        <input
+                          type="number"
+                          className="form-control"
+                          id="penalty"
+                          name="penalty"
+                          value={this.state.returned.penalty}
+                          onChange={this.handleChange}
+                          placeholder="Enter Penalty Amount"
+                          required
+                        />
+                      </div>
 
-    changeReturnedDateHandler = (event) => {
-        this.setState({ returnedDate: event.target.value })
-    }
+                      <div className="form-group ">
+                        <label htmlFor="penalty_Status">Penalty Status</label>{" "}
+                         <input
+                          type="text"
+                          className="form-control"
+                          id="penalty_Status"
+                          name="penalty_Status"
+                          value={this.state.returned.penalty_Status}
+                          onChange={this.handleChange}
+                          placeholder="Enter Penalty Status"
+                          required
+                        />
+                      </div>
 
-    changeDelayedDaysHandler = (event) => {
-        this.setState({ delayedDays: event.target.value })
-    }
-
-    changePenaltyHandler = (event) => {
-        this.setState({ penalty: event.target.value })
-    }
-
-    changePenalty_StatusHandler = (event) => {
-        this.setState({ penalty_Status: event.target.value })
-    }
-
-    cancel() {
-        this.props.history.push('/booksReturned');
-    }
-
-
-
-    render() {
-        return (
-            <div>
-                <div className="container">
-                    <div className="row">
-                        <div className="caed col-md-6 offset-md-3 offset-md-3">
-                            <h3 className="text-center">Add ReturnedBooks</h3>
-                            <div className="card-body">
-                                <form>
-                                    <div className="form-group">
-                                        <label>id:</label>
-                                        <input placeholder="Id" name="id" className="form-control" value={this.state.id} onChange={this.changeIdHandler} />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Returned Date:</label>
-                                        <input placeholder="returnedDate" name="returnedDate" className="form-control" value={this.state.returnedDate} onChange={this.changeReturnedDateHandler} />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Delayed Days:</label>
-                                        <input placeholder="DelayedDays" name="DelayedDays" className="form-control" value={this.state.delayedDays} onChange={this.changeDelayedDaysHandler} />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Penalty:</label>
-                                        <input placeholder="Penalty" name="Penalty" className="form-control" value={this.state.penalty} onChange={this.changePenaltyHandler} />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Penalty Status:</label>
-                                        <input placeholder="penalty_Status" name="penalty_Status" className="form-control" value={this.state.penalty_Status} onChange={this.changePenalty_StatusHandler} />
-                                    </div>
-                                    <button className="btn btn-success" onClick={this.saveBooksReturned}> Save</button>
-                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Cancel</button>
-
-                                </form>
-
-                            </div>
-                        </div>
+                                                                   
+                       
+                                                      
+                      
                     </div>
+                    <div className="box-footer">
+                    <button className="btn btn-success" onClick={this.handleSubmit}> Save </button>
+                    <button className="btn btn-danger" onClick={()=>{this.props.history.push("/booksReturned")}} style={{ marginLeft: "10px" }}>Cancel</button>
+                    </div>
+                  </form>
                 </div>
-
+              </div>
             </div>
-        )
-    }
+          </section>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
 export default AddBooksReturned;

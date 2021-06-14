@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import ContactPage from "./contactPage";
 
 class LoginNavbar extends Component {
   state = {
@@ -101,7 +102,7 @@ class LoginNavbar extends Component {
                   <div className="dropdown-menu dropdown-menu-right">
                     <div className="mini-cart">
                       <h6 className="p-3">
-                        Currently you cart item are empty.
+                        Contact admin for furthur details.
                       </h6>
                     </div>
                   </div>
@@ -137,7 +138,7 @@ class LoginNavbar extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="container" to="">
+                <NavLink className="container" to="/contact-page">
                   Contact
                 </NavLink>
               </li>

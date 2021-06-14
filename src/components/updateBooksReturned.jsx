@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BooksReturnedService from '../services/booksReturnedService';
+import DashboardNav from './dashboardnav';
 
 class UpdateBooksReturned extends Component {
 
@@ -70,6 +71,7 @@ class UpdateBooksReturned extends Component {
     render() {
         return (
             <div>
+                <DashboardNav />
                 <div className="container">
                     <div className="row">
                         <div className="caed col-md-6 offset-md-3 offset-md-3">

@@ -119,7 +119,7 @@ class LogoutNavbar extends Component {
               <li>
                 <NavLink
                   className="container"
-                  to="/ebook"
+                  to=""
                 >
                   Ebook
                 </NavLink>
@@ -132,7 +132,6 @@ class LogoutNavbar extends Component {
                   Book
                 </NavLink>
               </li>
-  
               <li>
                 <NavLink
                   className="container"

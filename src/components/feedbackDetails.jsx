@@ -38,7 +38,6 @@ class FeedbackDetails extends Component {
             <label htmlFor="name" className="form-label">
               Feedback_Date
             </label>
-            <span className="text-red">*</span>
             <input
               type="text"
               className="form-control"
@@ -46,14 +45,12 @@ class FeedbackDetails extends Component {
               name="feedbackDate"
               value={this.state.feedback.feedbackDate}
               onChange={this.handleChange}
-              required
             />
             </div>
             <div className="mb-3">
               <label htmlFor="lastName" className="form-label">
                 Description
               </label>
-              <span className="text-red">*</span>
               <input
                 type="text"
                 className="form-control"
@@ -61,31 +58,25 @@ class FeedbackDetails extends Component {
                 name="description"
                 value={this.state.feedback.description}
                 onChange={this.handleChange}
-                required
               />
             </div>
             <div className="mb-3">
               <label htmlFor="mobileNo" className="form-label">
                 Rating
               </label>
-              <span className="text-red">*</span>
               <input
-                type="number"
+                type="text"
                 className="form-control"
                 id="rating"
                 name="rating"
-                min='1'
-                max='5'
                 value={this.state.feedback.rating}
                 onChange={this.handleChange}
-                required
               />
             </div>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Comments
               </label>
-              <span className="text-red">*</span>
               <input
                 type="text"
                 className="form-control"
@@ -93,7 +84,6 @@ class FeedbackDetails extends Component {
                 name="comments"
                 value={this.state.feedback.comments}
                 onChange={this.handleChange}
-                required
               />
             </div>
             <button type="submit" className="btn btn-primary float-right mt-3">

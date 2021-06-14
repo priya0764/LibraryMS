@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AuthorService from '../services/authorService';
+import DashboardNav from './dashboardnav';
 
 class UpdateAuthor extends Component {
 
@@ -70,6 +71,7 @@ class UpdateAuthor extends Component {
     render() {
         return (
             <div>
+                <DashboardNav />
                 <div className="container">
                     <div className="row">
                         <div className="caed col-md-6 offset-md-3 offset-md-3">

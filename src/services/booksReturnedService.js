@@ -21,7 +21,7 @@ class BooksReturnedService {
     async addReturnedBooks(returned) {
         return await axios.post(BOOKSRETURNED_API_BASE_URL, returned);
     }
-    async updateReturnedBooks(returned, id) {
+    async updateReturnedBooks( returned, id) {
         return await axios.put(BOOKSRETURNED_API_BASE_URL + '/update/' + id, returned);
     }
 

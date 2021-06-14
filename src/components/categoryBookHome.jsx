@@ -10,11 +10,11 @@ class CategoryBookHome extends Component {
         <LoginNavbar />
         <div
           className="container-fluid ml-5"
-          style={{ textAlign: "left", fontSize: 20 }}
+          style={{ fontSize: 20 }}
         >
           <div className="row mt-5">
             <CategoryListHome />
-            <div className="col-sm-6" style={{marginLeft:200}}>
+            <div className="col-sm-6" style={{marginLeft:50}}>
               <div className="row">
                 <div className="col-sm-4">
                   <div className="single-book">
@@ -26,11 +26,9 @@ class CategoryBookHome extends Component {
                       />
                     </div>
                     <div className="book-content">
-                      <Link to="" className="book-title">
                         A Tale of Two Cities{" "}
-                      </Link>
                       <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="">
+                        <Link className="btn btn-outline-success btn-sm" to="#">
                           <i className="fa fa-eye"></i>
                         </Link>
                       </div>
@@ -47,11 +45,9 @@ class CategoryBookHome extends Component {
                       />
                     </div>
                     <div className="book-content">
-                      <Link to="" className="book-title">
                         The Lion, the Witch and the Wardrobe{" "}
-                      </Link>
                       <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="">
+                        <Link className="btn btn-outline-success btn-sm" to="#">
                           <i className="fa fa-eye"></i>
                         </Link>
                       </div>
@@ -68,11 +64,9 @@ class CategoryBookHome extends Component {
                       />
                     </div>
                     <div className="book-content">
-                      <Link to="" className="book-title">
                         The Little Prince{" "}
-                      </Link>
                       <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="">
+                        <Link className="btn btn-outline-success btn-sm" to="#">
                           <i className="fa fa-eye"></i>
                         </Link>
                       </div>
@@ -91,11 +85,9 @@ class CategoryBookHome extends Component {
                       />
                     </div>
                     <div className="book-content">
-                      <Link to="" className="book-title">
                         The Book Theif{" "}
-                      </Link>
                       <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="">
+                        <Link className="btn btn-outline-success btn-sm" to="#">
                           <i className="fa fa-eye"></i>
                         </Link>
                       </div>
@@ -112,11 +104,9 @@ class CategoryBookHome extends Component {
                       />
                     </div>
                     <div className="book-content">
-                      <Link to="" className="book-title">
                         Twilight{" "}
-                      </Link>
                       <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="">
+                        <Link className="btn btn-outline-success btn-sm" to="#">
                           <i className="fa fa-eye"></i>
                         </Link>
                       </div>
@@ -133,11 +123,9 @@ class CategoryBookHome extends Component {
                       />
                     </div>
                     <div className="book-content">
-                      <Link to="" className="book-title">
                         Pride and Prejudice{" "}
-                      </Link>
                       <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="">
+                        <Link className="btn btn-outline-success btn-sm" to="#">
                           <i className="fa fa-eye"></i>
                         </Link>
                       </div>

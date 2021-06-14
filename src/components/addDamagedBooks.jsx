@@ -60,9 +60,18 @@ class AddDamagedBooks extends Component {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-dark">
             Submit
           </button>
+          <button
+              type="submit"
+              className="btn btn-danger ml-3"
+              onClick={() => {
+                this.props.history.push("/damangedbook");
+              }}
+            >
+              Cancel
+            </button>
         </form>
       </div>
     );

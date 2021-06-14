@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AuthorService from '../services/authorService';
+import DashboardNav from './dashboardnav';
 import download from './pictures/download.png';
+
 
 
 class ViewAuthor extends Component {
@@ -19,6 +21,8 @@ class ViewAuthor extends Component {
     }
     render() {
         return (
+            <React.Fragment>
+                <DashboardNav />
             <div className="card col-md-6 offset-md-3">
                 
                 <h3 className="text-center"> View Author Details</h3>
@@ -51,6 +55,7 @@ class ViewAuthor extends Component {
 <div><a class="btn btn-primary" href="\author" role="button">Back</a></div>
 
             </div>
+            </React.Fragment>
             
         )
     }
