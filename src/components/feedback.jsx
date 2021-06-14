@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import FeedbackService from "../services/feedbackService";
 import { Link } from "react-router-dom";
-import DashboardNav from "./dashboardnav";
 
 class Feedback extends Component {
   state = {
     feedbacks: [],
     feedback: {
-      userId:'',
       id: "",
       feedbackDate: "",
       description: "",
@@ -47,12 +45,8 @@ class Feedback extends Component {
 
   render() {
     return (
-      <div>
-      <DashboardNav/>
-      <section className="content " style={{ fontFamily: "revert", marginLeft:300 }}>
-          <div className="box-head">
-      
-        <div className="d-flex justify-content-between " style={{width:'auto'}}>
+      <div className="w-75 mt-5 mx-auto">
+        <div className="d-flex justify-content-between ">
           <Link to="/feedback/add" className="btn btn-dark">
           <i className="fa fa-plus"></i>
             Add Feedback
@@ -66,7 +60,7 @@ class Feedback extends Component {
               onChange={this.onChange}
             />
             <button
-              className="btn btn-outline-success my-2 my-sm-0  ml-2 mr-5"
+              className="btn btn-outline-success my-2 my-sm-0"
               type="button"
               onClick={this.viewFeedback}
             >
@@ -74,16 +68,11 @@ class Feedback extends Component {
             </button>
           </form>
         </div>
-        <div className="box-body">
-              <div id="hide-table">
-          <table
-                  id="example1"
-                  className="table table-bordered table-striped mr-5"
-                  style={{ marginTop: 50, marginLeft:330, width:810}}
-                >
+        <div>
+          <div className="row ">
+            <table className="table table-striped table-bordered mt-2">
               <thead>
                 <tr>
-                  <th>UserId</th>
                   <th>Feedback_Date</th>
                   <th>Description</th>
                   <th>Rating</th>
@@ -94,7 +83,6 @@ class Feedback extends Component {
               <tbody>
                 {this.state.feedbacks.map((feedback) => (
                   <tr key={feedback.id}>
-                    <td>{feedback.userId}</td>
                     <td>{feedback.feedbackDate}</td>
                     <td>{feedback.description}</td>
                     <td>{feedback.rating}</td>
@@ -128,7 +116,6 @@ class Feedback extends Component {
           </div>
         </div>
       </div>
-      </section></div>
     );
   }
 }

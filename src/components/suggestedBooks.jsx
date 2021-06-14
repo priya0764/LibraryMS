@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SuggestedBooksService from "../services/suggestedBooksService";
 import {Link} from "react-router-dom";
+import DashboardNav from "./dashboardnav";
 import "./style.css";
 
 
@@ -55,7 +56,8 @@ class SuggestedBooks extends Component {
   render() {
     return (
       <div>
-        <h2 className="text-center">Suggested Books List </h2>
+        <DashboardNav />
+        <h2 className="text-center" style={{paddingLeft:200}}>Suggested Books List </h2>
         {/* <div className="row">
           <button           
             className="btn btn-info btn-large mb-2 ml-3"
@@ -65,7 +67,7 @@ class SuggestedBooks extends Component {
           </button>
         </div> */}
         <div className="d-flex justify-content-between">
-            <Link to="/add-suggestedbooks" className="btn btn-info btn-large mb-1">
+            <Link to="/add-suggestedbooks" className="btn btn-info btn-large mb-1" style={{marginLeft:270}}>
             <i class="bi bi-plus-square"></i> Add
             </Link>
             <form className="form-inline my-2 my-lg-0">
@@ -86,16 +88,13 @@ class SuggestedBooks extends Component {
               </button>
             </form>
           </div>
-        <div className="row">
-          <table className="table table-sm table-striped table-bordered ">
+        <div className="row" style={{marginLeft:250}}>
+          <table className="table table-sm table-striped table-bordered "  style={{marginLeft:280,marginTop:80,width:1050}}>
             <thead class="thead-dark">
               <tr>
                 <th>Title</th>
                 <th>Subject</th>
                 <th>Author</th>
-                {/*<th>Publications</th>
-                                <th>Description</th>
-                                <th>Suggested Date</th>*/}
                 <th>Status</th>
                 <th>Actions</th>
               </tr>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SuggestedBooksService from '../services/suggestedBooksService';
+import DashboardNav from './dashboardnav';
 class AddSuggestedBooks extends Component {
 
     constructor(props) {
@@ -76,6 +77,7 @@ class AddSuggestedBooks extends Component {
     render() {
         return (
             <div>
+                <DashboardNav />
                 <div className="container">
                     <div className="row">
                         <div className="caed col-md-6 offset-md-3 offset-md-3">
@@ -115,7 +117,7 @@ class AddSuggestedBooks extends Component {
                                         <input placeholder="status" name="status" className="form-control" value={this.state.status} onChange={this.changeStatusHandler} required />
                                     </div>
 
-                                    <button className="btn btn-success" onClick={this.saveSuggestedBooks}> Save</button>
+                                    <button className="btn btn-success" onClick={this.saveSuggestedBooks}> Save </button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Cancel</button>
 
                                 </form>
