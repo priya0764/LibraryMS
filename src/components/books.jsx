@@ -78,7 +78,7 @@ class Books extends Component {
                 <table
                   id="example1"
                   className="table table-bordered table-striped"
-                  style={{ marginTop: 100, marginLeft:260, width:"auto"}}
+                  style={{ marginTop: 100, marginLeft:260, width:1200}}
                 >
                   <thead>
                     <tr>

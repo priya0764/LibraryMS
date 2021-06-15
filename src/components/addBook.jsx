@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import BookService from "../services/bookService";
-import { Link } from "react-router-dom";
 import DashboardNav from './dashboardnav';
 
 class AddBook extends Component {
@@ -130,7 +129,7 @@ class AddBook extends Component {
                           name="imageName"
                           value={this.state.book.imageName}
                           onChange={this.handleChange}
-                          placeholder="Enter file Name"
+                          placeholder="Enter file Name (should end with .jpg)"
                           required
                         />
                       </div>
