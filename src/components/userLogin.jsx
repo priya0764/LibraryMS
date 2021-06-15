@@ -21,7 +21,7 @@ class UserLogin extends Component{
         console.log('loginentity => '+JSON.stringify(loginentity));
 
         UsersService.login(loginentity).then(res => {
-           this.props.history.push(`/Home`);
+           this.props.history.push("/userPage");
         });
     }
     changeEmailHandler =(event) =>{
@@ -37,7 +37,7 @@ render(){
             <br></br>
         <div>
         
-             <div className = "container-md" >
+             <div className = "container-md" style={{minHeight:757.08, textAlign:"left"}}>
                 <div className = "row">
                     <div className = "card col-md-6 offset-md-3 offset-md-3">
                         <h3 className = "text-center">Login Page</h3>

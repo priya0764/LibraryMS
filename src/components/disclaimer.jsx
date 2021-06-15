@@ -5,7 +5,7 @@ import login from './pictures/login.jpg'
 class Disclaimer extends Component {
   render() {
     return (
-        <div >
+        <React.Fragment>
             <LoginNavbar/>
         <div className="spinner-border text-success mt-4 mb-1" role="status">
         
@@ -15,7 +15,7 @@ class Disclaimer extends Component {
         </div>
         <img className="mx-auto" width='500' height='200' src={login}/>
        
-      </div>
+        </React.Fragment>
     );
   }
 }

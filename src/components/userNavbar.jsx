@@ -27,18 +27,13 @@ class UserNavbar extends Component {
               </div>
               <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 " style={{textAlign:"right", fontSize:20}}>
                 <ul className="header-items float-right">
-                  <li>
-                    <NavLink to="#" className="mr-2 ">
-                      <i className="fa fa-dashboard"></i> DashBoard
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="#" className="mr-2">
+                <li>
+                    <NavLink to="/userPage" className="mr-2">
                     <i class="fa fa-lock"></i> My Account
                     </NavLink>                    
                   </li>
                   <li>
-                    <NavLink to="#" className="mr-2">
+                    <NavLink to="/" className="mr-2">
                     <i class="fa fa-sign-out"></i> Logout
                     </NavLink>
                   </li>
@@ -70,13 +65,14 @@ class UserNavbar extends Component {
                         name="search"
                         onChange={this.onChange}
                       />
-                      <div className="input-group-append search-btn">
+                      <NavLink to="/book/details"
+                        className="input-group-append search-btn">
                         <input
                           type="submit"
                           className="input-group-text"
                           value="Search"
                         />
-                      </div>
+                      </NavLink>
                     </div>
                   </form>
                 </div>
@@ -111,7 +107,7 @@ class UserNavbar extends Component {
               <li>
                 <NavLink
                   className="container-fluid ml-5"
-                  to="#"
+                  to="/userPage"
                 >
                   <i className="fa fa-home"></i>Home
                 </NavLink>
@@ -119,7 +115,7 @@ class UserNavbar extends Component {
               <li>
                 <NavLink
                   className="container"
-                  to="#"
+                  to="/ebook"
                 >
                   Ebook
                 </NavLink>

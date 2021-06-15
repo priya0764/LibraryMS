@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import _ from "lodash";
 import UsersService from "../services/usersService";
 import {Link} from "react-router-dom";
+import DashboardNav from "./dashboardnav";
 
 class Users extends Component {
   constructor(props) {
@@ -51,10 +52,10 @@ class Users extends Component {
   };
 
   render() {
-    const { search, sortColumn, userList } = this.state;
+    const { search, sortColumn, userList }=this.state;
     var sorted=[];
     if(search){
-      sorted=userList.filter((user)=>user.userId === search);
+      sorted=userList.filter((user)=>user.userId==search);
     }else{
       sorted=_.orderBy(
         this.state.userList,
@@ -66,11 +67,12 @@ class Users extends Component {
     console.log("Sorted..",sorted);
     return (
       <div>
+        <DashboardNav/>
         <h2 className="text-center">Users List</h2>
         <div className="w-75 mt-5 mx-auto">
          <div className="d-flex justify-content-between">
            <Link to="/user/add" className="btn btn-success btn-large mb-1">
-             Add
+             Add User
            </Link>
            <form class="form-inline my-2 my-lg-0">
              <input
@@ -91,17 +93,14 @@ class Users extends Component {
          </div>
         </div>
         <div className="row">
-          <table className="table table-stripped table-bordered">
+          <table className="table table-stripped table-bordered mt-5">
             <thead>
               <tr>
                 <th onClick={()=>this.handleSort("email")}>Email</th>
                 <th onClick={()=>this.handleSort("firstname")}>FirstName</th>
                 <th onClick={()=>this.handleSort("lastname")}>LastName</th>
                 <th onClick={()=>this.handleSort("mobileNumber")}>MobileNumber</th>
-                <th onClick={()=>this.handleSort("dateOfBirth")}>DateOfBirth</th>
-                <th onClick={()=>this.handleSort("subscriptionDate")}>Subscription Date</th>
-                <th onClick={()=>this.handleSort("subExpireDate")}>SubExpire Date</th>
-                <th onClick={()=>this.handleSort("subscriptionStatus")}>Subscription Status</th>
+                <th onClick={()=>this.handleSort("dateOfBirth")}>DateOFBirth</th>
                 <th colSpan="2">Action</th>
              </tr>
             </thead>
@@ -113,9 +112,6 @@ class Users extends Component {
                   <td>{user.lastname}</td>
                   <td>{user.mobileNumber}</td>
                   <td>{user.dateOfBirth}</td>
-                  <td>{user.subscriptionDate}</td>
-                  <td>{user.subExpireDate}</td>
-                  <td>{user.subscriptionStatus}</td>
                   <td>
                      <Link to={`/user/update/${user.userId}`}>
                       <button className="btn btn-secondary">Update</button>

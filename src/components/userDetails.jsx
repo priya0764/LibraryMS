@@ -10,9 +10,7 @@ class UserDetails extends Component{
             firstname:"",
             lastname:"",
             dateOfBirth:"",
-            subscriptionDate:"",
-            subExpireDate:"",
-            subscriptionStatus:"",
+           
         },
      };
     componentDidMount(){
@@ -120,11 +118,9 @@ class UserDetails extends Component{
                         name="mobileNumber"
                         value={this.state.userList.mobileNumber}
                         onChange={this.handleChange}
-                      />  
-                  </div>
-                  <div className="mb-3">
+                      /> 
                       <label htmlFor="dateOfBirth" className="form-label">
-                          DateOfBirth
+                          dateOfBirth
                       </label>
                       <input
                         type="text"
@@ -132,45 +128,6 @@ class UserDetails extends Component{
                         id="dateOfBirth"
                         name="dateOfBirth"
                         value={this.state.userList.dateOfBirth}
-                        onChange={this.handleChange}
-                      />  
-                  </div>
-                  <div className="mb-3">
-                      <label htmlFor="subscriptionDate" className="form-label">
-                          Subscription Date
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="subscriptionDate"
-                        name="subscriptionDate"
-                        value={this.state.userList.subscriptionDate}
-                        onChange={this.handleChange}
-                      />  
-                  </div>
-                  <div className="mb-3">
-                      <label htmlFor="subExpireDate" className="form-label">
-                          SubExpire Date
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="subExpireDate"
-                        name="subExpireDate"
-                        value={this.state.userList.subExpireDate}
-                        onChange={this.handleChange}
-                      />  
-                  </div>
-                  <div className="mb-3">
-                      <label htmlFor="subscriptionStatus" className="form-label">
-                          Subscription Status
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="subscriptionStatus"
-                        name="subscriptionStatus"
-                        value={this.state.userList.subscriptionStatus}
                         onChange={this.handleChange}
                       />  
                   </div>

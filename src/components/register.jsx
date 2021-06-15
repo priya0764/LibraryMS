@@ -11,6 +11,7 @@ class Register extends Component {
             firstname:'',
             lastname:'',
             mobileNumber:'',
+            dateOfBirth:'',
         }
     };
     handleSubmit=(event)=>{
@@ -30,15 +31,12 @@ class Register extends Component {
     return (
       <div>
         <section class="main-login">
-          <div class="container">
+          <div class="container" style={{minHeight:757.08, textAlign:"left"}}>
             <div class="row">
               <div class="col-sm-6 offset-md-3">
                 <div class="my-login">
                   <h2 class="text-center">Register</h2>
-
-                  <form  onSubmit={this.handleSubmit}>
-                    
-                    
+                   <form  onSubmit={this.handleSubmit}>
                     <div class="form-group">
                       <label>Email</label> <span class="text-danger">*</span>
                       <input
@@ -64,7 +62,7 @@ class Register extends Component {
                       />
                     </div>
                     <div class="form-group">
-                      <label>FirstName</label> <span class="text-danger">*</span>
+                      <label>First Name</label> <span class="text-danger">*</span>
                       <input
                         type="text"
                         class="form-control "
@@ -77,7 +75,7 @@ class Register extends Component {
                       />
                     </div>
                     <div class="form-group">
-                      <label>LastName</label> <span class="text-danger">*</span>
+                      <label>Last Name</label> <span class="text-danger">*</span>
                       <input
                         type="text"
                         class="form-control "
@@ -90,7 +88,7 @@ class Register extends Component {
                       />
                     </div>
                     <div class="form-group">
-                      <label>MobileNumber</label> <span class="text-danger">*</span>
+                      <label>Mobile Number</label> <span class="text-danger">*</span>
                       <input
                         type="text"
                         class="form-control "
@@ -102,10 +100,21 @@ class Register extends Component {
                         onChange={this.handleChange}
                       />
                     </div>
+                    <label>Date Of Birth</label> <span class="text-danger">*</span>
+                      <input
+                        type="text"
+                        class="form-control "
+                        placeholder="yyyy-mm-dd"
+                        minLength="0000-00-00"
+                        id="dateOfBirth"
+                        name="dateOfBirth"
+                        value={this.state.user.dateOfBirth}
+                        onChange={this.handleChange}
+                      />
                     <div class="form-group">
-                      <button type="submit" class="btn btn-success btn-block" onSubmit={this.handleSubmit}>
+                      <button type="submit" class="btn btn-success btn-block mt-5">
                         Register
-                      </button> 
+                      </button>
                     </div>
                   </form>
                 </div>

@@ -31,9 +31,7 @@ class CategoryListHome extends Component {
                     <li>
                       <Link to="/category/books/fantasy">Fantasy</Link>
                     </li>
-                    <li>
-                      <Link to="/"> + More Category</Link>
-                    </li>
+
                   </ul>
                 </div>
               </div>
