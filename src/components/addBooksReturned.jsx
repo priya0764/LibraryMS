@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import BooksReturnedService from "../services/booksReturnedService";
-import { Link } from "react-router-dom";
-import DashboardNav from './dashboardnav';
+import DashboardNav from "./dashboardnav";
 
 class AddBooksReturned extends Component {
   state = {
     returned: {
-        returnedDate: '',
-        delayedDays: '',
-        penalty: '',
-        penalty_Status: ''
+      returnedDate: "",
+      delayedDays: "",
+      penalty: "",
+      penalty_Status: "",
     },
   };
 
@@ -29,11 +28,14 @@ class AddBooksReturned extends Component {
   render() {
     return (
       <React.Fragment>
-          <DashboardNav />
-        <div className="content-wrapper" style={{minHeight: 757.08, textAlign:"left"}}>
+        <DashboardNav />
+        <div
+          className="content-wrapper"
+          style={{ minHeight: 757.08, textAlign: "left" }}
+        >
           <section className="content">
             <div className="box box-mytheme">
-            <h3 className="text-center">Add Returned Books</h3>
+              <h3 className="text-center">Add Returned Books</h3>
               <div className="row">
                 <div className="col-md-6">
                   <form onSubmit={this.handleSubmit}>
@@ -101,7 +103,7 @@ class AddBooksReturned extends Component {
 
                       <div className="form-group ">
                         <label htmlFor="penalty_Status">Penalty Status</label>{" "}
-                         <input
+                        <input
                           type="text"
                           className="form-control"
                           id="penalty_Status"
@@ -112,15 +114,25 @@ class AddBooksReturned extends Component {
                           required
                         />
                       </div>
-
-                                                                   
-                       
-                                                      
-                      
                     </div>
+
                     <div className="box-footer">
-                    <button className="btn btn-success" onClick={this.handleSubmit}> Save </button>
-                    <button className="btn btn-danger" onClick={()=>{this.props.history.push("/booksReturned")}} style={{ marginLeft: "10px" }}>Cancel</button>
+                      <button
+                        className="btn btn-success"
+                        onClick={this.handleSubmit}
+                      >
+                        {" "}
+                        Save{" "}
+                      </button>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => {
+                          this.props.history.push("/booksReturned");
+                        }}
+                        style={{ marginLeft: "10px" }}
+                      >
+                        Cancel
+                      </button>
                     </div>
                   </form>
                 </div>

@@ -32,7 +32,7 @@ class CategoryListHome extends Component {
                       <Link to="/category/books/fantasy">Fantasy</Link>
                     </li>
                     <li>
-                      <Link to="/home"> + More Category</Link>
+                      <Link to="/"> + More Category</Link>
                     </li>
                   </ul>
                 </div>

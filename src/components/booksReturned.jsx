@@ -17,7 +17,6 @@ class BooksReturned extends Component {
     this.addReturnedBooks = this.addReturnedBooks.bind(this);
     this.deleteReturnedBooks = this.deleteReturnedBooks.bind(this);
     this.viewReturnedBooks = this.viewReturnedBooks.bind(this);
-    // this.updateReturnedBooks = this.updateReturnedBooks.bind(this);
   }
 
   addReturnedBooks() {
@@ -36,13 +35,6 @@ class BooksReturned extends Component {
     this.props.history.push(`returnedBooks-delayed/${delayedDays}`);
   };
 
-  /*
-    deleteReturnedBooks(id) {
-        BooksReturnedService.deleteReturnedBooks(id).then(res => {
-            this.setState({ authors: this.state.authors.filter(author => author.authorId !== authorId) });
-        });
-    }
-*/
   deleteReturnedBooks(id) {
     BooksReturnedService.deleteReturnedBooks(id).then((res) => {
       this.setState({
@@ -68,38 +60,19 @@ class BooksReturned extends Component {
       <div>
         <DashboardNav />
         <h2 className="text-center">ReturnedBooks List</h2>
-        {/* <div className="row">
-                    <button c
-                    lassName="btn btn-success mb-2" onClick={this.addReturnedBooks}>Add</button>
-                </div> */}
-
-        <div className="d-flex justify-content-between" style={{marginLeft:300}}>
+        <div
+          className="d-flex justify-content-between"
+          style={{ marginLeft: 300 }}
+        >
           <Link to="/add-returned" className="btn btn-success btn-large mb-1">
-          <i class="bi bi-plus-square"></i> Add
+            <i class="bi bi-plus-square"></i> Add
           </Link>
-          
-          <form className="form-inline my-2 my-lg-0">
-           {/* <input
-              className="form-control mr-sm-2"
-              type="search"
-              name="delayedDays"
-              placeholder="Search by days"
-              aria-label="Search"
-              onChange={this.onChange}
-            />
-             <button
-              className="btn btn-warning my-2 my-sm-0"
-              type="button"
-              onClick={() =>
-                this.getReturnedBooksByDelayedDays(this.state.search)
-              }
-            >
-              Search
-            </button> */}
-          </form>
         </div>
         <div className="row">
-          <table className="table table-sm table-striped table-bordered" style={{marginLeft:300, marginTop:51, width:1200}}>
+          <table
+            className="table table-sm table-striped table-bordered"
+            style={{ marginLeft: 300, marginTop: 51, width: 1200 }}
+          >
             <thead className="thead-dark">
               <tr>
                 <th>Photo</th>
@@ -126,7 +99,7 @@ class BooksReturned extends Component {
                       onClick={() => this.deleteReturnedBooks(returnedBooks.id)}
                       className="btn btn-danger"
                     >
-                     <i class="bi bi-trash-fill"></i>Delete
+                      <i class="bi bi-trash-fill"></i>Delete
                     </button>
                     <button
                       style={{ marginLeft: "10px" }}
