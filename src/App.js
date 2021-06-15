@@ -120,7 +120,6 @@ import ViewBookDashboard from './components/viewBookDashboard';
 
 import UserNavbar from './components/userNavbar';
 import UserSuggestedBooks from './components/userSuggestedBook';
-import UserProfile from "./components/userProfile";
 
 function App() {
   return (
@@ -197,7 +196,6 @@ function App() {
           <Route path="/suggestedbooks-title/:title" component={SearchTitle}></Route>
 
           <Route path="/userPage" component={UserPage} />
-          <Route path="/userprofile" component={UserProfile} />
           <Route path="/userNavbar" component={UserNavbar}/>
 
 

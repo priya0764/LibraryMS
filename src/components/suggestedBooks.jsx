@@ -58,14 +58,7 @@ class SuggestedBooks extends Component {
       <div>
         <DashboardNav />
         <h2 className="text-center" style={{paddingLeft:200}}>Suggested Books List </h2>
-        {/* <div className="row">
-          <button           
-            className="btn btn-info btn-large mb-2 ml-3"
-            onClick={this.addSuggestedBooks}
-          >
-            <i class="bi bi-plus-square"></i> Add
-          </button>
-        </div> */}
+        
         <div className="d-flex justify-content-between">
             <Link to="/add-suggestedbooks" className="btn btn-info btn-large mb-1" style={{marginLeft:270}}>
             <i class="bi bi-plus-square"></i> Add

@@ -20,7 +20,7 @@ class UserPage extends Component {
                   <div className="slider-menu">
                     <ul>
                       <li>
-                        <Link to="/user/update/:id">
+                        <Link to="/user/update/5">
                           <i className="bi bi-person-circle"></i> Update Profile
                         </Link>
                       </li>
@@ -55,7 +55,7 @@ class UserPage extends Component {
                     <div className="col-md-6">
                       <div className="profile_view_item">
                         <p>
-                          <b>Email</b>: email
+                          <b>Email</b>: user@gmail.com
                         </p>
                       </div>
                       <div className="profile_view_item">

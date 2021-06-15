@@ -20,7 +20,7 @@ class UserSuggestedBooks extends Component {
     event.preventDefault();
     SuggestedBooksService.addSuggestedBooks(this.state.suggestedbook).then(
       (res) => {
-        this.props.history.push("/suggestedbooks");
+        this.props.history.push("/userPage");
       }
     );
   };
@@ -174,7 +174,7 @@ class UserSuggestedBooks extends Component {
                       <button
                         className="btn btn-danger"
                         onClick={() => {
-                          this.props.history.push("/suggestedbooks");
+                          this.props.history.push("/userPage");
                         }}
                         style={{ marginLeft: "10px" }}
                       >
