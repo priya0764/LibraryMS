@@ -48,8 +48,8 @@ class ViewAuthor extends Component {
                     </div>
                 </div>
                 
-                <p> The information includes the author's unique identifier number,full name and contact details such
-                as emailId and moblineNumber.</p>
+                <p> The information includes the author's unique identifier number,full name
+                 and contact details suchas emailId and moblineNumber.</p>
                 <img src={download} width="150px" alt="bye" class="center"></img>
                 
 <div><a class="btn btn-primary" href="\author" role="button">Back</a></div>

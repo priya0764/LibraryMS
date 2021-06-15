@@ -16,10 +16,6 @@ class SearchReturnedBook extends Component {
       this.setState({ returnedBooks: res.data });
       console.log(this.state.returnedBooks);
     });
-    // const books = this.state.books.filter(
-    //   (book) => book.subject === this.state.search
-    // )
-    // this.setState({books})
 
   }
   render() {
