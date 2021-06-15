@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FeedbackService from "../services/feedbackService";
-import feedback3 from "../images/feedback3.jpg"
+import UserNavbar from "./userNavbar";
+import Footer from './footer'
 
 class AddFeedback extends Component {
   state = {
@@ -19,7 +20,7 @@ class AddFeedback extends Component {
     console.log("Submitted");
     FeedbackService.writeFeedback(this.state.feedback).then(
       (res) => {
-        this.props.history.push("/feedback");
+        this.props.history.push("/userPage");
       }
     );
   };
@@ -32,6 +33,7 @@ class AddFeedback extends Component {
   render() {
     return (
       <React.Fragment>
+        <UserNavbar/>
      <div className="mt-5">
         <h4 className="ml-5 mt-2 pl-5" style={{ color: "GrayText" }}>
           Give your valuable feedback
@@ -120,13 +122,14 @@ class AddFeedback extends Component {
 
           <button 
             type="submit"
-            className="btn btn-primary mt-3"           
+            className="btn btn-primary mt-3 mb-3"           
           >
             Submit
           </button>
         </form>
        
       </div>
+      <Footer/>
       </React.Fragment>
     );
   }

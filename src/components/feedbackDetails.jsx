@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FeedbackService from "../services/feedbackService";
+import DashboardNav from "./dashboardnav";
 
 class FeedbackDetails extends Component {
   state = {
@@ -35,7 +36,8 @@ class FeedbackDetails extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
+        <DashboardNav/>
+        <div style={{ fontFamily: "revert", marginLeft:300 }}>
           <form
             onSubmit={this.handleSubmit}
             className="w-50 ml-5 mt-5"

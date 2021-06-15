@@ -53,10 +53,7 @@ class Feedback extends Component {
           <div className="box-head">
       
         <div className="d-flex justify-content-between " style={{width:'auto'}}>
-          <Link to="/feedback/add" className="btn btn-dark">
-          <i className="fa fa-plus"></i>
-            Add Feedback
-          </Link>
+          
           <form className="form-inline my-2 my-lg-0 mr-0">
             <input
               className="form-control  "
