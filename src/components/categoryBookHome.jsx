@@ -27,11 +27,6 @@ class CategoryBookHome extends Component {
                     </div>
                     <div className="book-content">
                         A Tale of Two Cities{" "}
-                      <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="#">
-                          <i className="fa fa-eye"></i>
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -46,11 +41,7 @@ class CategoryBookHome extends Component {
                     </div>
                     <div className="book-content">
                         The Lion, the Witch and the Wardrobe{" "}
-                      <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="#">
-                          <i className="fa fa-eye"></i>
-                        </Link>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -65,11 +56,7 @@ class CategoryBookHome extends Component {
                     </div>
                     <div className="book-content">
                         The Little Prince{" "}
-                      <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="#">
-                          <i className="fa fa-eye"></i>
-                        </Link>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -86,11 +73,7 @@ class CategoryBookHome extends Component {
                     </div>
                     <div className="book-content">
                         The Book Theif{" "}
-                      <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="#">
-                          <i className="fa fa-eye"></i>
-                        </Link>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -105,11 +88,7 @@ class CategoryBookHome extends Component {
                     </div>
                     <div className="book-content">
                         Twilight{" "}
-                      <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="#">
-                          <i className="fa fa-eye"></i>
-                        </Link>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -124,11 +103,7 @@ class CategoryBookHome extends Component {
                     </div>
                     <div className="book-content">
                         Pride and Prejudice{" "}
-                      <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="#">
-                          <i className="fa fa-eye"></i>
-                        </Link>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -137,44 +112,6 @@ class CategoryBookHome extends Component {
           </div>
         </div>
       </React.Fragment>
-      // <div classNameName="">
-      //   {this.state.books.map((book) => (
-      //   <div className="col-lg-12 ml-5">
-      //     <div className="row">
-      //       <div className="col-sm-4">
-      //         <div className="single-book">
-      //           <div className="book-image ">
-      //             <Link to="">
-      //               <img
-      //                 className="book-thumbail-image h-100"
-      //                 src={`./image/${book.imageName}`}
-      //                 alt="single-book"
-      //                 style={{width:650}}
-      //               />
-      //             </Link>
-      //           </div>
-      //           <div className="book-content" style={{alignContent:"center"}}>
-      //             <Link
-      //               to=""
-      //               className="book-title" style={{textAlign:"center"}}
-      //             >
-      //               {book.title}{" "}
-      //             </Link>
-      //             <div className="book-actions">
-      //               <Link
-      //                 className="btn btn-outline-success btn-sm"
-      //                 to=""
-      //               >
-      //                 <i className="fa fa-eye"></i>
-      //               </Link>
-      //             </div>
-      //           </div>
-      //         </div>
-      //       </div>
-      //     </div>
-      //   </div>
-      //   ))}
-      // </div>
     );
   }
 }

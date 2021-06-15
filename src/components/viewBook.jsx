@@ -75,6 +75,14 @@ class ViewBook extends Component {
                     </div>
                   </div>
                 </div>
+                <button
+            className="btn btn-dark"
+            onClick={() => {
+              this.props.history.push("/book/details");
+            }}
+          >
+            Back
+          </button>
               </div>
             </div>
           </section>
