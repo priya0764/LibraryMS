@@ -79,7 +79,13 @@ class DashboardNav extends Component {
                       <i className="fa fa-dashboard"></i> <span>Dashboard</span>
                     </Link>
                   </li>
-
+                  
+                  <li className=" ">
+                    <Link to="/users">
+                      <i className="fa fa-user-plus"></i> <span>User</span>
+                    </Link>
+                  </li>
+                  
                   <li className=" ">
                     <Link to="/booksIssued">
                       <i className="fa fa-book"></i> <span>Book Issue</span>
@@ -113,11 +119,6 @@ class DashboardNav extends Component {
                     </Link>
                   </li>
 
-                  <li className=" ">
-                    <Link to="/users">
-                      <i className="fa fa-user-plus"></i> <span>User</span>
-                    </Link>
-                  </li>
                   <li className=" ">
                     <Link to="/book">
                       <i className="fa fa-book"></i> <span>Books</span>
