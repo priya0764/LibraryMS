@@ -20,14 +20,14 @@ class UserPage extends Component {
                   <div className="slider-menu">
                     <ul>
                       <li>
-                        <a href="/user/update/:id">
+                        <Link to="/user/update/:id">
                           <i className="bi bi-person-circle"></i> Update Profile
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a href="/add-suggestedbooks">
+                        <Link to="/usersuggestedbook">
                           <i className="bi bi-book"></i> Suggest books
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <a href="/feedback/add">
