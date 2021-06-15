@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReaderService from "../services/readerService";
+import DashboardNav from "./dashboardnav"
 
 
 class AddReader extends Component {
@@ -29,6 +30,7 @@ class AddReader extends Component {
   render() {
     return (
       <React.Fragment>
+        <DashboardNav/>
       <div className="w-50 mx-auto mt-5" style={{textAlign:'left'}}>
         <form onSubmit={this.handleSubmit}>
         
