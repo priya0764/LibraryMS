@@ -11,9 +11,7 @@ class AddUser extends Component{
             firstname:"",
             lastname:"",
             dateOfBirth:"",
-            subscriptionDate:"",
-            subExpireDate:"",
-            subscriptionStatus:"",
+            
         },
     };
     handleSubmit=(event)=>{
@@ -31,23 +29,10 @@ class AddUser extends Component{
     };
     render(){
         return(
-            <div className="w-50 mx-auto">
+            <div className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
                 <form onSubmit={this.handleSubmit}>
                     <div className="mb-3">
-                        <label htmlFor="userId" className="form-label">
-                            UserId
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="userId"
-                          name="userId"
-                          value={this.state.user.userId}
-                          onChange={this.handleChange}
-                          autoFocus
-                          />
-                        
-                         <label htmlFor="email" className="form-label">
+                        <label htmlFor="email" className="form-label">
                             Email
                         </label>
                         <input
@@ -57,18 +42,21 @@ class AddUser extends Component{
                           name="email"
                           value={this.state.user.email}
                           onChange={this.handleChange}
+                          required
                           />
                           <label htmlFor="password" className="form-label">
                             Password
                         </label>
                         <input
-                          type="text"
+                          type="password"
                           className="form-control"
+                          minLength="8"
+                          maxLength="15"
                           id="password"
                           name="password"
                           value={this.state.user.password}
                           onChange={this.handleChange}
-                          
+                          required
                           />
                         <label htmlFor="firstname" className="form-label">
                             FirstName
@@ -76,10 +64,13 @@ class AddUser extends Component{
                         <input
                           type="text"
                           className="form-control"
+                          minLength="2"
+                          maxLength="10"
                           id="firstname"
                           name="firstname"
                           value={this.state.user.firstname}
                           onChange={this.handleChange}
+                          required
                            />
                          <label htmlFor="lastname" className="form-label">
                             LastName
@@ -87,11 +78,13 @@ class AddUser extends Component{
                         <input
                           type="text"
                           className="form-control"
+                          minLenth="1"
+                          maxLength="10"
                           id="lastname"
                           name="lastname"
                           value={this.state.user.lastname}
                           onChange={this.handleChange}
-                          
+                          required
                         />
                          <label htmlFor="mobileNumber" className="form-label">
                             MobileNumber
@@ -99,57 +92,29 @@ class AddUser extends Component{
                         <input
                           type="text"
                           className="form-control"
+                          minLength="10"
+                          maxLength="10"
                           id="mobileNumber"
                           name="mobileNumber"
                           value={this.state.user.mobileNumber}
                           onChange={this.handleChange}
-                          
+                          required
                         />
-                       <label htmlFor="dateOfBirth" className="form-label">
+                        <label htmlFor="dateOfBirth" className="form-label">
                             DateOfBirth
                         </label>
                         <input
                           type="text"
                           className="form-control"
+                          minLength="yyyy-mm-dd"
+                          maxLength="yyyy-mm-dd"
                           id="dateOfBirth"
                           name="dateOfBirth"
                           value={this.state.user.dateOfBirth}
                           onChange={this.handleChange}
+                          required
                         />
-                       <label htmlFor="subscriptionDate" className="form-label">
-                            Subscription Date
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="subscriptionDate"
-                          name="subscriptionDate"
-                          value={this.state.user.subscriptionDate}
-                          onChange={this.handleChange}
-                        /> 
-                        <label htmlFor="subExpireDate" className="form-label">
-                            SubExpire Date
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="subExpireDate"
-                          name="subExpireDate"
-                          value={this.state.user.subExpireDate}
-                          onChange={this.handleChange}
-                        />  
-                       <label htmlFor="subscriptionStatus" className="form-label">
-                            Subscription Status
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="subscriptionStatus"
-                          name="subscriptionStatus"
-                          value={this.state.user.subscriptionStatus}
-                          onChange={this.handleChange}
-                        />
-                    </div>   
+                       </div>   
                     <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>
                         Submit
                     </button>     

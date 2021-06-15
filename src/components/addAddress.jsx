@@ -16,7 +16,7 @@ class AddAddress extends Component {
     event.preventDefault();
     console.log("Submitted");
     AddressService.createAddress(this.state.address).then((res) => {
-      this.props.history.push("");
+      this.props.history.push("address");
     });
   };
   handleChange = (event) => {
@@ -26,31 +26,21 @@ class AddAddress extends Component {
   };
   render() {
     return (
-      <div className="w-50 mx-auto">
+      <div className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
         <form onSubmit={this.handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="addressId" className="form-label">
-              AddressId
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="addressId"
-              name="addressId"
-              value={this.state.address.addressId}
-              onChange={this.handleChange}
-              autoFocus
-            />
             <label htmlFor="address1" className="form-label">
               Address1
             </label>
             <input
               type="text"
               className="form-control"
+              minLength="5"
               id="address1"
               name="address1"
               value={this.state.address.address1}
               onChange={this.handleChange}
+              required
             />
             <label htmlFor="address2" className="form-label">
               Address2
@@ -58,10 +48,12 @@ class AddAddress extends Component {
             <input
               type="text"
               className="form-control"
+              minLength="5"
               id="address2"
               name="address2"
               value={this.state.address.address2}
               onChange={this.handleChange}
+              required
             />
             <label htmlFor="city" className="form-label">
               City
@@ -69,10 +61,12 @@ class AddAddress extends Component {
             <input
               type="text"
               className="form-control"
+              minLength="5"
               id="city"
               name="city"
               value={this.state.address.city}
               onChange={this.handleChange}
+              required
             />
             <label htmlFor="state" className="form-label">
               State
@@ -80,10 +74,12 @@ class AddAddress extends Component {
             <input
               type="text"
               className="form-control"
+              minLength="5"
               id="state"
               name="state"
               value={this.state.address.state}
               onChange={this.handleChange}
+              required
             />
 
             <label htmlFor="pincode" className="form-label">
@@ -92,10 +88,12 @@ class AddAddress extends Component {
             <input
               type="text"
               className="form-control"
+              minLength="6"
               id="pincode"
               name="pincode"
               value={this.state.address.pincode}
               onChange={this.handleChange}
+              required
             />
           </div>
 

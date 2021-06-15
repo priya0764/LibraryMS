@@ -90,7 +90,7 @@ class BooksIssued extends Component {
          </div>
         </div>
         <div className="row">
-          <table className="table table-stripped table-bordered">
+          <table className="table table-stripped table-bordered mt-5">
             <thead>
               <tr>
                 

@@ -16,7 +16,7 @@ class AddBooksIssued extends Component{
         event.preventDefault();
         console.log("Submitted");
         BooksIssuedService.createBooks(this.state.booksIssuedlist).then((res)=>{
-            this.props.history.push("");
+            this.props.history.push("booksIssued");
 
         });
     };
@@ -27,31 +27,22 @@ class AddBooksIssued extends Component{
     };
     render(){
         return(
-            <div className="w-50 mx-auto">
+            <div className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
                 <form onSubmit={this.handleSubmit}>
                     <div className="mb-3">
-                        <label htmlFor="issueId" className="form-label">
-                            IssueId
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="issueId"
-                          name="issueId"
-                          value={this.state.booksIssued.issueId}
-                          onChange={this.handleChange}
-                          autoFocus
-                        />
                        <label htmlFor="issueDate" className="form-label">
                             IssueDate
                         </label>
                         <input
                           type="text"
                           className="form-control"
+                          placeholder="yyyy-mm-dd"
+                          minLength="0000-00-00"
                           id="issueDate"
                           name="issueDate"
                           value={this.state.booksIssued.issueDate}
                           onChange={this.handleChange}
+                          required
                         />
                        <label htmlFor="quantity" className="form-label">
                             Quantity
@@ -59,10 +50,13 @@ class AddBooksIssued extends Component{
                         <input
                           type="text"
                           className="form-control"
+                          placeholder="yyyy-mm-dd"
+                          minLength="0000-00-00"
                           id="quantity"
                           name="quantity"
                           value={this.state.booksIssued.quantity}
                           onChange={this.handleChange}
+                          required
                         /> 
                         <label htmlFor="dueDate" className="form-label">
                             Due Date
@@ -70,10 +64,13 @@ class AddBooksIssued extends Component{
                         <input
                           type="text"
                           className="form-control"
+                          placeholder="yyyy-mm-dd"
+                          minLength="0000-00-00"
                           id="dueDate"
                           name="dueDate"
                           value={this.state.booksIssued.dueDate}
                           onChange={this.handleChange}
+                          required
                         />  
                     </div>   
                     <button type="submit" className="btn btn-primary">
