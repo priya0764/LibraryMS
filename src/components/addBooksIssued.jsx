@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import BooksIssuedService from "../services/booksIssuedService";
-
+import DashboardNav from "./dashboardnav";
 
 class AddBooksIssued extends Component{
     state={
         booksIssued:{
+            userId:"",
             issueId:"",
             issueDate:"",
             quantity:"",
@@ -27,9 +28,13 @@ class AddBooksIssued extends Component{
     };
     render(){
         return(
+        <React.Fragment>
+           <DashboardNav/> 
             <div className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
                 <form onSubmit={this.handleSubmit}>
                     <div className="mb-3">
+                    
+
                        <label htmlFor="issueDate" className="form-label">
                             IssueDate
                         </label>
@@ -78,6 +83,7 @@ class AddBooksIssued extends Component{
                     </button>     
                 </form>
             </div>
+        </React.Fragment>  
         );
     }
 }

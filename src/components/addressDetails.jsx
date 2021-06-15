@@ -39,7 +39,7 @@ class AddressDetails extends Component{
     render(){
         return(
             <div>
-              <form onSubmit={this.handleSubmit} className="w-75 mx-auto">
+              <form onSubmit={this.handleSubmit} className="w-75 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
                   <h1>{this.props.match.params.id}</h1>
                   <div className="mb-3">
                       <label htmlFor="addressId" className="form-label">

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import usersService from "../services/usersService";
+import DashboardNav from "./dashboardnav";
 
 
 class AddUser extends Component{
@@ -29,6 +30,8 @@ class AddUser extends Component{
     };
     render(){
         return(
+        <React.Fragment>
+            <DashboardNav/>
             <div className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
                 <form onSubmit={this.handleSubmit}>
                     <div className="mb-3">
@@ -37,7 +40,7 @@ class AddUser extends Component{
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className="form-control mb-2"
                           id="email"
                           name="email"
                           value={this.state.user.email}
@@ -49,7 +52,7 @@ class AddUser extends Component{
                         </label>
                         <input
                           type="password"
-                          className="form-control"
+                          className="form-control mb-2"
                           minLength="8"
                           maxLength="15"
                           id="password"
@@ -63,7 +66,7 @@ class AddUser extends Component{
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className="form-control mb-2"
                           minLength="2"
                           maxLength="10"
                           id="firstname"
@@ -77,7 +80,7 @@ class AddUser extends Component{
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className="form-control mb-2"
                           minLenth="1"
                           maxLength="10"
                           id="lastname"
@@ -91,7 +94,7 @@ class AddUser extends Component{
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className="form-control mb-2"
                           minLength="10"
                           maxLength="10"
                           id="mobileNumber"
@@ -105,7 +108,7 @@ class AddUser extends Component{
                         </label>
                         <input
                           type="text"
-                          className="form-control"
+                          className="form-control mb-2"
                           minLength="yyyy-mm-dd"
                           maxLength="yyyy-mm-dd"
                           id="dateOfBirth"
@@ -120,6 +123,7 @@ class AddUser extends Component{
                     </button>     
                 </form>
             </div>
+          </React.Fragment>  
         );
     }
 }

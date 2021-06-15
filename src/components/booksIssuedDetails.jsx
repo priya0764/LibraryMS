@@ -1,5 +1,6 @@
 import React, { Component }from "react";
 import BooksIssuedService from "../services/booksIssuedService";
+import DashboardNav from "./dashboardnav";
 
 class BooksIssuedDetails extends Component{
     state = {
@@ -37,11 +38,14 @@ class BooksIssuedDetails extends Component{
     };
     render(){
         return(
+            <React.Fragment>
+              <DashboardNav/>  
             <div>
-              <form onSubmit={this.handleSubmit} className="w-75 mx-auto">
+              <form onSubmit={this.handleSubmit} className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
                   <h1>{this.props.match.params.id}</h1>
+                  
                   <div className="mb-3">
-                      <label htmlFor="issueId" className="form-label">
+                   <label htmlFor="issueId" className="form-label">
                           IssueId
                       </label>
                       <input
@@ -105,6 +109,7 @@ class BooksIssuedDetails extends Component{
                   </button>
               </form>
             </div>
+        </React.Fragment> 
         );
     }
 }

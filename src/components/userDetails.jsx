@@ -1,5 +1,6 @@
 import React, { Component }from "react";
 import UsersService from "../services/usersService";
+import DashboardNav from "./dashboardnav";
 
 class UserDetails extends Component{
     state = {
@@ -39,8 +40,10 @@ class UserDetails extends Component{
     };
     render(){
         return(
+         <React.Fragment>
+            <DashboardNav/>
             <div>
-              <form onSubmit={this.handleSubmit} className="w-75 mx-auto">
+              <form onSubmit={this.handleSubmit} className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
                   <h1>{this.props.match.params.id}</h1>
                   <div className="mb-3">
                       <label htmlFor="userId" className="form-label">
@@ -83,7 +86,7 @@ class UserDetails extends Component{
                   </div>
                   <div className="mb-3">
                       <label htmlFor="firstname" className="form-label">
-                          firstName
+                          First Name
                       </label>
                       <input
                         type="text"
@@ -96,7 +99,7 @@ class UserDetails extends Component{
                   </div>
                   <div className="mb-3">
                       <label htmlFor="lastname" className="form-label">
-                          LastName
+                          Last Name
                       </label>
                       <input
                         type="text"
@@ -109,7 +112,7 @@ class UserDetails extends Component{
                   </div>
                   <div className="mb-3">
                       <label htmlFor="mobileNumber" className="form-label">
-                          MobileNumber
+                          Mobile Number
                       </label>
                       <input
                         type="text"
@@ -119,8 +122,10 @@ class UserDetails extends Component{
                         value={this.state.userList.mobileNumber}
                         onChange={this.handleChange}
                       /> 
+                    </div>
+                    <div className="mb-3">  
                       <label htmlFor="dateOfBirth" className="form-label">
-                          dateOfBirth
+                          Date Of Birth
                       </label>
                       <input
                         type="text"
@@ -145,6 +150,7 @@ class UserDetails extends Component{
                   </button>
               </form>
             </div>
+        </React.Fragment>
         );
     }
 }
