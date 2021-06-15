@@ -41,7 +41,7 @@ class AddBook extends Component {
             <div className="box box-mytheme">
               <div className="row">
                 <div className="col-md-6">
-                  <form>
+                  <form onSubmit={this.handleSubmit}>
                     <div className="box-body">
                       <div className="form-group ">
                         <label htmlFor="bookId">Book Id</label>{" "}
@@ -201,7 +201,7 @@ class AddBook extends Component {
                       </div>
                     </div>
                     <div className="box-footer">
-                      <button type="submit" className="btn btn-dark">
+                      <button type="submit" className="btn btn-dark" onClick={this.handleSubmit}>
                         Add Book
                       </button>
                       <button
