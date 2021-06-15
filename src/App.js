@@ -9,10 +9,6 @@ import FeedbackDetails from './components/feedbackDetails';
 
 import AddReader from './components/addReader';
 import ReaderDetails from './components/readerDetails';
-
-
-import LoginFormUser from './components/loginFormUser'
-
 import Feedback from './components/feedback';
 
 
@@ -83,21 +79,8 @@ import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
 import ContactPage from './components/contactPage';
 import ThankyouPage from "./components/thankyouPage";
-import Ebook from "./components/ebook"
+//import Ebook from "./components/ebook"
 
-
-//import ViewAuthor from './components/viewAuthor';
-//import UpdateAuthor from './components/updateAuthor';
-//import AddAuthor from './components/addAuthor';
-
-//import BooksReturned from './components/booksReturned'
-//import AddBooksReturned from './components/addBooksReturned';
-//import UpdateBooksReturned from './components/updateBooksReturned';
-//import ViewBooksReturned from './components/viewBooksReturned';
-
-//import Dashboard from './components/dashboard';
-//import SearchAuthor from './components/searchAuthorByName';
-//import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
 import Disclaimer from './components/disclaimer'
 //import AddReader from './components/addReader'
@@ -119,6 +102,7 @@ import ViewBookDashboard from './components/viewBookDashboard';
 
 
 import UserNavbar from './components/userNavbar';
+import UserSuggestedBooks from './components/userSuggestedBook';
 
 function App() {
   return (
@@ -188,6 +172,7 @@ function App() {
           <Route path="/view-publisher/:publisherId" component={ViewPublisher}></Route>
 
           <Route path="/suggestedbooks" component={SuggestedBooks}></Route>
+          <Route path="/usersuggestedbook" component={UserSuggestedBooks} />
           <Route path="/update-suggestedbooks/:id" component={UpdateSuggestedBooks}></Route>
           <Route path="/add-suggestedbooks" component={AddSuggestedBooks}></Route>
           <Route path="/view-suggestedbooks/:id" component={ViewSuggestedBooks}></Route>
@@ -207,7 +192,7 @@ function App() {
             <Route path="/thankyou-Page" component={ThankyouPage}></Route>
 
             <Route path="/disclaimer" component={Disclaimer}></Route>
-           <Route path="/ebook" component={Ebook}></Route>
+           {/* <Route path="/ebook" component={Ebook}></Route> */}
 
 
 

@@ -25,11 +25,6 @@ class Adventure extends Component {
                       />
                     <div className="book-content">
                     Twilight
-                      <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="#">
-                          <i className="fa fa-eye"></i>
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 </div>

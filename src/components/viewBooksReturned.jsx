@@ -46,15 +46,16 @@ class ViewBooksReturned extends Component {
                             <label><b>Penalty Status</b></label>
                             <div>{this.state.returned.penalty_Status}</div>
                         </div>
-
                     </div>
-
                 </div>
+                
                 <p> The information includes the identification number of the returnedBook, number of delayed days,
                     the date in which it has been returned,penalty amount to be paid and penalty status.</p>
                 <img src={images} alt="hi" width="120" class="center"></img>
 
-<div><a class="btn btn-primary" href="\booksReturned" role="button">Back</a></div>
+                <div>
+                    <a class="btn btn-primary" href="\booksReturned" role="button">Back</a>
+                </div>
             </div>
             </React.Fragment>
         )

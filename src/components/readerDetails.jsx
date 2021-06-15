@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReaderService from '../services/readerService'
+import DashboardNav from "./dashboardnav";
 
 class ReaderDetails extends Component {
   state = {
@@ -33,7 +34,8 @@ class ReaderDetails extends Component {
   render() {
     return (
       <React.Fragment>
-      <div className='mt-4' >
+        <DashboardNav/>
+      <div className='mt-4'  style={{ fontFamily: "revert", marginLeft:300 }}>
         <form onSubmit={this.handleSubmit} className='w-75 mx-auto' style={{textAlign:'left'}}>
           <h1>{this.props.match.params.id}</h1>
           <div className="mb-3">

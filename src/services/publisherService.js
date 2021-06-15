@@ -1,5 +1,5 @@
 import axios from "axios";
-const PUBLISHER_API_BASE_URL = "http://localhost:8081/publisher";
+const PUBLISHER_API_BASE_URL = "http://localhost:8082/publisher";
 class PublisherService {
     async getAllPublishers(){
         return await axios.get(PUBLISHER_API_BASE_URL);

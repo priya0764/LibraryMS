@@ -1,59 +1,62 @@
 import React, { Component } from "react";
-import BookService from "../services/bookService";
-import DashboardNav from './dashboardnav';
+import SuggestedBooksService from "../services/suggestedBooksService";
+import UserNavbar from "./userNavbar";
 
-class AddBook extends Component {
+class UserSuggestedBooks extends Component {
   state = {
-    book: {
+    suggestedbook: {
+      id: "",
       title: "",
       subject: "",
       author: "",
-      publishedYear: "",
-      isbnCode: "",
-      quantity: "",
-      bookCost: "",
-      shelfDetails: "",
+      publications: "",
+      description: "",
+      suggested_date: "",
+      status: "",
     },
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    BookService.addBook(this.state.book).then((res) => {
-      this.props.history.push("/book");
-    });
+    SuggestedBooksService.addSuggestedBooks(this.state.suggestedbook).then(
+      (res) => {
+        this.props.history.push("/userPage");
+      }
+    );
   };
 
   handleChange = (event) => {
-    const book = { ...this.state.book };
-    book[event.currentTarget.name] = event.currentTarget.value;
-    this.setState({ book });
+    const suggestedbook = { ...this.state.suggestedbook };
+    suggestedbook[event.currentTarget.name] = event.currentTarget.value;
+    this.setState({ suggestedbook });
   };
 
   render() {
     return (
       <React.Fragment>
-        <DashboardNav/>
+          <UserNavbar/>
         <div
           className="content-wrapper"
           style={{ minHeight: 757.08, textAlign: "left" }}
         >
           <section className="content">
             <div className="box box-mytheme">
+              <h3 className="text-center">Add Suggested Books</h3>
               <div className="row">
                 <div className="col-md-6">
                   <form onSubmit={this.handleSubmit}>
                     <div className="box-body">
                       <div className="form-group ">
-                        <label htmlFor="bookId">Book Id</label>{" "}
+                        <label htmlFor="id">Id</label>{" "}
                         <span className="text-red">*</span>
                         <input
                           type="number"
                           className="form-control"
-                          id="bookId"
-                          name="bookId"
-                          value={this.state.book.bookId}
+                          id="id"
+                          name="id"
+                          value={this.state.suggestedbook.id}
                           onChange={this.handleChange}
-                          placeholder="Enter book id"
+                          placeholder="Enter id"
                           required
                           autoFocus
                         />
@@ -67,7 +70,7 @@ class AddBook extends Component {
                           className="form-control"
                           id="title"
                           name="title"
-                          value={this.state.book.title}
+                          value={this.state.suggestedbook.title}
                           onChange={this.handleChange}
                           placeholder="Enter title"
                           required
@@ -82,7 +85,7 @@ class AddBook extends Component {
                           className="form-control"
                           id="subject"
                           name="subject"
-                          value={this.state.book.subject}
+                          value={this.state.suggestedbook.subject}
                           onChange={this.handleChange}
                           placeholder="Enter Subject"
                           required
@@ -97,7 +100,7 @@ class AddBook extends Component {
                           className="form-control"
                           id="author"
                           name="author"
-                          value={this.state.book.author}
+                          value={this.state.suggestedbook.author}
                           onChange={this.handleChange}
                           placeholder="Enter Author"
                           required
@@ -105,111 +108,75 @@ class AddBook extends Component {
                       </div>
 
                       <div className="form-group ">
-                        <label htmlFor="publishedYear">Published Year</label>{" "}
-                        <span className="text-red">*</span>
+                        <label htmlFor="publications">Publications</label>{" "}
                         <input
-                          type="number"
+                          type="text"
                           className="form-control"
-                          id="publishedYear"
-                          name="publishedYear"
-                          value={this.state.book.publishedYear}
+                          id="publications"
+                          name="publications"
+                          value={this.state.suggestedbook.publications}
                           onChange={this.handleChange}
-                          placeholder="Enter Year"
+                          placeholder="Enter Publications"
                           required
                         />
                       </div>
 
                       <div className="form-group ">
-                        <label htmlFor="imageName">Cover Photo</label>{" "}
+                        <label htmlFor="description">Description</label>{" "}
                         <span className="text-red">*</span>
                         <input
                           type="text"
                           className="form-control"
-                          id="imageName"
-                          name="imageName"
-                          value={this.state.book.imageName}
+                          id="description"
+                          name="description"
+                          value={this.state.suggestedbook.description}
                           onChange={this.handleChange}
-                          placeholder="Enter file Name (should end with .jpg)"
+                          placeholder="Enter Description"
                           required
                         />
                       </div>
 
                       <div className="form-group ">
-                        <label htmlFor="isbnCode">Isbn No</label>
-                        <span className="text-red">*</span>
+                        <label htmlFor="suggested_date">Suggested Date</label>
                         <input
-                          type="text"
+                          type="date"
                           className="form-control"
-                          id="isbnCode"
-                          name="isbnCode"
-                          value={this.state.book.isbnCode}
+                          id="suggested_date"
+                          name="suggested_date"
+                          value={this.state.suggestedbook.suggested_date}
                           onChange={this.handleChange}
-                          placeholder="Enter ISBN Code"
+                          placeholder="yyyy-mm-dd"
                           required
                         />
                       </div>
 
                       <div className="form-group ">
-                        <label htmlFor="shelfDetails">Rack</label>
-                        <span className="text-red">*</span>
-                        <select
-                          name="shelfDetails"
-                          id="shelfDetails"
-                          className="form-control"
-                          value={this.state.book.shelfDetails}
-                          onChange={this.handleChange}
-                          placeholder="Enter Shelf"
-                          required
-                        >
-                          <option value="0">Please Select</option>
-                          <option value="5">E</option>
-                          <option value="4">D</option>
-                          <option value="3">C</option>
-                          <option value="2">B</option>
-                          <option value="1">A</option>
-                        </select>
-                      </div>
-
-                      <div className="form-group ">
-                        <label htmlFor="quantity">Quantity</label>
-                        <span className="text-red">*</span>
+                        <label htmlFor="status">Status</label>
                         <input
-                          type="text"
+                          name="status"
+                          id="status"
                           className="form-control"
-                          id="quantity"
-                          name="quantity"
-                          value={this.state.book.quantity}
+                          value={this.state.suggestedbook.status}
                           onChange={this.handleChange}
-                          placeholder="Enter Quantity"
-                          required
-                        />
-                      </div>
-
-                      <div className="form-group ">
-                        <label htmlFor="bookCost">Cost</label>
-                        <span className="text-red">*</span>
-                        <input
-                          type="text"
-                          className="form-control datepicker"
-                          id="bookCost"
-                          name="bookCost"
-                          value={this.state.book.bookCost}
-                          onChange={this.handleChange}
-                          placeholder="Enter Cost"
+                          placeholder="Enter the Status"
                           required
                         />
                       </div>
                     </div>
                     <div className="box-footer">
-                      <button type="submit" className="btn btn-dark" onClick={this.handleSubmit}>
-                        Add Book
+                      <button
+                        className="btn btn-success"
+                        onClick={this.handleSubmit}
+                      >
+                        {" "}
+                        Save{" "}
                       </button>
                       <button
-                        type="submit"
-                        className="btn btn-danger ml-3"
+                        className="btn btn-danger"
                         onClick={() => {
-                          this.props.history.push("/book");
+                          this.props.history.push("/userPage");
                         }}
+                        style={{ marginLeft: "10px" }}
                       >
                         Cancel
                       </button>
@@ -225,4 +192,4 @@ class AddBook extends Component {
   }
 }
 
-export default AddBook;
+export default UserSuggestedBooks;

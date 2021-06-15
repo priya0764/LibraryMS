@@ -70,13 +70,14 @@ class LogoutNavbar extends Component {
                         name="search"
                         onChange={this.onChange}
                       />
-                      <div className="input-group-append search-btn">
+                      <NavLink to="/book/details"
+                        className="input-group-append search-btn">
                         <input
                           type="submit"
                           className="input-group-text"
                           value="Search"
                         />
-                      </div>
+                      </NavLink>
                     </div>
                   </form>
                 </div>
@@ -132,14 +133,7 @@ class LogoutNavbar extends Component {
                   Book
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  className="container"
-                  to=""
-                >
-                  Contact
-                </NavLink>
-              </li>
+  
             </ul>
           </div>
         </section>

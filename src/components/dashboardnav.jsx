@@ -81,7 +81,7 @@ class DashboardNav extends Component {
                   </li>
 
                   <li className=" ">
-                    <Link to="/bookIssued">
+                    <Link to="/booksIssued">
                       <i className="fa fa-book"></i> <span>Book Issue</span>
                     </Link>
                   </li>
@@ -114,7 +114,7 @@ class DashboardNav extends Component {
                   </li>
 
                   <li className=" ">
-                    <Link to="/User">
+                    <Link to="/users">
                       <i className="fa fa-user-plus"></i> <span>User</span>
                     </Link>
                   </li>

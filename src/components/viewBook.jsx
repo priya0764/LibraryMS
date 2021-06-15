@@ -75,22 +75,18 @@ class ViewBook extends Component {
                     </div>
                   </div>
                 </div>
+                <button
+            className="btn btn-dark"
+            onClick={() => {
+              this.props.history.push("/book/details");
+            }}
+          >
+            Back
+          </button>
               </div>
             </div>
           </section>
         ))}
-        {/* <LogoutNavbar />
-        <div className="row pt-5 ml-5">
-          <div className="col-3">
-            <img width="200" src={`/images/${this.state.book.imageName}`} alt="title" />
-          </div>
-          <div className="col-9">
-            <div className="card-body" style={{textAlign:"left"}}>
-              <p className="card-title" style={{fontFamily:"cursive", fontSize:25}}>{title}</p>
-              <p className="card-text"></p>
-            </div>
-          </div>
-        </div>  */}
       </React.Fragment>
     );
   }
