@@ -36,10 +36,8 @@ class AddFeedback extends Component {
         <h4 className="ml-5 mt-2 pl-5" style={{ color: "GrayText" }}>
           Give your valuable feedback
         </h4>
-        <table>
-          <tr>
-            <td width='900'>
-        <form className="w-50 ml-5 pl-5"  onSubmit={this.handleSubmit} style={{textAlign:'left'}}>
+        
+        <form className="w-50 ml-5 pl-5 mx-auto"  onSubmit={this.handleSubmit} style={{textAlign:'left'}}>
           <div className="mb-0 mt-1">
             <label htmlFor="user_id" className="form-label">
               UserId
@@ -127,12 +125,7 @@ class AddFeedback extends Component {
             Submit
           </button>
         </form>
-        </td>
-        <td width='520' style={{backgroundImage:`url(${feedback3})`}}>
-          
-        </td>
-        </tr>
-        </table>
+       
       </div>
       </React.Fragment>
     );
