@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BookService from "../services/bookService";
 import LogoutNavbar from "./logoutNavbar";
+import {Link} from 'react-router-dom'
 
 class UserBooksList extends Component {
   state = {
@@ -31,7 +32,6 @@ class UserBooksList extends Component {
     return (
       <div className="container-fluid">
         <LogoutNavbar />
-        {/* {console.log(this.props.books)} */}
         <div className="row mt-3">
           <div className="col-md-10 mx-auto">
             <div className="row">
@@ -49,8 +49,11 @@ class UserBooksList extends Component {
                       onClick={() => this.viewBookDetails(book.title)}
                     />
                     <div className="card-body">
-                      <p className="card-title">{book.title}</p>
+                      <p className="card-title" style={{fontStyle:"revert", fontSize:20}}>{book.title}</p>
                       <p className="card-text float-center">{book.subject}</p>
+                      <Link className="btn btn-outline-success btn-sm" to={`/viewbook/${book.title}`}>
+                          <i className="fa fa-eye"></i>
+                        </Link>
                     </div>
                   </div>
                 </div>

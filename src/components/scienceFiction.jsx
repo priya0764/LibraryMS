@@ -25,11 +25,6 @@ class Thriller extends Component {
                       />
                     <div className="book-content">
                         The Little Prince
-                      <div className="book-actions">
-                        <Link className="btn btn-outline-success btn-sm" to="#">
-                          <i className="fa fa-eye"></i>
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 </div>
