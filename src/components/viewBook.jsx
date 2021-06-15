@@ -79,18 +79,6 @@ class ViewBook extends Component {
             </div>
           </section>
         ))}
-        {/* <LogoutNavbar />
-        <div className="row pt-5 ml-5">
-          <div className="col-3">
-            <img width="200" src={`/images/${this.state.book.imageName}`} alt="title" />
-          </div>
-          <div className="col-9">
-            <div className="card-body" style={{textAlign:"left"}}>
-              <p className="card-title" style={{fontFamily:"cursive", fontSize:25}}>{title}</p>
-              <p className="card-text"></p>
-            </div>
-          </div>
-        </div>  */}
       </React.Fragment>
     );
   }

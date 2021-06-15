@@ -119,6 +119,7 @@ import ViewBookDashboard from './components/viewBookDashboard';
 
 
 import UserNavbar from './components/userNavbar';
+import UserSuggestedBooks from './components/userSuggestedBook';
 
 function App() {
   return (
@@ -188,6 +189,7 @@ function App() {
           <Route path="/view-publisher/:publisherId" component={ViewPublisher}></Route>
 
           <Route path="/suggestedbooks" component={SuggestedBooks}></Route>
+          <Route path="/usersuggestedbook" component={UserSuggestedBooks} />
           <Route path="/update-suggestedbooks/:id" component={UpdateSuggestedBooks}></Route>
           <Route path="/add-suggestedbooks" component={AddSuggestedBooks}></Route>
           <Route path="/view-suggestedbooks/:id" component={ViewSuggestedBooks}></Route>
