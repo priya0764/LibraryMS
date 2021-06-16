@@ -1,6 +1,7 @@
 import React,{ Component } from 'react'
 import UsersService from '../services/usersService'
 import { Link } from "react-router-dom";
+
 import LoginNavbar from './loginNavbar';
   
 class UserLogin extends Component{
@@ -34,6 +35,8 @@ class UserLogin extends Component{
     
 render(){
     return(
+        <React.Fragment>
+        <LoginNavbar />      
         <div>
             <LoginNavbar />
             <br></br>
@@ -74,6 +77,7 @@ render(){
             </div>
         </div>
         </div>
+</React.Fragment>   
     )
 }
 }

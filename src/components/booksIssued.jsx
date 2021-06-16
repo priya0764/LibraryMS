@@ -66,33 +66,30 @@ class BooksIssued extends Component {
     console.log("Sorted..",sorted);
     return (
       <div>
+
         <DashboardNav />
         <h2 className="text-center">BooksIssued List</h2>
         <div className="w-75 mt-5 mx-auto">
          <div className="d-flex justify-content-between" style={{marginLeft:250}}>
            <Link to="/booksIssued/add" className="btn btn-success btn-large mb-1">
+
              Add
            </Link>
            <form class="form-inline my-2 my-lg-0">
              <input
               classNAme="form-control ml-auto"
               type="search"
-              placeholder="search by Id"
+              placeholder="search"
               aria-label="search"
               onChange={this.onChange}
              />
-             <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="button"
-              onClick={this.viewBooksIssued} 
-             >
-               Search
-            </button> 
-           </form>
+             </form>
          </div>
         </div>
         <div className="row">
+
           <table className="table table-stripped table-bordered " style={{marginLeft:300, marginTop:100,width:1000}}>
+
             <thead>
               <tr>
                 

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import UsersService from '../services/usersService'
+
 import LoginNavbar from "./loginNavbar";
+
 
 
 class Register extends Component {
@@ -30,6 +32,8 @@ class Register extends Component {
       };
   render() {
     return (
+      <React.Fragment>
+      <LoginNavbar />  
       <div>
         <LoginNavbar />
         <section class="main-login">
@@ -125,6 +129,7 @@ class Register extends Component {
           </div>
         </section>
       </div>
+      </React.Fragment>
     );
   }
 }

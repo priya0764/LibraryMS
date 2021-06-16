@@ -40,10 +40,14 @@ class UserDetails extends Component{
     };
     render(){
         return(
+         <React.Fragment>
+            <DashboardNav/>
             <div>
+
                 <DashboardNav />
               <form onSubmit={this.handleSubmit} className="w-50 mx-auto">
                   <h1>Update User</h1>
+
                   <div className="mb-3">
                       <label htmlFor="userId" className="form-label">
                           UserId
@@ -85,7 +89,7 @@ class UserDetails extends Component{
                   </div>
                   <div className="mb-3">
                       <label htmlFor="firstname" className="form-label">
-                          firstName
+                          First Name
                       </label>
                       <input
                         type="text"
@@ -98,7 +102,7 @@ class UserDetails extends Component{
                   </div>
                   <div className="mb-3">
                       <label htmlFor="lastname" className="form-label">
-                          LastName
+                          Last Name
                       </label>
                       <input
                         type="text"
@@ -111,7 +115,7 @@ class UserDetails extends Component{
                   </div>
                   <div className="mb-3">
                       <label htmlFor="mobileNumber" className="form-label">
-                          MobileNumber
+                          Mobile Number
                       </label>
                       <input
                         type="text"
@@ -121,8 +125,10 @@ class UserDetails extends Component{
                         value={this.state.userList.mobileNumber}
                         onChange={this.handleChange}
                       /> 
+                    </div>
+                    <div className="mb-3">  
                       <label htmlFor="dateOfBirth" className="form-label">
-                          dateOfBirth
+                          Date Of Birth
                       </label>
                       <input
                         type="text"
@@ -147,6 +153,7 @@ class UserDetails extends Component{
                   </button>
               </form>
             </div>
+        </React.Fragment>
         );
     }
 }

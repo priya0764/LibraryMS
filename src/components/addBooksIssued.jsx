@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import BooksIssuedService from "../services/booksIssuedService";
-
+import DashboardNav from "./dashboardnav";
 
 class AddBooksIssued extends Component{
     state={
@@ -27,9 +27,13 @@ class AddBooksIssued extends Component{
     };
     render(){
         return(
+        <React.Fragment>
+           <DashboardNav/> 
             <div className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
                 <form onSubmit={this.handleSubmit}>
                     <div className="mb-3">
+                    
+
                        <label htmlFor="issueDate" className="form-label">
                             IssueDate
                         </label>
@@ -50,8 +54,6 @@ class AddBooksIssued extends Component{
                         <input
                           type="text"
                           className="form-control"
-                          placeholder="yyyy-mm-dd"
-                          minLength="0000-00-00"
                           id="quantity"
                           name="quantity"
                           value={this.state.booksIssued.quantity}
@@ -78,6 +80,7 @@ class AddBooksIssued extends Component{
                     </button>     
                 </form>
             </div>
+        </React.Fragment>  
         );
     }
 }

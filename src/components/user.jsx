@@ -68,32 +68,29 @@ class Users extends Component {
     return (
       <div>
         <DashboardNav/>
-        <h2 className="text-center">Users List</h2>
+        <h2 className="text-center mt-2">Users List</h2>
         <div className="w-75 mt-5 mx-auto">
+
          <div className="d-flex justify-content-between" style={{marginLeft:230}}>
            <Link to="/user/add" className="btn btn-success btn-large mb-1">
+
              Add User
            </Link>
            <form class="form-inline my-2 my-lg-0">
              <input
               classNAme="form-control ml-auto"
               type="search"
-              placeholder="search by Id"
+              placeholder="search"
               aria-label="search"
               onChange={this.onChange}
              />
-             <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="button"
-              onClick={this.viewUser} 
-             >
-               Search
-            </button> 
            </form>
          </div>
         </div>
         <div className="row">
+
           <table className="table table-stripped table-bordered " style={{marginLeft:280, marginTop:100, width:1000}}>
+
             <thead>
               <tr>
                 <th onClick={()=>this.handleSort("email")}>Email</th>
