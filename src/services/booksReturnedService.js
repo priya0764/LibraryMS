@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BOOKSRETURNED_API_BASE_URL = "http://localhost:8082/booksReturned";
+const BOOKSRETURNED_API_BASE_URL = "http://localhost:8080/booksReturned";
 class BooksReturnedService {
     async getAllReturnedBooks() {
         return await axios.get(BOOKSRETURNED_API_BASE_URL);

@@ -1,5 +1,5 @@
 import axios from "axios";
-const SUGGESTED_BOOKS_API_BASE_URL = "http://localhost:8082/suggestedbooks";
+const SUGGESTED_BOOKS_API_BASE_URL = "http://localhost:8080/suggestedbooks";
 class SuggestedBooksService {
   async getAllSuggestedBooks() {
     return await axios.get(SUGGESTED_BOOKS_API_BASE_URL);

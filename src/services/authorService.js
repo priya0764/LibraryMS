@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const AUTHOR_API_BASE_URL = "http://localhost:8082/author";
+const AUTHOR_API_BASE_URL = "http://localhost:8080/author";
 class AuthorService {
     async getAllAuthors() {
         return await axios.get(AUTHOR_API_BASE_URL);

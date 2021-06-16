@@ -62,7 +62,7 @@ class Author extends Component {
         <h2 className="text-center">Authors List</h2>
         <div
           className="d-flex justify-content-between"
-          style={{ marginLeft: 300, marginTop: 25, width: 1200 }}
+          style={{ marginLeft: 250, marginTop: 25, width: 1400 }}
         >
           <Link to="/add-author" className="btn btn-success ">
             <i class="bi bi-plus-square" style={{ marginRight: 10 }}></i>Add
