@@ -80,7 +80,7 @@ class Users extends Component {
              <input
               classNAme="form-control ml-auto"
               type="search"
-              placeholder="search by Id"
+              placeholder="search"
               aria-label="search"
               onChange={this.onChange}
              />

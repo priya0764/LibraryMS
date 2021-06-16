@@ -79,7 +79,7 @@ class BooksIssued extends Component {
              <input
               classNAme="form-control ml-auto"
               type="search"
-              placeholder="search by Id"
+              placeholder="search"
               aria-label="search"
               onChange={this.onChange}
              />
@@ -102,7 +102,6 @@ class BooksIssued extends Component {
             <tbody>
               {sorted.map((booksIssued) => (
                 <tr key={booksIssued.issueId}>
-                  
                   <td>{booksIssued.issueDate}</td>
                   <td>{booksIssued.quantity}</td>
                   <td>{booksIssued.dueDate}</td>

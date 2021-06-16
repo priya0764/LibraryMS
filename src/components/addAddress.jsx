@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import AddressService from "../services/addressService";
+import DashboardNav from "./dashboardnav";
 
 class AddAddress extends Component {
   state = {
     address: {
-      addressIdId: "",
+      userId:"",
+      addressId: "",
       address1: "",
       address2: "",
       city: "",
@@ -26,10 +28,12 @@ class AddAddress extends Component {
   };
   render() {
     return (
+      <React.Fragment>
+      <DashboardNav/>
       <div className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
         <form onSubmit={this.handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="address1" className="form-label">
+          <label htmlFor="address1" className="form-label">
               Address1
             </label>
             <input
@@ -102,6 +106,7 @@ class AddAddress extends Component {
           </button>
         </form>
       </div>
+      </React.Fragment> 
     );
   }
 }

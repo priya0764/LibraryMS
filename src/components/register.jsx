@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import UsersService from '../services/usersService'
-
+import LoginNavbar from './loginNavbar';
 
 class Register extends Component {
     state={
@@ -29,6 +29,8 @@ class Register extends Component {
       };
   render() {
     return (
+      <React.Fragment>
+      <LoginNavbar />  
       <div>
         <section class="main-login">
           <div class="container" style={{minHeight:757.08, textAlign:"left"}}>
@@ -123,6 +125,7 @@ class Register extends Component {
           </div>
         </section>
       </div>
+      </React.Fragment>
     );
   }
 }

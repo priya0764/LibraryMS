@@ -5,7 +5,6 @@ import DashboardNav from "./dashboardnav";
 class AddBooksIssued extends Component{
     state={
         booksIssued:{
-            userId:"",
             issueId:"",
             issueDate:"",
             quantity:"",
@@ -55,8 +54,6 @@ class AddBooksIssued extends Component{
                         <input
                           type="text"
                           className="form-control"
-                          placeholder="yyyy-mm-dd"
-                          minLength="0000-00-00"
                           id="quantity"
                           name="quantity"
                           value={this.state.booksIssued.quantity}
