@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const FEEDBACK_API_BASE_URL="http://localhost:8080/feedback"
+const FEEDBACK_API_BASE_URL="http://localhost:8082/feedback"
 
 class FeedbackService{
     async getAllFeedback(){

@@ -29,7 +29,9 @@ class AddAddress extends Component {
   render() {
     return (
       <React.Fragment>
+
       <DashboardNav/>
+
       <div className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
         <form onSubmit={this.handleSubmit}>
           <div className="mb-3">
@@ -106,7 +108,9 @@ class AddAddress extends Component {
           </button>
         </form>
       </div>
+
       </React.Fragment> 
+
     );
   }
 }

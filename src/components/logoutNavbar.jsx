@@ -112,15 +112,15 @@ class LogoutNavbar extends Component {
               <li>
                 <NavLink
                   className="container-fluid ml-5"
-                  to=""
+                  to="/adminPage"
                 >
-                  <i className="fa fa-home"></i>Home
+                  Home
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   className="container"
-                  to=""
+                  to="/ebook"
                 >
                   Ebook
                 </NavLink>

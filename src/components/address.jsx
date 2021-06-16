@@ -66,13 +66,14 @@ class Address extends Component {
     console.log("Sorted..",sorted);
     return (
       <div>
-        <DashboardNav/>
-        <h2 className="text-center mt-5">Address List</h2>
-        <div className="w-75 mt-10 mx-auto">
-         <div className="d-flex justify-content-between"
-         style={{marginLeft:100}}
-         >
-           <Link to="/address/add" className="btn btn-success btn-large mb-10 ml-5 ">
+
+        <DashboardNav />
+        <h2 className="text-center">Address List</h2>
+        <div className="w-75 mt-5 mx-auto">
+         <div className="d-flex justify-content-between">
+           <Link to="/address/add" className="btn btn-success btn-large mb-1"
+           style={{marginLeft:100, marginBottom:180}}>
+
              Add
            </Link>
            <form class="form-inline my-2 my-lg-0">
@@ -87,9 +88,10 @@ class Address extends Component {
          </div>
         </div>
         <div className="row">
-          <table className="table table-stripped table-bordered mt-10"
-          style={{marginTop:150 , marginLeft:400, marginRight:500, width:900}}
-          >
+
+          <table className="table table-stripped table-bordered mt-5" 
+          style={{marginTop:200 , marginLeft:400, marginRight:500, width:900}}>
+
             <thead>
               <tr>
                 

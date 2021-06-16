@@ -55,7 +55,7 @@ class BookDetails extends Component {
     return (
       <React.Fragment>
         <DashboardNav/>
-          <h2>{this.state.book.bookId}</h2>
+          <h2>Update Book</h2>
       <div className="w-25 mx-auto" style={{textAlign:"left"}}>
         <form onSubmit={this.handleSubmit}>
           <div className="mb-3">

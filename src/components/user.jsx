@@ -70,10 +70,10 @@ class Users extends Component {
         <DashboardNav/>
         <h2 className="text-center mt-2">Users List</h2>
         <div className="w-75 mt-5 mx-auto">
-         <div className="d-flex justify-content-between" 
-           style={{marginLeft:200}}
-         >
-           <Link to="/user/add" className="btn btn-success btn-small mb-1">
+
+         <div className="d-flex justify-content-between" style={{marginLeft:230}}>
+           <Link to="/user/add" className="btn btn-success btn-large mb-1">
+
              Add User
            </Link>
            <form class="form-inline my-2 my-lg-0">
@@ -88,9 +88,9 @@ class Users extends Component {
          </div>
         </div>
         <div className="row">
-          <table className="table table-stripped table-bordered mt-10"
-          style={{ marginTop: 100, marginLeft:300, marginRight:200, width:1200}}
-          >
+
+          <table className="table table-stripped table-bordered " style={{marginLeft:280, marginTop:100, width:1000}}>
+
             <thead>
               <tr>
                 <th onClick={()=>this.handleSort("email")}>Email</th>

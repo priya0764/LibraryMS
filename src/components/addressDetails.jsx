@@ -2,7 +2,6 @@ import React, { Component }from "react";
 import AddressService from "../services/addressService";
 import DashboardNav from "./dashboardnav";
 
-
 class AddressDetails extends Component{
     state = {
         addressList: {
@@ -43,7 +42,9 @@ class AddressDetails extends Component{
            <React.Fragment>
            <DashboardNav/>
             <div>
+
               <form onSubmit={this.handleSubmit} className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
+
                   <h1>{this.props.match.params.id}</h1>
                    <div className="mb-3">
                      <label htmlFor="addressId" className="form-label">

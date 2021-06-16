@@ -1,8 +1,9 @@
 import React,{ Component } from 'react'
 import UsersService from '../services/usersService'
 import { Link } from "react-router-dom";
-import LoginNavbar from './loginNavbar'; 
 
+import LoginNavbar from './loginNavbar';
+  
 class UserLogin extends Component{
     constructor(props){
         super(props)
@@ -37,6 +38,7 @@ render(){
         <React.Fragment>
         <LoginNavbar />      
         <div>
+            <LoginNavbar />
             <br></br>
         <div>
         

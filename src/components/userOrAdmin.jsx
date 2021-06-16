@@ -30,7 +30,9 @@ class UserOrAdmin extends Component {
                 </button>{" "}
               </Link>
               <Link to={`/user/login`}>
-                <button className="btn btn-danger btn-lg ml-3" id="user">
+
+                <button className="btn btn-danger btn-lg " id="user">
+
                   User
                 </button>
                 <br></br>

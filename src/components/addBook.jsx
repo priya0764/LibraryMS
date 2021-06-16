@@ -33,6 +33,7 @@ class AddBook extends Component {
     return (
       <React.Fragment>
         <DashboardNav/>
+        <h2 style={{textAlign:"left", marginLeft:250}}>Add Book</h2>
         <div
           className="content-wrapper"
           style={{ minHeight: 757.08, textAlign: "left" }}

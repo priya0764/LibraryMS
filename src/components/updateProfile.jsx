@@ -145,7 +145,9 @@ class UpdateProfile extends Component{
                   <button
                     className="btn btn-secondary mr-2 float-right"
                     onClick={()=>{
-                        this.props.history.push("/users");
+
+                        this.props.history.push("/userPage");
+
                     }}
                   >
                     Cancel
@@ -157,6 +159,7 @@ class UpdateProfile extends Component{
         );
     }
 }
+
 
 export default UpdateProfile;
 
