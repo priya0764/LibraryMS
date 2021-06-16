@@ -1,8 +1,6 @@
 import React, { Component }from "react";
 import UsersService from "../services/usersService";
-import DashboardNav from "./dashboardnav";
 import UserNavbar from "./userNavbar";
-import { Link } from "react-router-dom";
 
 class UpdateProfile extends Component{
     state = {

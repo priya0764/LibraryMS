@@ -11,10 +11,6 @@ import AddReader from './components/addReader';
 import ReaderDetails from './components/readerDetails';
 import Feedback from './components/feedback';
 
-
-
-
-
 import UserOrAdmin from './components/userOrAdmin';
 import LoginFormAdmin from './components/loginFormAdmin';
 import AdminPage from './components/adminPage'
