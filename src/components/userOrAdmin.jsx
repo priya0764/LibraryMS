@@ -21,16 +21,16 @@ class UserOrAdmin extends Component {
           </div>
           <div className="col-sm-4" style={{marginTop:150}}>
             <div className="well text-center mt-5">
-              <strong>Login Panel</strong>
+              <strong><h2>Login Panel</h2></strong>
               <br/>
               <Link to={`/admin/login`}>
                 {" "}
-                <button className="btn btn-primary " id="admin">
+                <button className="btn btn-primary btn-lg" id="admin">
                   Admin
                 </button>{" "}
               </Link>
               <Link to={`/user/login`}>
-                <button className="btn btn-danger " id="user">
+                <button className="btn btn-danger btn-lg ml-3" id="user">
                   User
                 </button>
                 <br></br>
