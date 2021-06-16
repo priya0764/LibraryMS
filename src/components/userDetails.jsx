@@ -42,9 +42,7 @@ class UserDetails extends Component{
         return(
          <React.Fragment>
             <DashboardNav/>
-            <div>
-
-                <DashboardNav />
+            
               <form onSubmit={this.handleSubmit} className="w-50 mx-auto">
                   <h1>Update User</h1>
 
@@ -152,7 +150,6 @@ class UserDetails extends Component{
                     Cancel
                   </button>
               </form>
-            </div>
         </React.Fragment>
         );
     }

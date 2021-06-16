@@ -37,9 +37,7 @@ render(){
     return(
         <React.Fragment>
         <LoginNavbar />      
-        <div>
-            <LoginNavbar />
-            <br></br>
+        
         <div>
         
              <div className = "container-md" style={{minHeight:757.08, textAlign:"left"}}>
@@ -75,7 +73,6 @@ render(){
                     </div>
                 </div>
             </div>
-        </div>
         </div>
 </React.Fragment>   
     )
