@@ -102,7 +102,7 @@ class LoginNavbar extends Component {
                   <div className="dropdown-menu dropdown-menu-right">
                     <div className="mini-cart">
                       <h6 className="p-3">
-                        Contact admin for furthur details.
+                        Currently Cart Item are empty.
                       </h6>
                     </div>
                   </div>

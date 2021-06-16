@@ -1,5 +1,6 @@
 import React, { Component }from "react";
 import AddressService from "../services/addressService";
+import DashboardNav from "./dashboardnav";
 
 class AddressDetails extends Component{
     state = {
@@ -38,11 +39,15 @@ class AddressDetails extends Component{
     };
     render(){
         return(
+           <React.Fragment>
+           <DashboardNav/>
             <div>
-              <form onSubmit={this.handleSubmit} className="w-75 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
+
+              <form onSubmit={this.handleSubmit} className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
+
                   <h1>{this.props.match.params.id}</h1>
-                  <div className="mb-3">
-                      <label htmlFor="addressId" className="form-label">
+                   <div className="mb-3">
+                     <label htmlFor="addressId" className="form-label">
                           AddressId
                       </label>
                       <input
@@ -132,6 +137,7 @@ class AddressDetails extends Component{
                   </button>
               </form>
             </div>
+        </React.Fragment>   
         );
     }
 }

@@ -115,7 +115,7 @@ class UserNavbar extends Component {
               <li>
                 <NavLink
                   className="container"
-                  to="/ebook"
+                  to="/userEbook"
                 >
                   Ebook
                 </NavLink>
@@ -123,7 +123,7 @@ class UserNavbar extends Component {
               <li>
                 <NavLink
                   className="container"
-                  to="/book/details"
+                  to="/userBook2"
                 >
                   Book
                 </NavLink>
