@@ -76,7 +76,7 @@ class Readers extends Component {
           <table
                   id="example1"
                   className="table table-bordered table-striped mr-5"
-                  style={{ marginTop: 50, marginLeft:330, width:810}}
+                  style={{ marginTop: 50, marginLeft:330, width:1115}}
                 >
               <thead>
                 <tr>

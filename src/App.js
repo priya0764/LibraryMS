@@ -79,8 +79,9 @@ import SearchReturnedBook from './components/searchReturnedBookByDelayedDays';
 
 import ContactPage from './components/contactPage';
 import ThankyouPage from "./components/thankyouPage";
-//import Ebook from "./components/ebook"
-
+import Ebook from "./components/ebook"
+import EbookUser from "./components/ebookUser";
+import UpdateProfile from "./components/updateProfile";
 
 import Disclaimer from './components/disclaimer'
 //import AddReader from './components/addReader'
@@ -103,6 +104,8 @@ import ViewBookDashboard from './components/viewBookDashboard';
 
 import UserNavbar from './components/userNavbar';
 import UserSuggestedBooks from './components/userSuggestedBook';
+import UserBooksList2 from "./components/userBook2";
+import ViewBookUser from "./components/viewBookUser";
 
 function App() {
   return (
@@ -114,6 +117,7 @@ function App() {
           <Route path="/reader/update/:id" component={ReaderDetails} />
           <Route path="/reader/:id" component={ReaderDetails} />
           <Route path="/reader" component={Readers} />
+          <Route path="/updateProfile/:id" component={UpdateProfile}></Route>
 
           <Route path="/feedback/add" component={AddFeedback} />
           <Route path="/feedback/update/:id" component={FeedbackDetails} />
@@ -165,6 +169,8 @@ function App() {
           <Route path="/booksIssued" component={BooksIssued} />
           <Route path="/register" component={Register} />
           <Route path="/logout" component={Logout} />
+          <Route path="/userBook2" component={UserBooksList2}></Route>
+          <Route path="/viewBookUser/:title" component={ViewBookUser}></Route>
 
           <Route path="/publisher" component={Publishers}></Route>
           <Route path="/update-publisher/:publisherId" component={UpdatePublisher}></Route>
@@ -192,7 +198,8 @@ function App() {
             <Route path="/thankyou-Page" component={ThankyouPage}></Route>
 
             <Route path="/disclaimer" component={Disclaimer}></Route>
-           {/* <Route path="/ebook" component={Ebook}></Route> */}
+            <Route path="/ebook" component={Ebook}></Route> 
+            <Route path="/userEbook" component={EbookUser}></Route>
 
 
 

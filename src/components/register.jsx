@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UsersService from '../services/usersService'
+import LoginNavbar from "./loginNavbar";
 
 
 class Register extends Component {
@@ -30,6 +31,7 @@ class Register extends Component {
   render() {
     return (
       <div>
+        <LoginNavbar />
         <section class="main-login">
           <div class="container" style={{minHeight:757.08, textAlign:"left"}}>
             <div class="row">

@@ -1,6 +1,7 @@
 import React,{ Component } from 'react'
 import UsersService from '../services/usersService'
 import { Link } from "react-router-dom";
+import LoginNavbar from './loginNavbar';
   
 class UserLogin extends Component{
     constructor(props){
@@ -34,6 +35,7 @@ class UserLogin extends Component{
 render(){
     return(
         <div>
+            <LoginNavbar />
             <br></br>
         <div>
         

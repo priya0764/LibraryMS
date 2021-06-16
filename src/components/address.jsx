@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import _ from "lodash";
 import AddressService from "../services/addressService";
 import {Link} from "react-router-dom";
+import DashboardNav from "./dashboardnav";
 
 class Address extends Component {
   constructor(props) {
@@ -65,10 +66,12 @@ class Address extends Component {
     console.log("Sorted..",sorted);
     return (
       <div>
+        <DashboardNav />
         <h2 className="text-center">Address List</h2>
         <div className="w-75 mt-5 mx-auto">
          <div className="d-flex justify-content-between">
-           <Link to="/address/add" className="btn btn-success btn-large mb-1">
+           <Link to="/address/add" className="btn btn-success btn-large mb-1"
+           style={{marginLeft:100, marginBottom:180}}>
              Add
            </Link>
            <form class="form-inline my-2 my-lg-0">
@@ -90,7 +93,8 @@ class Address extends Component {
          </div>
         </div>
         <div className="row">
-          <table className="table table-stripped table-bordered mt-5">
+          <table className="table table-stripped table-bordered mt-5" 
+          style={{marginTop:200 , marginLeft:400, marginRight:500, width:900}}>
             <thead>
               <tr>
                 

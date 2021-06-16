@@ -1,5 +1,6 @@
 import React, { Component }from "react";
 import AddressService from "../services/addressService";
+import DashboardNav from "./dashboardnav";
 
 class AddressDetails extends Component{
     state = {
@@ -39,6 +40,7 @@ class AddressDetails extends Component{
     render(){
         return(
             <div>
+                <DashboardNav />
               <form onSubmit={this.handleSubmit} className="w-75 mx-auto">
                   <h1>{this.props.match.params.id}</h1>
                   <div className="mb-3">

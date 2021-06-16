@@ -4,6 +4,23 @@ import LoginNavbar from "./loginNavbar";
 import Footer from "./footer";
 
 class ContactPage extends Component {
+  state={
+    contact:{
+        name:'',
+        email:'',
+        subject:'',
+    }
+}
+handleChange=(event)=>{
+    event.preventDefault();
+    const contact=this.state.contact;
+    contact[event.currentTarget.name]=event.currentTarget.value;
+    this.setState({contact});
+}
+handleSubmit=()=>{
+    this.props.history.push("/thankyou-Page");
+}
+
   render() {
     return (
       <React.Fragment>
@@ -19,7 +36,7 @@ class ContactPage extends Component {
                   style={{ marginLeft: "500px" }}
                 />
               </div>
-              <form method="POST">
+              <form onSubmit={this.handleSubmit}>
                 <h3>Drop Us a Message</h3>
                 <div class="row">
                   <div class="col-md-6">
@@ -29,7 +46,8 @@ class ContactPage extends Component {
                         name="name"
                         class="form-control "
                         placeholder="Your Name *"
-                        value=""
+                        value={this.state.contact.name}
+                        onChange={this.handleChange}
                         required
                       />
                     </div>
@@ -39,7 +57,8 @@ class ContactPage extends Component {
                         name="email"
                         class="form-control "
                         placeholder="Your Email *"
-                        value=""
+                        value={this.state.contact.email}
+                        onChange={this.handleChange}
                         required
                       />
                     </div>
@@ -49,19 +68,20 @@ class ContactPage extends Component {
                         name="subject"
                         class="form-control "
                         placeholder="Your Subject *"
-                        value=""
+                        value={this.state.contact.subject}
+                        onChange={this.handleChange}
                         required
                       />
                     </div>
                     <div class="form-group">
-                      <Link to="/thankyou-Page">
+                     
                         <input
                           type="submit"
                           name="btnSubmit"
                           class="btnContact"
                           value="Send Message"
                         />
-                      </Link>
+                      
                     </div>
                   </div>
                   <div class="col-md-6">

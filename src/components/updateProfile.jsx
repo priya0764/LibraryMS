@@ -1,8 +1,10 @@
 import React, { Component }from "react";
 import UsersService from "../services/usersService";
 import DashboardNav from "./dashboardnav";
+import UserNavbar from "./userNavbar";
+import { Link } from "react-router-dom";
 
-class UserDetails extends Component{
+class UpdateProfile extends Component{
     state = {
         userList: {
             userId:"",
@@ -40,10 +42,11 @@ class UserDetails extends Component{
     };
     render(){
         return(
-            <div>
-                <DashboardNav />
-              <form onSubmit={this.handleSubmit} className="w-50 mx-auto">
-                  <h1>Update User</h1>
+         <React.Fragment>
+            <UserNavbar/>
+           <div>
+            <form onSubmit={this.handleSubmit} className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
+                  <h2>Update Profile</h2>
                   <div className="mb-3">
                       <label htmlFor="userId" className="form-label">
                           UserId
@@ -85,7 +88,7 @@ class UserDetails extends Component{
                   </div>
                   <div className="mb-3">
                       <label htmlFor="firstname" className="form-label">
-                          firstName
+                          First Name
                       </label>
                       <input
                         type="text"
@@ -98,7 +101,7 @@ class UserDetails extends Component{
                   </div>
                   <div className="mb-3">
                       <label htmlFor="lastname" className="form-label">
-                          LastName
+                          Last Name
                       </label>
                       <input
                         type="text"
@@ -111,7 +114,7 @@ class UserDetails extends Component{
                   </div>
                   <div className="mb-3">
                       <label htmlFor="mobileNumber" className="form-label">
-                          MobileNumber
+                          Mobile Number
                       </label>
                       <input
                         type="text"
@@ -121,8 +124,10 @@ class UserDetails extends Component{
                         value={this.state.userList.mobileNumber}
                         onChange={this.handleChange}
                       /> 
+                    </div>
+                    <div className="mb-3">  
                       <label htmlFor="dateOfBirth" className="form-label">
-                          dateOfBirth
+                          Date Of Birth
                       </label>
                       <input
                         type="text"
@@ -140,16 +145,17 @@ class UserDetails extends Component{
                   <button
                     className="btn btn-secondary mr-2 float-right"
                     onClick={()=>{
-                        this.props.history.push("/users");
+                        this.props.history.push("/userPage");
                     }}
                   >
                     Cancel
                   </button>
               </form>
-            </div>
+              </div>  
+        
+        </React.Fragment>
         );
     }
 }
 
-export default UserDetails;
-
+export default UpdateProfile;

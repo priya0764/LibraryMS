@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import _ from "lodash";
 import BooksIssuedService from "../services/booksIssuedService";
 import {Link} from "react-router-dom";
+import DashboardNav from "./dashboardnav";
 
 class BooksIssued extends Component {
   constructor(props) {
@@ -65,9 +66,10 @@ class BooksIssued extends Component {
     console.log("Sorted..",sorted);
     return (
       <div>
+        <DashboardNav />
         <h2 className="text-center">BooksIssued List</h2>
         <div className="w-75 mt-5 mx-auto">
-         <div className="d-flex justify-content-between">
+         <div className="d-flex justify-content-between" style={{marginLeft:250}}>
            <Link to="/booksIssued/add" className="btn btn-success btn-large mb-1">
              Add
            </Link>
@@ -90,7 +92,7 @@ class BooksIssued extends Component {
          </div>
         </div>
         <div className="row">
-          <table className="table table-stripped table-bordered mt-5">
+          <table className="table table-stripped table-bordered " style={{marginLeft:300, marginTop:100,width:1000}}>
             <thead>
               <tr>
                 
