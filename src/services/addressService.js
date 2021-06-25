@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const LOCAL_HOST_URL = "http://localhost:8082/address";
+const LOCAL_HOST_URL = "http://localhost:8080/address";
 
 class AddressService{
     async getAllAddresses(){

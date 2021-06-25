@@ -65,14 +65,14 @@ class Address extends Component {
     console.log(this.state.addressList);
     console.log("Sorted..",sorted);
     return (
-      <div>
+      <React.Fragment>
 
         <DashboardNav />
         <h2 className="text-center">Address List</h2>
         <div className="w-75 mt-5 mx-auto">
          <div className="d-flex justify-content-between">
            <Link to="/address/add" className="btn btn-success btn-large mb-1"
-           style={{marginLeft:100, marginBottom:180}}>
+           style={{marginLeft:150, marginBottom:180}}>
 
              Add
            </Link>
@@ -89,8 +89,8 @@ class Address extends Component {
         </div>
         <div className="row">
 
-          <table className="table table-stripped table-bordered mt-5" 
-          style={{marginTop:200 , marginLeft:400, marginRight:500, width:900}}>
+          <table className="table table-stripped table-bordered" 
+          style={{marginTop:150 , marginLeft:300, marginRight:500, width:1100}}>
 
             <thead>
               <tr>
@@ -129,7 +129,7 @@ class Address extends Component {
             </tbody>
           </table>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

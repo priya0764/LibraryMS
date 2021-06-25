@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const READER_API_BASE_URL ="http://localhost:8082/reader"
+const READER_API_BASE_URL ="http://localhost:8080/reader"
 
 class ReaderService{
     async getAllReaders(){

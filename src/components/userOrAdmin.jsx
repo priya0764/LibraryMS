@@ -8,7 +8,7 @@ class UserOrAdmin extends Component {
     let LibraryWelcome="LibraryWelcome"
     return (
       <React.Fragment>
-      <div className="container-fluid">
+      <div>
         <LoginNavbar />
         <div className="row">
           <div className="col-sm-8">

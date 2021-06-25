@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const LOCAL_HOST_URL = "http://localhost:8082/api";
+const LOCAL_HOST_URL = "http://localhost:8080/api";
 
 class UsersService{
     async getAllUsers(){

@@ -68,7 +68,7 @@ class UpdateAuthor extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <DashboardNav />
         <div className="container">
           <div className="row">
@@ -134,7 +134,7 @@ class UpdateAuthor extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

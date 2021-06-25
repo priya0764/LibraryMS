@@ -5,7 +5,7 @@ class StoreBooksCategory extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <React.Fragment>
         <div className="main-book-category-list mr-5">
           <div className="container ml-5 mr-5">
             <div className="row">
@@ -131,7 +131,7 @@ class StoreBooksCategory extends Component {
           </div>
         </div>
         <hr className="hr-border" />
-      </div>
+      </React.Fragment>
     );
   }
 }
