@@ -65,7 +65,7 @@ class BooksIssued extends Component {
     console.log(this.state.booksIssuedList);
     console.log("Sorted..",sorted);
     return (
-      <div>
+      <React.Fragment>
 
         <DashboardNav />
         <h2 className="text-center">BooksIssued List</h2>
@@ -122,7 +122,7 @@ class BooksIssued extends Component {
             </tbody>
           </table>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

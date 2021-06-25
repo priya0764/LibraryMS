@@ -44,7 +44,7 @@ class Publishers extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <DashboardNav />
         <h2 className="text-center" style={{paddingLeft:200}} >  Publisher List </h2>
         <div className="row" style={{marginLeft:250}}>
@@ -117,7 +117,7 @@ class Publishers extends Component {
             </tbody>
           </table>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -53,7 +53,7 @@ class SuggestedBooks extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <DashboardNav />
         <h2 className="text-center" style={{ paddingLeft: 200 }}>
           Suggested Books List{" "}
@@ -146,7 +146,7 @@ class SuggestedBooks extends Component {
             </tbody>
           </table>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

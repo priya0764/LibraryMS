@@ -56,7 +56,7 @@ class Author extends Component {
   };
   render() {
     return (
-      <div>
+      <React.Fragment>
         <DashboardNav />
 
         <h2 className="text-center">Authors List</h2>
@@ -147,7 +147,7 @@ class Author extends Component {
             </tbody>
           </table>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

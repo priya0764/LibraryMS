@@ -5,7 +5,7 @@ class Footer extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <React.Fragment>
         <section className="main-newsletter">
           <div className="container" style={{ marginLeft: 400 }}>
             <div className="row ml-5">
@@ -31,7 +31,7 @@ class Footer extends Component {
             </div>
           </div>
         </section>
-      </div>
+      </React.Fragment>
     );
   }
 }

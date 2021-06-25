@@ -42,7 +42,6 @@ class UpdateProfile extends Component{
         return(
          <React.Fragment>
             <UserNavbar/>
-           <div>
             <form onSubmit={this.handleSubmit} className="w-50 mx-auto" style={{minHeight:757.08, textAlign:"left"}}>
                   <h2>Update Profile</h2>
                   <div className="mb-3">
@@ -151,7 +150,6 @@ class UpdateProfile extends Component{
                     Cancel
                   </button>
               </form>
-              </div>  
         
         </React.Fragment>
         );

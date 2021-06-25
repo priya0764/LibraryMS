@@ -7,7 +7,7 @@ import Footer from './footer'
 class UserPage extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <UserNavbar/>
         <section className="main-slider">
           <div className="container">
@@ -83,7 +83,7 @@ class UserPage extends Component {
           </div>
         </section>
         <Footer/>
-      </div>
+      </React.Fragment>
     );
   }
 }

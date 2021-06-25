@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const LOCAL_HOST_URL = "http://localhost:8082/damagedbooks"
+const LOCAL_HOST_URL = "http://localhost:8080/damagedbooks"
 
 class DamagedBooksService {
     async getAllDamagedBooks(){

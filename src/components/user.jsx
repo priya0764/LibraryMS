@@ -66,7 +66,7 @@ class Users extends Component {
     console.log(this.state.userList);
     console.log("Sorted..",sorted);
     return (
-      <div>
+      <React.Fragment>
         <DashboardNav/>
         <h2 className="text-center mt-2">Users List</h2>
         <div className="w-75 mt-5 mx-auto">
@@ -126,7 +126,7 @@ class Users extends Component {
             </tbody>
           </table>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

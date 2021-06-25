@@ -71,7 +71,7 @@ class UpdateBooksReturned extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <DashboardNav />
         <div className="container">
           <div className="row">
@@ -139,7 +139,7 @@ class UpdateBooksReturned extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

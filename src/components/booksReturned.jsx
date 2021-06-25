@@ -57,7 +57,7 @@ class BooksReturned extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <DashboardNav />
         <h2 className="text-center">ReturnedBooks List</h2>
         <div
@@ -121,7 +121,7 @@ class BooksReturned extends Component {
             </tbody>
           </table>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

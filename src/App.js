@@ -106,7 +106,7 @@ import ViewBookUser from "./components/viewBookUser";
 function App() {
   return (
     <div className="App">
-      <div className="container-fluid">
+      {/* <div className="container-fluid"> */}
         <Router>
         <Switch>
           <Route path="/reader/add" component={AddReader} />
@@ -211,7 +211,7 @@ function App() {
           <Route path="/" exact component={Home} />
         </Switch>
         </Router>
-      </div>
+      {/* </div> */}
     </div>
   );
 }

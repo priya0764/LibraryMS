@@ -5,9 +5,9 @@ class Logout extends Component {
     state = {};
     render() {
       return (
-        <div>
+        <React.Fragment>
             <Link to="/userLogin">Logout</Link>
-        </div>
+        </React.Fragment>
       );
     }
   }
