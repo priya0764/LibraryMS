@@ -30,7 +30,7 @@ class UserBooksList2 extends Component {
   
   render() {
     return (
-      <div className="container-fluid">
+      <React.Fragment>
         <UserNavbar />
         <div className="row mt-3">
           <div className="col-md-10 mx-auto">
@@ -61,7 +61,7 @@ class UserBooksList2 extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
